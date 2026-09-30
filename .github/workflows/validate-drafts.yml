@@ -1,0 +1,36 @@
+name: Validate draft fixes
+on:
+  push:
+    branches: [validation/draft-fixes-20260930]
+permissions:
+  contents: read
+jobs:
+  cfg:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 523f151acf5b9f36c24fe01411bde6e01c4a4552
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install torch==2.6.0 torchvision==0.21.0 --index-url https://download.pytorch.org/whl/cpu
+      - run: pip install -e . pytest
+      - run: OMP_NUM_THREADS=1 python -m pytest tests/test_cfg_finite_rescale.py -q
+  milvus:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      DEEPFACE_BACKEND_ENGINE: pytorch
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: Afloat16/deepface
+          ref: 015e012f27f0043a6c714f33de8c7afb0c8d4f5d
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install torch==2.6.0 torchvision==0.21.0 --index-url https://download.pytorch.org/whl/cpu
+      - run: pip install -r requirements_base.txt pytest pymilvus==2.6.9 milvus-lite==2.5.1 'setuptools<81' 'opencv-python<5'
+      - run: python -m pytest tests/integration/test_milvus_distance_lite.py tests/unit/test_milvus_distance.py tests/unit/test_angular_distance.py tests/unit/test_datastore_normalized_metric.py -q
