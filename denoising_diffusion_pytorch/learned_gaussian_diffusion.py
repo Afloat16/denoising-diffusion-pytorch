@@ -2,6 +2,7 @@ import torch
 from collections import namedtuple
 from math import pi, sqrt, log as ln
 from inspect import isfunction
+from functools import partial
 
 from einops import rearrange, reduce
 
@@ -24,6 +25,9 @@ def default(val, d):
     if exists(val):
         return val
     return d() if isfunction(d) else d
+
+def identity(x):
+    return x
 
 # tensor helpers
 
@@ -70,6 +74,14 @@ def discretized_gaussian_log_likelihood(x, *, means, log_scales, thres = 0.999):
 # gaussian diffusion for learned variance + hybrid eps simple + vb loss
 
 class LearnedGaussianDiffusion(GaussianDiffusion):
+    """Learned posterior variance with the selected prediction objective.
+
+    The first output head and its MSE target use the base diffusion's
+    ``objective``; the second head interpolates log variances. Checkpoints
+    trained with the earlier unconditional noise target must be loaded with
+    ``objective='pred_noise'``.
+    """
+
     def __init__(
         self,
         model,
@@ -83,8 +95,8 @@ class LearnedGaussianDiffusion(GaussianDiffusion):
 
         self.vb_loss_weight = vb_loss_weight
 
-    def model_predictions(self, x, t, x_self_cond = None, clip_x_start = False, rederive_pred_noise = False):
-        model_output = self.model(x, t)
+    def model_predictions(self, x, t, x_self_cond = None, clip_x_start = False, rederive_pred_noise = False, model_output = None):
+        model_output = default(model_output, lambda: self.model(x, t))
         model_output, pred_variance = model_output.chunk(2, dim = 1)
 
         maybe_clip = partial(torch.clamp, min = -1., max = 1.) if clip_x_start else identity
@@ -92,18 +104,25 @@ class LearnedGaussianDiffusion(GaussianDiffusion):
         if self.objective == 'pred_noise':
             pred_noise = model_output
             x_start = self.predict_start_from_noise(x, t, model_output)
+            x_start = maybe_clip(x_start)
+
+            if clip_x_start and rederive_pred_noise:
+                pred_noise = self.predict_noise_from_start(x, t, x_start)
 
         elif self.objective == 'pred_x0':
-            pred_noise = self.predict_noise_from_start(x, t, model_output)
-            x_start = model_output
+            x_start = maybe_clip(model_output)
+            pred_noise = self.predict_noise_from_start(x, t, x_start)
 
-        x_start = maybe_clip(x_start)
+        elif self.objective == 'pred_v':
+            x_start = maybe_clip(self.predict_start_from_v(x, t, model_output))
+            pred_noise = self.predict_noise_from_start(x, t, x_start)
 
         return ModelPrediction(pred_noise, x_start, pred_variance)
 
     def p_mean_variance(self, *, x, t, clip_denoised, model_output = None, **kwargs):
         model_output = default(model_output, lambda: self.model(x, t))
-        pred_noise, var_interp_frac_unnormalized = model_output.chunk(2, dim = 1)
+        predictions = self.model_predictions(x, t, clip_x_start = clip_denoised, model_output = model_output)
+        var_interp_frac_unnormalized = predictions.pred_variance
 
         min_log = extract(self.posterior_log_variance_clipped, t, x.shape)
         max_log = extract(torch.log(self.betas), t, x.shape)
@@ -112,10 +131,7 @@ class LearnedGaussianDiffusion(GaussianDiffusion):
         model_log_variance = var_interp_frac * max_log + (1 - var_interp_frac) * min_log
         model_variance = model_log_variance.exp()
 
-        x_start = self.predict_start_from_noise(x, t, pred_noise)
-
-        if clip_denoised:
-            x_start.clamp_(-1., 1.)
+        x_start = predictions.pred_x_start
 
         model_mean, _, _ = self.q_posterior(x_start, x, t)
 
@@ -150,9 +166,16 @@ class LearnedGaussianDiffusion(GaussianDiffusion):
 
         # simple loss - predicting noise, x0, or x_prev
 
-        pred_noise, _ = model_output.chunk(2, dim = 1)
+        prediction, _ = model_output.chunk(2, dim = 1)
 
-        simple_losses = F.mse_loss(pred_noise, noise, reduction = 'none')
+        if self.objective == 'pred_noise':
+            target = noise
+        elif self.objective == 'pred_x0':
+            target = x_start
+        elif self.objective == 'pred_v':
+            target = self.predict_v(x_start, t, noise)
+
+        simple_losses = F.mse_loss(prediction, target, reduction = 'none')
         simple_losses = reduce(simple_losses, 'b ... -> b', 'mean')
 
         total_loss = simple_losses + vb_losses * self.vb_loss_weight
