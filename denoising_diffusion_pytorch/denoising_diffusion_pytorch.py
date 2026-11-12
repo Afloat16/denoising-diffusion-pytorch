@@ -1014,7 +1014,7 @@ class Trainer:
         return self.accelerator.device
 
     def save(self, milestone):
-        if not self.accelerator.is_local_main_process:
+        if not self.accelerator.is_main_process:
             return
 
         data = {

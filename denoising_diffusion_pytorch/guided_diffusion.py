@@ -876,7 +876,7 @@ class Trainer(object):
         self.model, self.opt = self.accelerator.prepare(self.model, self.opt)
 
     def save(self, milestone):
-        if not self.accelerator.is_local_main_process:
+        if not self.accelerator.is_main_process:
             return
 
         data = {
@@ -901,7 +901,8 @@ class Trainer(object):
 
         self.step = data['step']
         self.opt.load_state_dict(data['opt'])
-        self.ema.load_state_dict(data['ema'])
+        if self.accelerator.is_main_process:
+            self.ema.load_state_dict(data['ema'])
 
         if 'version' in data:
             print(f"loading from version {data['version']}")
