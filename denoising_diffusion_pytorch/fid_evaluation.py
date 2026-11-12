@@ -92,16 +92,25 @@ class FIDEvaluation:
     def fid_score(self):
         if not self.dataset_stats_loaded:
             self.load_or_precalc_dataset_stats()
-        self.sampler.eval()
+        training_states = (
+            [(module, module.training) for module in self.sampler.modules()]
+            if isinstance(self.sampler, torch.nn.Module)
+            else []
+        )
         batches = num_to_groups(self.n_samples, self.batch_size)
         stacked_fake_features = []
         self.print_fn(
             f"Stacking Inception features for {self.n_samples} generated samples."
         )
-        for batch in tqdm(batches):
-            fake_samples = self.sampler.sample(batch_size=batch)
-            fake_features = self.calculate_inception_features(fake_samples)
-            stacked_fake_features.append(fake_features)
+        try:
+            self.sampler.eval()
+            for batch in tqdm(batches):
+                fake_samples = self.sampler.sample(batch_size=batch)
+                fake_features = self.calculate_inception_features(fake_samples)
+                stacked_fake_features.append(fake_features)
+        finally:
+            for module, training in training_states:
+                module.training = training
         stacked_fake_features = torch.cat(stacked_fake_features, dim=0).cpu().numpy()
         m1 = np.mean(stacked_fake_features, axis=0)
         s1 = np.cov(stacked_fake_features, rowvar=False)
