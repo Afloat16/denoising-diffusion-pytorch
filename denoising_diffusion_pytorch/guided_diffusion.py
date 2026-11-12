@@ -660,6 +660,13 @@ class GaussianDiffusion(nn.Module):
             self_cond = x_start if self.self_condition else None
             pred_noise, x_start, *_ = self.model_predictions(img, time_cond, self_cond, clip_x_start = True)
 
+            if exists(cond_fn):
+                alpha = self.alphas_cumprod[time]
+                gradient = cond_fn(img, time_cond, **default(guidance_kwargs, {}))
+                pred_noise = self.predict_noise_from_start(img, time_cond, x_start)
+                pred_noise = pred_noise - (1 - alpha).sqrt() * gradient
+                x_start = self.predict_start_from_noise(img, time_cond, pred_noise)
+
             imgs.append(img)
 
             if time_next < 0:
