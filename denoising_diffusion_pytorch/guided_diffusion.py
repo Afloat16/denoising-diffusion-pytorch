@@ -628,14 +628,15 @@ class GaussianDiffusion(nn.Module):
         batch, device = shape[0], self.betas.device
 
         img = torch.randn(shape, device = device)
-        imgs = [img]
+        imgs = [img] if return_all_timesteps else []
 
         x_start = None
 
         for t in tqdm(reversed(range(0, self.num_timesteps)), desc = 'sampling loop time step', total = self.num_timesteps):
             self_cond = x_start if self.self_condition else None
             img, x_start = self.p_sample(img, t, self_cond, cond_fn, guidance_kwargs)
-            imgs.append(img)
+            if return_all_timesteps:
+                imgs.append(img)
 
         ret = img if not return_all_timesteps else torch.stack(imgs, dim = 1)
 
@@ -651,7 +652,7 @@ class GaussianDiffusion(nn.Module):
         time_pairs = list(zip(times[:-1], times[1:])) # [(T-1, T-2), (T-2, T-3), ..., (1, 0), (0, -1)]
 
         img = torch.randn(shape, device = device)
-        imgs = [img]
+        imgs = [img] if return_all_timesteps else []
 
         x_start = None
 
@@ -660,7 +661,8 @@ class GaussianDiffusion(nn.Module):
             self_cond = x_start if self.self_condition else None
             pred_noise, x_start, *_ = self.model_predictions(img, time_cond, self_cond, clip_x_start = True)
 
-            imgs.append(img)
+            if return_all_timesteps:
+                imgs.append(img)
 
             if time_next < 0:
                 img = x_start
