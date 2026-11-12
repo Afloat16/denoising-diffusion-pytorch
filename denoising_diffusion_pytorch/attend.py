@@ -111,11 +111,14 @@ class Attend(nn.Module):
 
         # similarity
 
-        sim = einsum(f"b h i d, b h j d -> b h i j", q, k) * scale
+        with torch.autocast(device_type = q.device.type, enabled = False):
+            q_for_scores = q.float() if q.dtype in (torch.float16, torch.bfloat16) else q
+            k_for_scores = k.float() if k.dtype in (torch.float16, torch.bfloat16) else k
+            sim = einsum(f"b h i d, b h j d -> b h i j", q_for_scores, k_for_scores) * scale
 
-        # attention
+            # attention
 
-        attn = sim.softmax(dim = -1)
+            attn = sim.softmax(dim = -1).to(v.dtype)
         attn = self.attn_dropout(attn)
 
         # aggregate values
