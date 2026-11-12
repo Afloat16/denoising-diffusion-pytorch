@@ -100,7 +100,7 @@ class RMSNorm(nn.Module):
         self.g = nn.Parameter(torch.ones(1, dim, 1, 1))
 
     def forward(self, x):
-        return F.normalize(x, dim = 1) * self.g * (x.shape[-1] ** 0.5)
+        return F.normalize(x, dim = 1) * self.g * (x.shape[1] ** 0.5)
 
 class PreNorm(nn.Module):
     def __init__(self, dim, fn):
