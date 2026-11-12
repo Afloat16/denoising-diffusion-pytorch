@@ -281,7 +281,7 @@ class Encoder(Module):
 
         x = self.block2(x)
 
-        x = self.res_mp_add(x, res)
+        x = self.res_mp_add(res, x)
 
         if exists(self.attn):
             x = self.attn(x)
@@ -359,7 +359,7 @@ class Decoder(Module):
 
         x = self.block2(x)
 
-        x = self.res_mp_add(x, res)
+        x = self.res_mp_add(res, x)
 
         if exists(self.attn):
             x = self.attn(x)
@@ -408,7 +408,7 @@ class Attention(Module):
         out = rearrange(out, 'b h n d -> b (h d) n')
         out = self.to_out(out)
 
-        return self.mp_add(out, res)
+        return self.mp_add(res, out)
 
 # unet proposed by karras
 # improvised 1d version
@@ -661,7 +661,7 @@ class MPFeedForward(Module):
     def forward(self, x):
         res = x
         out = self.net(x)
-        return self.mp_add(out, res)
+        return self.mp_add(res, out)
 
 class MPImageTransformer(Module):
     def __init__(
