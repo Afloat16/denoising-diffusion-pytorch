@@ -153,7 +153,7 @@ class Conv1d(Module):
             nn.init.dirac_(self.weight)
 
         self.eps = eps
-        self.fan_in = dim_in * kernel_size
+        self.fan_in = weight[0].numel()
         self.concat_ones_to_input = concat_ones_to_input
 
     def forward(self, x):
