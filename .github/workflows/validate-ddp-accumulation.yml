@@ -1,0 +1,43 @@
+name: Validate DDP accumulation
+on:
+  push:
+    branches: [validation/ddp-accumulation-20261112]
+permissions:
+  contents: read
+jobs:
+  native-cpu:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: d870451a94050ce0c73e444649a6e19742dcc605
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install native CPU runtime
+        run: |
+          python -m pip install torch==2.9.1 torchvision==0.24.1 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install -e . pytest accelerate==1.11.0
+      - name: Verify patched native training and DDP reductions
+        run: python -m pytest tests/test_ddp_accumulation.py -q --junitxml=patched.xml
+      - name: Restore unchanged production source
+        run: git checkout c8155b1dc622e3f1ef0d53dc6e5a570ca105bcec -- denoising_diffusion_pytorch/denoising_diffusion_pytorch.py denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py denoising_diffusion_pytorch/guided_diffusion.py denoising_diffusion_pytorch/repaint.py
+      - name: Verify baseline fails only the four accumulation reduction cases
+        shell: bash
+        run: |
+          set +e
+          python -m pytest tests/test_ddp_accumulation.py -q --junitxml=baseline.xml
+          result=$?
+          set -e
+          test "$result" -eq 1
+          python - <<'PY'
+          import xml.etree.ElementTree as ET
+          suites = list(ET.parse("baseline.xml").getroot().iter("testsuite"))
+          counts = {key: sum(int(suite.attrib.get(key, 0)) for suite in suites) for key in ("tests", "failures", "errors", "skipped")}
+          print(counts)
+          assert counts == {"tests": 16, "failures": 4, "errors": 0, "skipped": 0}, counts
+          PY
