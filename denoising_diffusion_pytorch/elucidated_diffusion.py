@@ -134,7 +134,7 @@ class ElucidatedDiffusion(nn.Module):
         inv_rho = 1 / self.rho
 
         steps = torch.arange(num_sample_steps, device = self.device, dtype = torch.float32)
-        sigmas = (self.sigma_max ** inv_rho + steps / (N - 1) * (self.sigma_min ** inv_rho - self.sigma_max ** inv_rho)) ** self.rho
+        sigmas = (self.sigma_max ** inv_rho + steps / max(N - 1, 1) * (self.sigma_min ** inv_rho - self.sigma_max ** inv_rho)) ** self.rho
 
         sigmas = F.pad(sigmas, (0, 1), value = 0.) # last step is sigma value of 0.
         return sigmas
