@@ -463,7 +463,7 @@
     },
     "novelty": "Inspected all 345 historical source blobs and 13 save variants across the original 112 fork/PR heads; every version writes directly to the destination. No atomic-save helper or temporary-replacement implementation was present. This is separate from global EMA ownership and best-FID persistence patches.",
     "history": "ddp-checkpoint-history.json",
-    "status": "validated",
+    "status": "published",
     "files": [
       "denoising_diffusion_pytorch/_checkpoint.py",
       "denoising_diffusion_pytorch/denoising_diffusion_pytorch.py",
@@ -471,7 +471,12 @@
       "denoising_diffusion_pytorch/guided_diffusion.py",
       "denoising_diffusion_pytorch/repaint.py",
       "tests/test_atomic_checkpoints.py"
-    ]
+    ],
+    "pr": 425,
+    "url": "https://github.com/lucidrains/denoising-diffusion-pytorch/pull/425",
+    "state": "open",
+    "merged_at": null,
+    "maintainer_can_modify": false
   },
   {
     "key": "guided_image_mode",
@@ -492,11 +497,16 @@
     },
     "novelty": "All 29 guided-diffusion source blobs and the single historical guided Trainer constructor were inspected; none infer the image mode from diffusion channels. Prior image-discovery changes concern file ordering/extensions and do not implement this conversion.",
     "history": "ddp-guided-image-mode-history.json",
-    "status": "validated",
+    "status": "published",
     "files": [
       "denoising_diffusion_pytorch/guided_diffusion.py",
       "tests/test_guided_training_image_mode.py"
-    ]
+    ],
+    "pr": 426,
+    "url": "https://github.com/lucidrains/denoising-diffusion-pytorch/pull/426",
+    "state": "open",
+    "merged_at": null,
+    "maintainer_can_modify": false
   },
   {
     "key": "linear_attention_config",
@@ -517,12 +527,17 @@
     },
     "novelty": "All 77 historical 1D/CFG source blobs use LinearAttention(dim_in) and LinearAttention(dim_out) without the configured heads or head dimension. No documentation limits these settings to the middle layer, and the main 2D Unet forwards them to every full/linear attention stage.",
     "history": "ddp-linear-attention-config-history.json",
-    "status": "validated",
+    "status": "published",
     "files": [
       "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py",
       "denoising_diffusion_pytorch/classifier_free_guidance.py",
       "tests/test_linear_attention_configuration.py"
-    ]
+    ],
+    "pr": 427,
+    "url": "https://github.com/lucidrains/denoising-diffusion-pytorch/pull/427",
+    "state": "open",
+    "merged_at": null,
+    "maintainer_can_modify": false
   },
   {
     "key": "fid_precision",
@@ -543,11 +558,16 @@
     },
     "novelty": "All 12 historical FID source blobs and three calculate_inception_features variants were inspected; none normalize input dtype or isolate Inception from ambient autocast. Existing FID cache, sample-budget, evaluation-loader and moment-streaming work does not address this precision boundary.",
     "history": "ddp-fid-dtype-history.json",
-    "status": "validated",
+    "status": "published",
     "files": [
       "denoising_diffusion_pytorch/fid_evaluation.py",
       "tests/test_fid_feature_precision.py"
-    ]
+    ],
+    "pr": 428,
+    "url": "https://github.com/lucidrains/denoising-diffusion-pytorch/pull/428",
+    "state": "open",
+    "merged_at": null,
+    "maintainer_can_modify": false
   },
   {
     "key": "guidance_empty_kwargs",
@@ -568,11 +588,16 @@
     },
     "novelty": "All 29 historical guided-diffusion blobs and four p_sample/condition_mean variants were inspected. Every DDPM callback guard also requires non-None guidance_kwargs. The earlier DDIM guidance branch is a different sampler change and retains this DDPM guard.",
     "history": "ddp-guidance-empty-kwargs-history.json",
-    "status": "validated",
+    "status": "published",
     "files": [
       "denoising_diffusion_pytorch/guided_diffusion.py",
       "tests/test_guidance_without_kwargs.py"
-    ]
+    ],
+    "pr": 429,
+    "url": "https://github.com/lucidrains/denoising-diffusion-pytorch/pull/429",
+    "state": "open",
+    "merged_at": null,
+    "maintainer_can_modify": false
   },
   {
     "key": "edm_preconditioning",
@@ -593,10 +618,15 @@
     },
     "novelty": "All 27 historical EDM source blobs and five coefficient/loss-weight variants were inspected. None use a stable hypotenuse norm or reciprocal-sum loss weighting. This concerns EDM sigma preconditioning, independently of log-SNR schedule weighting, single-step schedules, or sampling scalar conversion.",
     "history": "ddp-edm-preconditioning-history.json",
-    "status": "validated",
+    "status": "published",
     "files": [
       "denoising_diffusion_pytorch/elucidated_diffusion.py",
       "tests/test_edm_preconditioning_stability.py"
-    ]
+    ],
+    "pr": 430,
+    "url": "https://github.com/lucidrains/denoising-diffusion-pytorch/pull/430",
+    "state": "open",
+    "merged_at": null,
+    "maintainer_can_modify": false
   }
 ]
