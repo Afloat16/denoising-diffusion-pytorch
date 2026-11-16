@@ -1,0 +1,37 @@
+FFF...                                                                   [100%]
+=================================== FAILURES ===================================
+_________ test_integer_class_labels_match_long_labels[label_dtype0-1] __________
+tests/test_karras_integer_labels.py:43: in test_integer_class_labels_match_long_labels
+    actual = model(inputs, times, class_labels=labels)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+denoising_diffusion_pytorch/karras_unet_1d.py:593: in forward
+    class_labels = F.one_hot(class_labels, self.num_classes)
+E   RuntimeError: one_hot is only applicable to index tensor of type LongTensor.
+_________ test_integer_class_labels_match_long_labels[label_dtype0-2] __________
+tests/test_karras_integer_labels.py:43: in test_integer_class_labels_match_long_labels
+    actual = model(inputs, times, class_labels=labels)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+denoising_diffusion_pytorch/karras_unet.py:586: in forward
+    class_labels = F.one_hot(class_labels, self.num_classes)
+E   RuntimeError: one_hot is only applicable to index tensor of type LongTensor.
+_________ test_integer_class_labels_match_long_labels[label_dtype0-3] __________
+tests/test_karras_integer_labels.py:43: in test_integer_class_labels_match_long_labels
+    actual = model(inputs, times, class_labels=labels)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+denoising_diffusion_pytorch/karras_unet_3d.py:718: in forward
+    class_labels = F.one_hot(class_labels, self.num_classes)
+E   RuntimeError: one_hot is only applicable to index tensor of type LongTensor.
+=========================== short test summary info ============================
+FAILED tests/test_karras_integer_labels.py::test_integer_class_labels_match_long_labels[label_dtype0-1]
+FAILED tests/test_karras_integer_labels.py::test_integer_class_labels_match_long_labels[label_dtype0-2]
+FAILED tests/test_karras_integer_labels.py::test_integer_class_labels_match_long_labels[label_dtype0-3]
+3 failed, 3 passed in 5.50s

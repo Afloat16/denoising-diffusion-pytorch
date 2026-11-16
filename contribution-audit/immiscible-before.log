@@ -1,0 +1,49 @@
+FFF.                                                                     [100%]
+=================================== FAILURES ===================================
+_______ test_immiscible_assignment_preserves_input_gradients[True-False] _______
+tests/test_immiscible_gradients.py:57: in test_immiscible_assignment_preserves_input_gradients
+    actual = diffusion.p_losses(images, times, noise=noise)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch.py:803: in p_losses
+    x = self.q_sample(x_start = x_start, t = t, noise = noise)
+../../.venv-torch/lib/python3.12/site-packages/torch/amp/autocast_mode.py:44: in decorate_autocast
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch.py:780: in q_sample
+    assign = self.noise_assignment(x_start, noise)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch.py:772: in noise_assignment
+    _, assign = linear_sum_assignment(dist.cpu())
+../../.venv-torch/lib/python3.12/site-packages/torch/_tensor.py:1151: in __array__
+    return self.numpy().astype(dtype, copy=False)
+E   RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+_______ test_immiscible_assignment_preserves_input_gradients[False-True] _______
+tests/test_immiscible_gradients.py:57: in test_immiscible_assignment_preserves_input_gradients
+    actual = diffusion.p_losses(images, times, noise=noise)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch.py:803: in p_losses
+    x = self.q_sample(x_start = x_start, t = t, noise = noise)
+../../.venv-torch/lib/python3.12/site-packages/torch/amp/autocast_mode.py:44: in decorate_autocast
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch.py:780: in q_sample
+    assign = self.noise_assignment(x_start, noise)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch.py:772: in noise_assignment
+    _, assign = linear_sum_assignment(dist.cpu())
+../../.venv-torch/lib/python3.12/site-packages/torch/_tensor.py:1151: in __array__
+    return self.numpy().astype(dtype, copy=False)
+E   RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+_______ test_immiscible_assignment_preserves_input_gradients[True-True] ________
+tests/test_immiscible_gradients.py:57: in test_immiscible_assignment_preserves_input_gradients
+    actual = diffusion.p_losses(images, times, noise=noise)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch.py:803: in p_losses
+    x = self.q_sample(x_start = x_start, t = t, noise = noise)
+../../.venv-torch/lib/python3.12/site-packages/torch/amp/autocast_mode.py:44: in decorate_autocast
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch.py:780: in q_sample
+    assign = self.noise_assignment(x_start, noise)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch.py:772: in noise_assignment
+    _, assign = linear_sum_assignment(dist.cpu())
+../../.venv-torch/lib/python3.12/site-packages/torch/_tensor.py:1151: in __array__
+    return self.numpy().astype(dtype, copy=False)
+E   RuntimeError: Can't call numpy() on Tensor that requires grad. Use tensor.detach().numpy() instead.
+=========================== short test summary info ============================
+FAILED tests/test_immiscible_gradients.py::test_immiscible_assignment_preserves_input_gradients[True-False]
+FAILED tests/test_immiscible_gradients.py::test_immiscible_assignment_preserves_input_gradients[False-True]
+FAILED tests/test_immiscible_gradients.py::test_immiscible_assignment_preserves_input_gradients[True-True]
+3 failed, 1 passed in 4.73s

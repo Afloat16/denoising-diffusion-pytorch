@@ -1,0 +1,112 @@
+FFFFFF............FFFFFF............                                     [100%]
+=================================== FAILURES ===================================
+_ test_rms_normalization_preserves_finite_extreme_inputs[0.0-dtype0-denoising_diffusion_pytorch] _
+tests/test_rms_precision.py:38: in test_rms_normalization_preserves_finite_extreme_inputs
+    assert torch.isfinite(actual).all()
+E   assert tensor(False)
+E    +  where tensor(False) = <built-in method all of Tensor object at 0x7f22bf344190>()
+E    +    where <built-in method all of Tensor object at 0x7f22bf344190> = tensor([[[[False, False],\n          [False, False]],\n\n         [[False, False],\n          [False, False]],\n\n         [... False]],\n\n         [[False, False],\n          [False, False]],\n\n         [[False, False],\n          [False, False]]]]).all
+E    +      where tensor([[[[False, False],\n          [False, False]],\n\n         [[False, False],\n          [False, False]],\n\n         [... False]],\n\n         [[False, False],\n          [False, False]],\n\n         [[False, False],\n          [False, False]]]]) = <built-in method isfinite of type object at 0x7f22e2192980>(tensor([[[[nan, nan],\n          [nan, nan]],\n\n         [[nan, nan],\n          [nan, nan]],\n\n         [[nan, nan],\n    ...n],\n          [nan, nan]],\n\n         [[nan, nan],\n          [nan, nan]]]], dtype=torch.float16, grad_fn=<MulBackward0>))
+E    +        where <built-in method isfinite of type object at 0x7f22e2192980> = torch.isfinite
+_ test_rms_normalization_preserves_finite_extreme_inputs[0.0-dtype0-denoising_diffusion_pytorch_1d] _
+tests/test_rms_precision.py:38: in test_rms_normalization_preserves_finite_extreme_inputs
+    assert torch.isfinite(actual).all()
+E   assert tensor(False)
+E    +  where tensor(False) = <built-in method all of Tensor object at 0x7f22c6a68c30>()
+E    +    where <built-in method all of Tensor object at 0x7f22c6a68c30> = tensor([[[False, False, False, False],\n         [False, False, False, False],\n         [False, False, False, False],\n ...\n         [False, False, False, False],\n         [False, False, False, False],\n         [False, False, False, False]]]).all
+E    +      where tensor([[[False, False, False, False],\n         [False, False, False, False],\n         [False, False, False, False],\n ...\n         [False, False, False, False],\n         [False, False, False, False],\n         [False, False, False, False]]]) = <built-in method isfinite of type object at 0x7f22e2192980>(tensor([[[nan, nan, nan, nan],\n         [nan, nan, nan, nan],\n         [nan, nan, nan, nan],\n         [nan, nan, nan, ...nan, nan],\n         [nan, nan, nan, nan],\n         [nan, nan, nan, nan]]], dtype=torch.float16, grad_fn=<MulBackward0>))
+E    +        where <built-in method isfinite of type object at 0x7f22e2192980> = torch.isfinite
+_ test_rms_normalization_preserves_finite_extreme_inputs[0.0-dtype0-classifier_free_guidance] _
+tests/test_rms_precision.py:38: in test_rms_normalization_preserves_finite_extreme_inputs
+    assert torch.isfinite(actual).all()
+E   assert tensor(False)
+E    +  where tensor(False) = <built-in method all of Tensor object at 0x7f22e274a530>()
+E    +    where <built-in method all of Tensor object at 0x7f22e274a530> = tensor([[[[False, False],\n          [False, False]],\n\n         [[False, False],\n          [False, False]],\n\n         [... False]],\n\n         [[False, False],\n          [False, False]],\n\n         [[False, False],\n          [False, False]]]]).all
+E    +      where tensor([[[[False, False],\n          [False, False]],\n\n         [[False, False],\n          [False, False]],\n\n         [... False]],\n\n         [[False, False],\n          [False, False]],\n\n         [[False, False],\n          [False, False]]]]) = <built-in method isfinite of type object at 0x7f22e2192980>(tensor([[[[nan, nan],\n          [nan, nan]],\n\n         [[nan, nan],\n          [nan, nan]],\n\n         [[nan, nan],\n    ...n],\n          [nan, nan]],\n\n         [[nan, nan],\n          [nan, nan]]]], dtype=torch.float16, grad_fn=<MulBackward0>))
+E    +        where <built-in method isfinite of type object at 0x7f22e2192980> = torch.isfinite
+_ test_rms_normalization_preserves_finite_extreme_inputs[0.0-dtype0-guided_diffusion] _
+tests/test_rms_precision.py:38: in test_rms_normalization_preserves_finite_extreme_inputs
+    assert torch.isfinite(actual).all()
+E   assert tensor(False)
+E    +  where tensor(False) = <built-in method all of Tensor object at 0x7f22e2749c20>()
+E    +    where <built-in method all of Tensor object at 0x7f22e2749c20> = tensor([[[[False, False],\n          [False, False]],\n\n         [[False, False],\n          [False, False]],\n\n         [... False]],\n\n         [[False, False],\n          [False, False]],\n\n         [[False, False],\n          [False, False]]]]).all
+E    +      where tensor([[[[False, False],\n          [False, False]],\n\n         [[False, False],\n          [False, False]],\n\n         [... False]],\n\n         [[False, False],\n          [False, False]],\n\n         [[False, False],\n          [False, False]]]]) = <built-in method isfinite of type object at 0x7f22e2192980>(tensor([[[[nan, nan],\n          [nan, nan]],\n\n         [[nan, nan],\n          [nan, nan]],\n\n         [[nan, nan],\n    ...n],\n          [nan, nan]],\n\n         [[nan, nan],\n          [nan, nan]]]], dtype=torch.float16, grad_fn=<MulBackward0>))
+E    +        where <built-in method isfinite of type object at 0x7f22e2192980> = torch.isfinite
+__ test_rms_normalization_preserves_finite_extreme_inputs[0.0-dtype0-repaint] __
+tests/test_rms_precision.py:38: in test_rms_normalization_preserves_finite_extreme_inputs
+    assert torch.isfinite(actual).all()
+E   assert tensor(False)
+E    +  where tensor(False) = <built-in method all of Tensor object at 0x7f22bf1c86e0>()
+E    +    where <built-in method all of Tensor object at 0x7f22bf1c86e0> = tensor([[[[False, False],\n          [False, False]],\n\n         [[False, False],\n          [False, False]],\n\n         [... False]],\n\n         [[False, False],\n          [False, False]],\n\n         [[False, False],\n          [False, False]]]]).all
+E    +      where tensor([[[[False, False],\n          [False, False]],\n\n         [[False, False],\n          [False, False]],\n\n         [... False]],\n\n         [[False, False],\n          [False, False]],\n\n         [[False, False],\n          [False, False]]]]) = <built-in method isfinite of type object at 0x7f22e2192980>(tensor([[[[nan, nan],\n          [nan, nan]],\n\n         [[nan, nan],\n          [nan, nan]],\n\n         [[nan, nan],\n    ...n],\n          [nan, nan]],\n\n         [[nan, nan],\n          [nan, nan]]]], dtype=torch.float16, grad_fn=<MulBackward0>))
+E    +        where <built-in method isfinite of type object at 0x7f22e2192980> = torch.isfinite
+_ test_rms_normalization_preserves_finite_extreme_inputs[0.0-dtype0-simple_diffusion] _
+tests/test_rms_precision.py:38: in test_rms_normalization_preserves_finite_extreme_inputs
+    assert torch.isfinite(actual).all()
+E   assert tensor(False)
+E    +  where tensor(False) = <built-in method all of Tensor object at 0x7f22bf239b30>()
+E    +    where <built-in method all of Tensor object at 0x7f22bf239b30> = tensor([[[False, False, False, False, False, False, False, False],\n         [False, False, False, False, False, False,... False, False, False, False, False, False, False],\n         [False, False, False, False, False, False, False, False]]]).all
+E    +      where tensor([[[False, False, False, False, False, False, False, False],\n         [False, False, False, False, False, False,... False, False, False, False, False, False, False],\n         [False, False, False, False, False, False, False, False]]]) = <built-in method isfinite of type object at 0x7f22e2192980>(tensor([[[nan, nan, nan, nan, nan, nan, nan, nan],\n         [nan, nan, nan, nan, nan, nan, nan, nan],\n         [nan, n...an, nan, nan],\n         [nan, nan, nan, nan, nan, nan, nan, nan]]], dtype=torch.float16,\n       grad_fn=<MulBackward0>))
+E    +        where <built-in method isfinite of type object at 0x7f22e2192980> = torch.isfinite
+_ test_rms_normalization_preserves_finite_extreme_inputs[40000.0-dtype0-denoising_diffusion_pytorch] _
+tests/test_rms_precision.py:39: in test_rms_normalization_preserves_finite_extreme_inputs
+    torch.testing.assert_close(actual, expected, rtol=tolerance, atol=tolerance)
+E   AssertionError: Tensor-likes are not close!
+E   
+E   Mismatched elements: 64 / 64 (100.0%)
+E   Greatest absolute difference: 1.0 at index (0, 0, 0, 0) (up to 0.001 allowed)
+E   Greatest relative difference: 1.0 at index (0, 0, 0, 0) (up to 0.001 allowed)
+_ test_rms_normalization_preserves_finite_extreme_inputs[40000.0-dtype0-denoising_diffusion_pytorch_1d] _
+tests/test_rms_precision.py:39: in test_rms_normalization_preserves_finite_extreme_inputs
+    torch.testing.assert_close(actual, expected, rtol=tolerance, atol=tolerance)
+E   AssertionError: Tensor-likes are not close!
+E   
+E   Mismatched elements: 64 / 64 (100.0%)
+E   Greatest absolute difference: 1.0 at index (0, 0, 0) (up to 0.001 allowed)
+E   Greatest relative difference: 1.0 at index (0, 0, 0) (up to 0.001 allowed)
+_ test_rms_normalization_preserves_finite_extreme_inputs[40000.0-dtype0-classifier_free_guidance] _
+tests/test_rms_precision.py:39: in test_rms_normalization_preserves_finite_extreme_inputs
+    torch.testing.assert_close(actual, expected, rtol=tolerance, atol=tolerance)
+E   AssertionError: Tensor-likes are not close!
+E   
+E   Mismatched elements: 64 / 64 (100.0%)
+E   Greatest absolute difference: 1.0 at index (0, 0, 0, 0) (up to 0.001 allowed)
+E   Greatest relative difference: 1.0 at index (0, 0, 0, 0) (up to 0.001 allowed)
+_ test_rms_normalization_preserves_finite_extreme_inputs[40000.0-dtype0-guided_diffusion] _
+tests/test_rms_precision.py:39: in test_rms_normalization_preserves_finite_extreme_inputs
+    torch.testing.assert_close(actual, expected, rtol=tolerance, atol=tolerance)
+E   AssertionError: Tensor-likes are not close!
+E   
+E   Mismatched elements: 64 / 64 (100.0%)
+E   Greatest absolute difference: 0.5 at index (0, 0, 0, 0) (up to 0.001 allowed)
+E   Greatest relative difference: 1.0 at index (0, 0, 0, 0) (up to 0.001 allowed)
+_ test_rms_normalization_preserves_finite_extreme_inputs[40000.0-dtype0-repaint] _
+tests/test_rms_precision.py:39: in test_rms_normalization_preserves_finite_extreme_inputs
+    torch.testing.assert_close(actual, expected, rtol=tolerance, atol=tolerance)
+E   AssertionError: Tensor-likes are not close!
+E   
+E   Mismatched elements: 64 / 64 (100.0%)
+E   Greatest absolute difference: 1.0 at index (0, 0, 0, 0) (up to 0.001 allowed)
+E   Greatest relative difference: 1.0 at index (0, 0, 0, 0) (up to 0.001 allowed)
+_ test_rms_normalization_preserves_finite_extreme_inputs[40000.0-dtype0-simple_diffusion] _
+tests/test_rms_precision.py:39: in test_rms_normalization_preserves_finite_extreme_inputs
+    torch.testing.assert_close(actual, expected, rtol=tolerance, atol=tolerance)
+E   AssertionError: Tensor-likes are not close!
+E   
+E   Mismatched elements: 48 / 48 (100.0%)
+E   Greatest absolute difference: 1.0 at index (0, 0, 0) (up to 0.001 allowed)
+E   Greatest relative difference: 1.0 at index (0, 0, 0) (up to 0.001 allowed)
+=========================== short test summary info ============================
+FAILED tests/test_rms_precision.py::test_rms_normalization_preserves_finite_extreme_inputs[0.0-dtype0-denoising_diffusion_pytorch]
+FAILED tests/test_rms_precision.py::test_rms_normalization_preserves_finite_extreme_inputs[0.0-dtype0-denoising_diffusion_pytorch_1d]
+FAILED tests/test_rms_precision.py::test_rms_normalization_preserves_finite_extreme_inputs[0.0-dtype0-classifier_free_guidance]
+FAILED tests/test_rms_precision.py::test_rms_normalization_preserves_finite_extreme_inputs[0.0-dtype0-guided_diffusion]
+FAILED tests/test_rms_precision.py::test_rms_normalization_preserves_finite_extreme_inputs[0.0-dtype0-repaint]
+FAILED tests/test_rms_precision.py::test_rms_normalization_preserves_finite_extreme_inputs[0.0-dtype0-simple_diffusion]
+FAILED tests/test_rms_precision.py::test_rms_normalization_preserves_finite_extreme_inputs[40000.0-dtype0-denoising_diffusion_pytorch]
+FAILED tests/test_rms_precision.py::test_rms_normalization_preserves_finite_extreme_inputs[40000.0-dtype0-denoising_diffusion_pytorch_1d]
+FAILED tests/test_rms_precision.py::test_rms_normalization_preserves_finite_extreme_inputs[40000.0-dtype0-classifier_free_guidance]
+FAILED tests/test_rms_precision.py::test_rms_normalization_preserves_finite_extreme_inputs[40000.0-dtype0-guided_diffusion]
+FAILED tests/test_rms_precision.py::test_rms_normalization_preserves_finite_extreme_inputs[40000.0-dtype0-repaint]
+FAILED tests/test_rms_precision.py::test_rms_normalization_preserves_finite_extreme_inputs[40000.0-dtype0-simple_diffusion]
+12 failed, 24 passed in 4.58s
