@@ -1,0 +1,96 @@
+FFFFFFFF....                                                             [100%]
+=================================== FAILURES ===================================
+_ test_failed_serialization_never_publishes_a_partial_checkpoint[denoising_diffusion_pytorch-False] _
+tests/test_atomic_checkpoints.py:116: in test_failed_serialization_never_publishes_a_partial_checkpoint
+    assert not path.exists()
+E   AssertionError: assert not True
+E    +  where True = exists()
+E    +    where exists = PosixPath('/workspace/scratch/4bed741d4966/worktrees/ddp-atomic-checkpoints/pytest-of-agent/pytest-0/test_failed_serialization_neve0/checkpoints/model-latest.pt').exists
+---------------------------- Captured stdout setup -----------------------------
+training complete
+---------------------------- Captured stderr setup -----------------------------
+  0%|          | 0/1 [00:00<?, ?it/s]loss: 0.4985:   0%|          | 0/1 [00:00<?, ?it/s]loss: 0.4985: 100%|██████████| 1/1 [00:00<00:00, 22.65it/s]
+_ test_failed_serialization_never_publishes_a_partial_checkpoint[denoising_diffusion_pytorch-True] _
+tests/test_atomic_checkpoints.py:109: in test_failed_serialization_never_publishes_a_partial_checkpoint
+    assert path.read_bytes() == previous
+E   AssertionError: assert b'incomplete checkpoint' == b'PK\x03\x04\...0\x00\x00\x00'
+E     
+E     At index 0 diff: b'i' != b'P'
+E     Use -v to get more diff
+---------------------------- Captured stdout setup -----------------------------
+training complete
+---------------------------- Captured stderr setup -----------------------------
+  0%|          | 0/1 [00:00<?, ?it/s]loss: 0.4985:   0%|          | 0/1 [00:00<?, ?it/s]loss: 0.4985: 100%|██████████| 1/1 [00:00<00:00, 224.37it/s]
+_ test_failed_serialization_never_publishes_a_partial_checkpoint[denoising_diffusion_pytorch_1d-False] _
+tests/test_atomic_checkpoints.py:116: in test_failed_serialization_never_publishes_a_partial_checkpoint
+    assert not path.exists()
+E   AssertionError: assert not True
+E    +  where True = exists()
+E    +    where exists = PosixPath('/workspace/scratch/4bed741d4966/worktrees/ddp-atomic-checkpoints/pytest-of-agent/pytest-0/test_failed_serialization_neve2/checkpoints/model-latest.pt').exists
+---------------------------- Captured stdout setup -----------------------------
+training complete
+---------------------------- Captured stderr setup -----------------------------
+  0%|          | 0/1 [00:00<?, ?it/s]loss: 3.8389:   0%|          | 0/1 [00:00<?, ?it/s]loss: 3.8389: 100%|██████████| 1/1 [00:00<00:00, 214.72it/s]
+_ test_failed_serialization_never_publishes_a_partial_checkpoint[denoising_diffusion_pytorch_1d-True] _
+tests/test_atomic_checkpoints.py:109: in test_failed_serialization_never_publishes_a_partial_checkpoint
+    assert path.read_bytes() == previous
+E   AssertionError: assert b'incomplete checkpoint' == b'PK\x03\x04\...0\x00\x00\x00'
+E     
+E     At index 0 diff: b'i' != b'P'
+E     Use -v to get more diff
+---------------------------- Captured stdout setup -----------------------------
+training complete
+---------------------------- Captured stderr setup -----------------------------
+  0%|          | 0/1 [00:00<?, ?it/s]loss: 3.8389:   0%|          | 0/1 [00:00<?, ?it/s]loss: 3.8389: 100%|██████████| 1/1 [00:00<00:00, 404.04it/s]
+_ test_failed_serialization_never_publishes_a_partial_checkpoint[guided_diffusion-False] _
+tests/test_atomic_checkpoints.py:116: in test_failed_serialization_never_publishes_a_partial_checkpoint
+    assert not path.exists()
+E   AssertionError: assert not True
+E    +  where True = exists()
+E    +    where exists = PosixPath('/workspace/scratch/4bed741d4966/worktrees/ddp-atomic-checkpoints/pytest-of-agent/pytest-0/test_failed_serialization_neve4/checkpoints/model-latest.pt').exists
+---------------------------- Captured stdout setup -----------------------------
+training complete
+---------------------------- Captured stderr setup -----------------------------
+  0%|          | 0/1 [00:00<?, ?it/s]loss: 3.5112:   0%|          | 0/1 [00:00<?, ?it/s]loss: 3.5112: 100%|██████████| 1/1 [00:00<00:00, 127.02it/s]
+_ test_failed_serialization_never_publishes_a_partial_checkpoint[guided_diffusion-True] _
+tests/test_atomic_checkpoints.py:109: in test_failed_serialization_never_publishes_a_partial_checkpoint
+    assert path.read_bytes() == previous
+E   AssertionError: assert b'incomplete checkpoint' == b'PK\x03\x04\...0\x00\x00\x00'
+E     
+E     At index 0 diff: b'i' != b'P'
+E     Use -v to get more diff
+---------------------------- Captured stdout setup -----------------------------
+training complete
+---------------------------- Captured stderr setup -----------------------------
+  0%|          | 0/1 [00:00<?, ?it/s]loss: 3.5112:   0%|          | 0/1 [00:00<?, ?it/s]loss: 3.5112: 100%|██████████| 1/1 [00:00<00:00, 257.90it/s]
+_ test_failed_serialization_never_publishes_a_partial_checkpoint[repaint-False] _
+tests/test_atomic_checkpoints.py:116: in test_failed_serialization_never_publishes_a_partial_checkpoint
+    assert not path.exists()
+E   AssertionError: assert not True
+E    +  where True = exists()
+E    +    where exists = PosixPath('/workspace/scratch/4bed741d4966/worktrees/ddp-atomic-checkpoints/pytest-of-agent/pytest-0/test_failed_serialization_neve6/checkpoints/model-latest.pt').exists
+---------------------------- Captured stdout setup -----------------------------
+training complete
+---------------------------- Captured stderr setup -----------------------------
+  0%|          | 0/1 [00:00<?, ?it/s]loss: 0.4985:   0%|          | 0/1 [00:00<?, ?it/s]loss: 0.4985: 100%|██████████| 1/1 [00:00<00:00, 299.42it/s]
+_ test_failed_serialization_never_publishes_a_partial_checkpoint[repaint-True] _
+tests/test_atomic_checkpoints.py:109: in test_failed_serialization_never_publishes_a_partial_checkpoint
+    assert path.read_bytes() == previous
+E   AssertionError: assert b'incomplete checkpoint' == b'PK\x03\x04\...0\x00\x00\x00'
+E     
+E     At index 0 diff: b'i' != b'P'
+E     Use -v to get more diff
+---------------------------- Captured stdout setup -----------------------------
+training complete
+---------------------------- Captured stderr setup -----------------------------
+  0%|          | 0/1 [00:00<?, ?it/s]loss: 0.4985:   0%|          | 0/1 [00:00<?, ?it/s]loss: 0.4985: 100%|██████████| 1/1 [00:00<00:00, 414.95it/s]
+=========================== short test summary info ============================
+FAILED tests/test_atomic_checkpoints.py::test_failed_serialization_never_publishes_a_partial_checkpoint[denoising_diffusion_pytorch-False]
+FAILED tests/test_atomic_checkpoints.py::test_failed_serialization_never_publishes_a_partial_checkpoint[denoising_diffusion_pytorch-True]
+FAILED tests/test_atomic_checkpoints.py::test_failed_serialization_never_publishes_a_partial_checkpoint[denoising_diffusion_pytorch_1d-False]
+FAILED tests/test_atomic_checkpoints.py::test_failed_serialization_never_publishes_a_partial_checkpoint[denoising_diffusion_pytorch_1d-True]
+FAILED tests/test_atomic_checkpoints.py::test_failed_serialization_never_publishes_a_partial_checkpoint[guided_diffusion-False]
+FAILED tests/test_atomic_checkpoints.py::test_failed_serialization_never_publishes_a_partial_checkpoint[guided_diffusion-True]
+FAILED tests/test_atomic_checkpoints.py::test_failed_serialization_never_publishes_a_partial_checkpoint[repaint-False]
+FAILED tests/test_atomic_checkpoints.py::test_failed_serialization_never_publishes_a_partial_checkpoint[repaint-True]
+8 failed, 4 passed in 5.67s

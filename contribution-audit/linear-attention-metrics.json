@@ -1,0 +1,132 @@
+[
+  {
+    "variant": "denoising_diffusion_pytorch_1d",
+    "heads": 4,
+    "dim_head": 32,
+    "stage_qkv_widths": [
+      384,
+      384,
+      384,
+      384
+    ],
+    "stage_attention_parameters": 20560,
+    "phase": "fixed"
+  },
+  {
+    "variant": "denoising_diffusion_pytorch_1d",
+    "heads": 1,
+    "dim_head": 8,
+    "stage_qkv_widths": [
+      24,
+      24,
+      24,
+      24
+    ],
+    "stage_attention_parameters": 1360,
+    "phase": "fixed"
+  },
+  {
+    "variant": "denoising_diffusion_pytorch_1d",
+    "heads": 2,
+    "dim_head": 16,
+    "stage_qkv_widths": [
+      96,
+      96,
+      96,
+      96
+    ],
+    "stage_attention_parameters": 5200,
+    "phase": "fixed"
+  },
+  {
+    "variant": "classifier_free_guidance",
+    "heads": 4,
+    "dim_head": 32,
+    "stage_qkv_widths": [
+      384,
+      384,
+      384,
+      384
+    ],
+    "stage_attention_parameters": 20560,
+    "phase": "fixed"
+  },
+  {
+    "variant": "classifier_free_guidance",
+    "heads": 1,
+    "dim_head": 8,
+    "stage_qkv_widths": [
+      24,
+      24,
+      24,
+      24
+    ],
+    "stage_attention_parameters": 1360,
+    "phase": "fixed"
+  },
+  {
+    "variant": "classifier_free_guidance",
+    "heads": 2,
+    "dim_head": 16,
+    "stage_qkv_widths": [
+      96,
+      96,
+      96,
+      96
+    ],
+    "stage_attention_parameters": 5200,
+    "phase": "fixed"
+  },
+  {
+    "phase": "before",
+    "variant": "denoising_diffusion_pytorch_1d",
+    "heads": 1,
+    "dim_head": 8,
+    "stage_qkv_widths": [
+      384,
+      384,
+      384,
+      384
+    ],
+    "stage_attention_parameters": 20560
+  },
+  {
+    "phase": "before",
+    "variant": "denoising_diffusion_pytorch_1d",
+    "heads": 2,
+    "dim_head": 16,
+    "stage_qkv_widths": [
+      384,
+      384,
+      384,
+      384
+    ],
+    "stage_attention_parameters": 20560
+  },
+  {
+    "phase": "before",
+    "variant": "classifier_free_guidance",
+    "heads": 1,
+    "dim_head": 8,
+    "stage_qkv_widths": [
+      384,
+      384,
+      384,
+      384
+    ],
+    "stage_attention_parameters": 20560
+  },
+  {
+    "phase": "before",
+    "variant": "classifier_free_guidance",
+    "heads": 2,
+    "dim_head": 16,
+    "stage_qkv_widths": [
+      384,
+      384,
+      384,
+      384
+    ],
+    "stage_attention_parameters": 20560
+  }
+]

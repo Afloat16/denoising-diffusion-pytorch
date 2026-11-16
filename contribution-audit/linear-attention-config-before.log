@@ -1,0 +1,36 @@
+FFFF....                                                                 [100%]
+=================================== FAILURES ===================================
+_ test_linear_stages_use_the_requested_attention_width_during_training[1-8-denoising_diffusion_pytorch_1d] _
+tests/test_linear_attention_configuration.py:47: in test_linear_stages_use_the_requested_attention_width_during_training
+    assert projected_widths == [3 * heads * dim_head] * len(linear_layers)
+E   assert [384, 384, 384, 384] == [24, 24, 24, 24]
+E     
+E     At index 0 diff: 384 != 24
+E     Use -v to get more diff
+_ test_linear_stages_use_the_requested_attention_width_during_training[1-8-classifier_free_guidance] _
+tests/test_linear_attention_configuration.py:47: in test_linear_stages_use_the_requested_attention_width_during_training
+    assert projected_widths == [3 * heads * dim_head] * len(linear_layers)
+E   assert [384, 384, 384, 384] == [24, 24, 24, 24]
+E     
+E     At index 0 diff: 384 != 24
+E     Use -v to get more diff
+_ test_linear_stages_use_the_requested_attention_width_during_training[2-16-denoising_diffusion_pytorch_1d] _
+tests/test_linear_attention_configuration.py:47: in test_linear_stages_use_the_requested_attention_width_during_training
+    assert projected_widths == [3 * heads * dim_head] * len(linear_layers)
+E   assert [384, 384, 384, 384] == [96, 96, 96, 96]
+E     
+E     At index 0 diff: 384 != 96
+E     Use -v to get more diff
+_ test_linear_stages_use_the_requested_attention_width_during_training[2-16-classifier_free_guidance] _
+tests/test_linear_attention_configuration.py:47: in test_linear_stages_use_the_requested_attention_width_during_training
+    assert projected_widths == [3 * heads * dim_head] * len(linear_layers)
+E   assert [384, 384, 384, 384] == [96, 96, 96, 96]
+E     
+E     At index 0 diff: 384 != 96
+E     Use -v to get more diff
+=========================== short test summary info ============================
+FAILED tests/test_linear_attention_configuration.py::test_linear_stages_use_the_requested_attention_width_during_training[1-8-denoising_diffusion_pytorch_1d]
+FAILED tests/test_linear_attention_configuration.py::test_linear_stages_use_the_requested_attention_width_during_training[1-8-classifier_free_guidance]
+FAILED tests/test_linear_attention_configuration.py::test_linear_stages_use_the_requested_attention_width_during_training[2-16-denoising_diffusion_pytorch_1d]
+FAILED tests/test_linear_attention_configuration.py::test_linear_stages_use_the_requested_attention_width_during_training[2-16-classifier_free_guidance]
+4 failed, 4 passed in 5.75s

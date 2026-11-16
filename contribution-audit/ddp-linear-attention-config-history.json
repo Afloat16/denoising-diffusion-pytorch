@@ -1,0 +1,632 @@
+{
+  "heads": 112,
+  "blobs": 77,
+  "call_variants": {
+    "LinearAttention(dim_in)": [
+      {
+        "oid": "94f335d411850771974fdd49b509f0c600bae260",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "e9e05e138b8444f03114a306f8e85d832545f5a8",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "8ec9c87c2fc68cc50eeb809006356a7d2af0ba69",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "12e0102dac272748a29b533339da0b425b655ebf",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "9bf717b6d0566a25c403989111736cfa19b1f994",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "adb27127a92f92145255edc2f25243aaeb299754",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "f8e411f77120cee278818585d5adbf391733f562",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "ee231210ad8e3accfe8b20e8483e65ad1abf0083",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "7e60b35e81967d4a70f38e6f57c7619243fd750e",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "4e4a7fb9b7dc5228c68a749daa44a35b280e5974",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "20d7f15db1474137ddb055a120b26ecbf2f08df0",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "5b58121dcdc0a829bcdf1f0c550042e157f7e9dc",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "5fcf9329581b95fb1cfe32308c201d30b7c9a7bf",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "28c2b5bc52fc6fd06c29d6c0f0a107a8c43d1fc3",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "7fd6934d6fe0815382667fc48f094fb511319950",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "66434550826a80f31015e23a9aefca5d6eb0c29d",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "45b19cd1f394d230cc3fe5b7fe3f6e338aa3c083",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "6a6fd83142884659b1bc13e921fd1d48210317e5",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "c0b88236c6d12f3db0831f288dd0d1e6d3aca3b8",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "328d31d241fa6e30e84648a35694b0402eb2b221",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "06f85e920d1031a582f1e6391bc411d7ccc9ed6c",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "ab24137870e86ba39dc46a107357ccf754262c73",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "a48c0d07cc1a5ba2f1af52676560fd2ee186cf32",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "2718d7f12b95c9859ab0f7c7401beb1420a80163",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "d49d895190487850dd1f09869381058ee68e4cde",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "6e403c7ffb8d87586fc1c2bcb0ff836614b8e580",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "8f5c55ee2ac124dedac732a379ec8b9a322626d1",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "6970ccec2241750257996d919283a4a0f0673fa1",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "bf88ebfe4e6debad448ad04220ab88afb2be0875",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "e94dde8194a13eeb66f1e3eed006278a6efb02fb",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "d836a8762dffd6c8a7c8a5058620da5b4c591588",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "19bbbd3d4cd88fdcb1faefa618bf7b9df831520a",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "eda42a10572dd0781114e93c3f6bfbffb42f5c3c",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "68a60d6f94a55d98bcf34460a7f811765cc303e4",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "5da033f27b25324c375bdd11246d84485c948c87",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "52c8bf3519f07939bc43012f9a4486ce41f8943a",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "59b5e2f9100ceb05c0c05096a67fb5223c477065",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "94bf94f70cbe11419cee97e6eff82a052e2847f7",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "03391d22fec40216e9776873f5961bc98ea7c252",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "40a5cd5a85aa3bbe8464d6265276c133e6cfdc72",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "1187aa1612841e7774ba74afadbd684194ad1dfe",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "1253a61be2fefd7a3a24a9302fca59c41f775b86",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "5b831f0fff583cf0448a89a4f24ce85cfe62d7c3",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "94b1d48cc12be2d553a6a7c1b5d2af34e335fa82",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "79ade5f5079311dcad1c82b7867cf4a4f109562c",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "8c1cf62c07189a701db2f93f88e3883903416428",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "9cce4c41a30acacf7e2d397d461b1fe847bdb4f7",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "37d4ddc849d966dccd2f6f8a3d216e93a3ee0476",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "fb36df9c3b2583d86067dd0a7419032584fcf896",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "a22dadc4637ea4f1429101c4f0b9bc53a3791df9",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "33e0ede1cbb4367b941d3ca18a060dcce86f31c6",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "400c2390a0f83059941c06275e98fe4fb8418320",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "a782b8a47d4fb6d66dd58d2e21eed83552bef311",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "f2fd65ed65154f2843531827c28e25ccbd7875d0",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "44fe9f5fe4980c4072c4e017812cf003c9f02e89",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "bccc1dc0f044fb124362c7bf4036cd6d6482bef5",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "d5973ed2d724f8051e7b515487ce06f8e0d7df4f",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "2dade8ef195dad9f5cd146db2e6ebc264d1b44b4",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "e41afde3a6e74f8e423c5f3a5b3e2ce40a2eb490",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "629431f35ffbc0f21e3983120d0a5ad225b72078",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "2b68f1ec0963e2b7668cb3fc05175877091fc3fd",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "e4792bf05c6e33b745d78a6685bfad264ed5c727",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "9428479634e302c2cc54e78fb0ffc843fb5269d6",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "97399af74043262559b7505721ce14a1e04d0baa",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "1e371cf1ed3fe152b45a8376721dd1e3699481c4",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "0c33b3c19c13b8ef5c549e670d6a53103dd123b3",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "e8c90e4e10f9f7eb9e7815e18556b41ce2127487",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "0cf37aabdc2dde6dc099d0745042d6cc1b6b2ca7",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "e256a276012634182e9851009575b491cb6cd49c",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "d678bc1fd97b05b920d63f404d5d19c299080643",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "cc941fd9f102e23ea3ef1abd2f1866008232f947",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "a4783a81d4c461fc892f6f7aa48af3f3f330f05a",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "3b968c2eb109878d22161b405040e2f7790e4397",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "08240df31679f1ce427b3381b069e071bf62deda",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "4ca735bc27c44c26eb74450c7b19f768c757359f",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "9ceaadf14bfc39971a4b4351757db0e029bc3a6e",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "327f34f45d5ffcbda807a88829c8bf3801c7d3b3",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      }
+    ],
+    "LinearAttention(dim_out)": [
+      {
+        "oid": "94f335d411850771974fdd49b509f0c600bae260",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "e9e05e138b8444f03114a306f8e85d832545f5a8",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "8ec9c87c2fc68cc50eeb809006356a7d2af0ba69",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "12e0102dac272748a29b533339da0b425b655ebf",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "9bf717b6d0566a25c403989111736cfa19b1f994",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "adb27127a92f92145255edc2f25243aaeb299754",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "f8e411f77120cee278818585d5adbf391733f562",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "ee231210ad8e3accfe8b20e8483e65ad1abf0083",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "7e60b35e81967d4a70f38e6f57c7619243fd750e",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "4e4a7fb9b7dc5228c68a749daa44a35b280e5974",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "20d7f15db1474137ddb055a120b26ecbf2f08df0",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "5b58121dcdc0a829bcdf1f0c550042e157f7e9dc",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "5fcf9329581b95fb1cfe32308c201d30b7c9a7bf",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "28c2b5bc52fc6fd06c29d6c0f0a107a8c43d1fc3",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "7fd6934d6fe0815382667fc48f094fb511319950",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "66434550826a80f31015e23a9aefca5d6eb0c29d",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "45b19cd1f394d230cc3fe5b7fe3f6e338aa3c083",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "6a6fd83142884659b1bc13e921fd1d48210317e5",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "c0b88236c6d12f3db0831f288dd0d1e6d3aca3b8",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "328d31d241fa6e30e84648a35694b0402eb2b221",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "06f85e920d1031a582f1e6391bc411d7ccc9ed6c",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "ab24137870e86ba39dc46a107357ccf754262c73",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "a48c0d07cc1a5ba2f1af52676560fd2ee186cf32",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "2718d7f12b95c9859ab0f7c7401beb1420a80163",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "d49d895190487850dd1f09869381058ee68e4cde",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "6e403c7ffb8d87586fc1c2bcb0ff836614b8e580",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "8f5c55ee2ac124dedac732a379ec8b9a322626d1",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "6970ccec2241750257996d919283a4a0f0673fa1",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "bf88ebfe4e6debad448ad04220ab88afb2be0875",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "e94dde8194a13eeb66f1e3eed006278a6efb02fb",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "d836a8762dffd6c8a7c8a5058620da5b4c591588",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "19bbbd3d4cd88fdcb1faefa618bf7b9df831520a",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "eda42a10572dd0781114e93c3f6bfbffb42f5c3c",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "68a60d6f94a55d98bcf34460a7f811765cc303e4",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "5da033f27b25324c375bdd11246d84485c948c87",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "52c8bf3519f07939bc43012f9a4486ce41f8943a",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "59b5e2f9100ceb05c0c05096a67fb5223c477065",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "94bf94f70cbe11419cee97e6eff82a052e2847f7",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "03391d22fec40216e9776873f5961bc98ea7c252",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "40a5cd5a85aa3bbe8464d6265276c133e6cfdc72",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "1187aa1612841e7774ba74afadbd684194ad1dfe",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "1253a61be2fefd7a3a24a9302fca59c41f775b86",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "5b831f0fff583cf0448a89a4f24ce85cfe62d7c3",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "94b1d48cc12be2d553a6a7c1b5d2af34e335fa82",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "79ade5f5079311dcad1c82b7867cf4a4f109562c",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "8c1cf62c07189a701db2f93f88e3883903416428",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "9cce4c41a30acacf7e2d397d461b1fe847bdb4f7",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "37d4ddc849d966dccd2f6f8a3d216e93a3ee0476",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "fb36df9c3b2583d86067dd0a7419032584fcf896",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "a22dadc4637ea4f1429101c4f0b9bc53a3791df9",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "33e0ede1cbb4367b941d3ca18a060dcce86f31c6",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "400c2390a0f83059941c06275e98fe4fb8418320",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "a782b8a47d4fb6d66dd58d2e21eed83552bef311",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "f2fd65ed65154f2843531827c28e25ccbd7875d0",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "44fe9f5fe4980c4072c4e017812cf003c9f02e89",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "bccc1dc0f044fb124362c7bf4036cd6d6482bef5",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "d5973ed2d724f8051e7b515487ce06f8e0d7df4f",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "2dade8ef195dad9f5cd146db2e6ebc264d1b44b4",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "e41afde3a6e74f8e423c5f3a5b3e2ce40a2eb490",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "629431f35ffbc0f21e3983120d0a5ad225b72078",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "2b68f1ec0963e2b7668cb3fc05175877091fc3fd",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "e4792bf05c6e33b745d78a6685bfad264ed5c727",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "9428479634e302c2cc54e78fb0ffc843fb5269d6",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "97399af74043262559b7505721ce14a1e04d0baa",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "1e371cf1ed3fe152b45a8376721dd1e3699481c4",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "0c33b3c19c13b8ef5c549e670d6a53103dd123b3",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "e8c90e4e10f9f7eb9e7815e18556b41ce2127487",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "0cf37aabdc2dde6dc099d0745042d6cc1b6b2ca7",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "e256a276012634182e9851009575b491cb6cd49c",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "d678bc1fd97b05b920d63f404d5d19c299080643",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "cc941fd9f102e23ea3ef1abd2f1866008232f947",
+        "path": "denoising_diffusion_pytorch/classifier_free_guidance.py"
+      },
+      {
+        "oid": "a4783a81d4c461fc892f6f7aa48af3f3f330f05a",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "3b968c2eb109878d22161b405040e2f7790e4397",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "08240df31679f1ce427b3381b069e071bf62deda",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "4ca735bc27c44c26eb74450c7b19f768c757359f",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "9ceaadf14bfc39971a4b4351757db0e029bc3a6e",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      },
+      {
+        "oid": "327f34f45d5ffcbda807a88829c8bf3801c7d3b3",
+        "path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py"
+      }
+    ]
+  },
+  "configuration_semantics": {
+    "source": "c8155b1dc622e3f1ef0d53dc6e5a570ca105bcec",
+    "scope_review": "No documentation or constructor comments restrict attn_heads/attn_dim_head to the bottleneck. The standard 2D Unet passes both settings to every down/up attention stage, choosing FullAttention or LinearAttention, and uses them in the middle attention too.",
+    "standard_unet_path": "denoising_diffusion_pytorch/denoising_diffusion_pytorch.py",
+    "compatibility": "Default heads=4 and dim_head=32 preserve identical state and output. Previously trained non-default 1D/CFG checkpoints contain fixed-width linear attention and require matching/migrating these stage shapes."
+  }
+}

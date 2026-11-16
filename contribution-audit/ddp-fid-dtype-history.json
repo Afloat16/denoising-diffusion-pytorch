@@ -1,0 +1,174 @@
+{
+  "heads": 112,
+  "blobs": 12,
+  "variants": [
+    {
+      "name": "calculate_inception_features",
+      "code": "def calculate_inception_features(self, samples):\n        if self.channels == 1:\n            samples = repeat(samples, \"b 1 ... -> b c ...\", c=3)\n\n        self.inception_v3.eval()\n        features = self.inception_v3(samples)[0]\n\n        if features.size(2) != 1 or features.size(3) != 1:\n            features = adaptive_avg_pool2d(features, output_size=(1, 1))\n        features = rearrange(features, \"... 1 1 -> ...\")\n        return features",
+      "occurrences": [
+        {
+          "oid": "f274997a34af666537357bd2b6b57f86ff4dea5a",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        },
+        {
+          "oid": "cf8128f56f51662a6198a1b3559b96ded9f9da1b",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        },
+        {
+          "oid": "21773873556b21210641912faf6b9ed7e7a38680",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        },
+        {
+          "oid": "aad5e70cb9e46adb60025334acb6360966bc9521",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        },
+        {
+          "oid": "5c4291bdf3f35723d5875f0e34a4bf2b333ca950",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        },
+        {
+          "oid": "1cceeb4c8d1e0b0dd84a9f0d9a243e39f5168589",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        }
+      ]
+    },
+    {
+      "name": "load_or_precalc_dataset_stats",
+      "code": "def load_or_precalc_dataset_stats(self):\n        path = os.path.join(self.stats_dir, \"dataset_stats\")\n        try:\n            ckpt = np.load(path + \".npz\")\n            self.m2, self.s2 = ckpt[\"m2\"], ckpt[\"s2\"]\n            self.print_fn(\"Dataset stats loaded from disk.\")\n            ckpt.close()\n        except OSError:\n            num_batches = int(math.ceil(self.n_samples / self.batch_size))\n            stats = _FeatureStats()\n            self.print_fn(\n                f\"Calculating Inception statistics for {self.n_samples} samples from the real dataset.\"\n            )\n            for _ in tqdm(range(num_batches)):\n                try:\n                    real_samples = next(self.dl)\n                except StopIteration:\n                    break\n                real_samples = real_samples.to(self.device)\n                stats.update(self.calculate_inception_features(real_samples))\n            m2, s2 = stats.finalize()\n            np.savez_compressed(path, m2=m2, s2=s2)\n            self.print_fn(f\"Dataset stats cached to {path}.npz for future use.\")\n            self.m2, self.s2 = m2, s2\n        self.dataset_stats_loaded = True",
+      "occurrences": [
+        {
+          "oid": "f274997a34af666537357bd2b6b57f86ff4dea5a",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        }
+      ]
+    },
+    {
+      "name": "load_or_precalc_dataset_stats",
+      "code": "def load_or_precalc_dataset_stats(self):\n        path = os.path.join(self.stats_dir, \"dataset_stats\")\n        try:\n            ckpt = np.load(path + \".npz\")\n            self.m2, self.s2 = ckpt[\"m2\"], ckpt[\"s2\"]\n            self.print_fn(\"Dataset stats loaded from disk.\")\n            ckpt.close()\n        except OSError:\n            num_batches = int(math.ceil(self.n_samples / self.batch_size))\n            stacked_real_features = []\n            self.print_fn(\n                f\"Stacking Inception features for {self.n_samples} samples from the real dataset.\"\n            )\n            for _ in tqdm(range(num_batches)):\n                try:\n                    real_samples = next(self.dl)\n                except StopIteration:\n                    break\n                real_samples = real_samples.to(self.device)\n                real_features = self.calculate_inception_features(real_samples)\n                stacked_real_features.append(real_features)\n            stacked_real_features = (\n                torch.cat(stacked_real_features, dim=0).cpu().numpy()\n            )\n            m2 = np.mean(stacked_real_features, axis=0)\n            s2 = np.cov(stacked_real_features, rowvar=False)\n            np.savez_compressed(path, m2=m2, s2=s2)\n            self.print_fn(f\"Dataset stats cached to {path}.npz for future use.\")\n            self.m2, self.s2 = m2, s2\n        self.dataset_stats_loaded = True",
+      "occurrences": [
+        {
+          "oid": "cf8128f56f51662a6198a1b3559b96ded9f9da1b",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        },
+        {
+          "oid": "1cceeb4c8d1e0b0dd84a9f0d9a243e39f5168589",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        },
+        {
+          "oid": "9b44bfbdfd43e0fa726e0520c319ad8cfe529b6c",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        },
+        {
+          "oid": "7b38108d19b518f6e7b258d199032604f37ff22d",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        }
+      ]
+    },
+    {
+      "name": "load_or_precalc_dataset_stats",
+      "code": "def load_or_precalc_dataset_stats(self):\n        path = os.path.join(self.stats_dir, \"dataset_stats\")\n        try:\n            ckpt = np.load(path + \".npz\")\n            self.m2, self.s2 = ckpt[\"m2\"], ckpt[\"s2\"]\n            self.print_fn(\"Dataset stats loaded from disk.\")\n            ckpt.close()\n        except OSError:\n            remaining_samples = self.n_samples\n            stacked_real_features = []\n            self.print_fn(\n                f\"Stacking Inception features for {self.n_samples} samples from the real dataset.\"\n            )\n            with tqdm(total=self.n_samples) as progress:\n                while remaining_samples > 0:\n                    try:\n                        real_samples = next(self.dl)\n                    except StopIteration:\n                        break\n                    real_samples = real_samples[:remaining_samples].to(self.device)\n                    real_features = self.calculate_inception_features(real_samples)\n                    stacked_real_features.append(real_features)\n                    remaining_samples -= real_samples.shape[0]\n                    progress.update(real_samples.shape[0])\n            stacked_real_features = (\n                torch.cat(stacked_real_features, dim=0).cpu().numpy()\n            )\n            m2 = np.mean(stacked_real_features, axis=0)\n            s2 = np.cov(stacked_real_features, rowvar=False)\n            np.savez_compressed(path, m2=m2, s2=s2)\n            self.print_fn(f\"Dataset stats cached to {path}.npz for future use.\")\n            self.m2, self.s2 = m2, s2\n        self.dataset_stats_loaded = True",
+      "occurrences": [
+        {
+          "oid": "21773873556b21210641912faf6b9ed7e7a38680",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        }
+      ]
+    },
+    {
+      "name": "load_or_precalc_dataset_stats",
+      "code": "def load_or_precalc_dataset_stats(self):\n        path = os.path.join(self.stats_dir, \"dataset_stats\")\n        try:\n            ckpt = np.load(path + \".npz\")\n            self.m2, self.s2 = ckpt[\"m2\"], ckpt[\"s2\"]\n            self.print_fn(\"Dataset stats loaded from disk.\")\n            ckpt.close()\n        except OSError:\n            if self.n_samples <= 0:\n                raise ValueError(\"num_fid_samples must be positive\")\n            stacked_real_features = []\n            self.print_fn(\n                f\"Stacking Inception features for {self.n_samples} samples from the real dataset.\"\n            )\n            num_samples = 0\n            with tqdm(total=self.n_samples) as progress:\n                for real_samples in self.dl:\n                    if real_samples.shape[0] == 0:\n                        raise ValueError(\"Cannot compute FID statistics from an empty batch\")\n                    real_samples = real_samples[:self.n_samples - num_samples].to(self.device)\n                    real_features = self.calculate_inception_features(real_samples)\n                    stacked_real_features.append(real_features)\n                    num_samples += real_features.shape[0]\n                    progress.update(real_features.shape[0])\n                    if num_samples >= self.n_samples:\n                        break\n            stacked_real_features = (\n                torch.cat(stacked_real_features, dim=0).cpu().numpy()\n            )\n            m2 = np.mean(stacked_real_features, axis=0)\n            s2 = np.cov(stacked_real_features, rowvar=False)\n            np.savez_compressed(path, m2=m2, s2=s2)\n            self.print_fn(f\"Dataset stats cached to {path}.npz for future use.\")\n            self.m2, self.s2 = m2, s2\n        self.dataset_stats_loaded = True",
+      "occurrences": [
+        {
+          "oid": "aad5e70cb9e46adb60025334acb6360966bc9521",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        }
+      ]
+    },
+    {
+      "name": "load_or_precalc_dataset_stats",
+      "code": "def load_or_precalc_dataset_stats(self):\n        path = os.path.join(self.stats_dir, \"dataset_stats\")\n        try:\n            with np.load(path + \".npz\") as ckpt:\n                self.m2, self.s2 = ckpt[\"m2\"], ckpt[\"s2\"]\n            self.print_fn(\"Dataset stats loaded from disk.\")\n        except (OSError, EOFError, ValueError, KeyError, BadZipFile):\n            num_batches = int(math.ceil(self.n_samples / self.batch_size))\n            stacked_real_features = []\n            self.print_fn(\n                f\"Stacking Inception features for {self.n_samples} samples from the real dataset.\"\n            )\n            for _ in tqdm(range(num_batches)):\n                try:\n                    real_samples = next(self.dl)\n                except StopIteration:\n                    break\n                real_samples = real_samples.to(self.device)\n                real_features = self.calculate_inception_features(real_samples)\n                stacked_real_features.append(real_features)\n            stacked_real_features = (\n                torch.cat(stacked_real_features, dim=0).cpu().numpy()\n            )\n            m2 = np.mean(stacked_real_features, axis=0)\n            s2 = np.cov(stacked_real_features, rowvar=False)\n            np.savez_compressed(path, m2=m2, s2=s2)\n            self.print_fn(f\"Dataset stats cached to {path}.npz for future use.\")\n            self.m2, self.s2 = m2, s2\n        self.dataset_stats_loaded = True",
+      "occurrences": [
+        {
+          "oid": "5c4291bdf3f35723d5875f0e34a4bf2b333ca950",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        }
+      ]
+    },
+    {
+      "name": "calculate_inception_features",
+      "code": "def calculate_inception_features(self, samples):\n        if self.channels == 1:\n            samples = repeat(samples, \"b 1 ... -> b c ...\", c=3)\n        features = self.inception_v3(samples)[0]\n        if features.size(2) != 1 or features.size(3) != 1:\n            features = adaptive_avg_pool2d(features, output_size=(1, 1))\n        features = rearrange(features, \"... 1 1 -> ...\")\n        return features",
+      "occurrences": [
+        {
+          "oid": "9b44bfbdfd43e0fa726e0520c319ad8cfe529b6c",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        },
+        {
+          "oid": "7b38108d19b518f6e7b258d199032604f37ff22d",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        },
+        {
+          "oid": "75e7a65cf7fe166d139b6ca3d963ee0fa8e2788f",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        }
+      ]
+    },
+    {
+      "name": "load_or_precalc_dataset_stats",
+      "code": "def load_or_precalc_dataset_stats(self):\n        path = os.path.join(self.stats_dir, \"dataset_stats\")\n        try:\n            ckpt = np.load(path + \".npz\")\n            self.m2, self.s2 = ckpt[\"m2\"], ckpt[\"s2\"]\n            self.print_fn(\"Dataset stats loaded from disk.\")\n        except FileNotFoundError:\n            num_batches = int(math.ceil(self.n_samples / self.batch_size))\n            stacked_real_features = []\n            self.print_fn(\n                f\"Stacking Inception features for {self.n_samples} samples from the real dataset.\"\n            )\n            for _ in tqdm(range(num_batches)):\n                try:\n                    real_samples = next(self.dl)\n                except StopIteration:\n                    break\n                real_samples = real_samples.to(self.device)\n                real_features = self.calculate_inception_features(real_samples)\n                stacked_real_features.append(real_features)\n            stacked_real_features = (\n                torch.cat(stacked_real_features, dim=0).cpu().numpy()\n            )\n            m2 = np.mean(stacked_real_features, axis=0)\n            s2 = np.cov(stacked_real_features, rowvar=False)\n            np.savez_compressed(path, m2=m2, s2=s2)\n            self.print_fn(f\"Dataset stats cached to {path}.npz for future use.\")\n            self.m2, self.s2 = m2, s2\n        self.dataset_stats_loaded = True",
+      "occurrences": [
+        {
+          "oid": "75e7a65cf7fe166d139b6ca3d963ee0fa8e2788f",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        }
+      ]
+    },
+    {
+      "name": "calculate_inception_features",
+      "code": "def calculate_inception_features(self, samples):\n        if self.channels == 1:\n            samples = repeat(samples, \"b 1 ... -> b c ...\", c=3)\n        features = self.inception_v3(samples)[0]\n        features = rearrange(features, \"... 1 1 -> ...\")\n        return features",
+      "occurrences": [
+        {
+          "oid": "a400fe30b32eaf93cff5558768385724bec7555d",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        },
+        {
+          "oid": "5e67e025453d4b9a6b0c6f675205cddf55b63ab8",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        },
+        {
+          "oid": "5a9b834931761305fa21c1c8d8ceb95dac53f90d",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        }
+      ]
+    },
+    {
+      "name": "load_or_precalc_dataset_stats",
+      "code": "def load_or_precalc_dataset_stats(self):\n        path = os.path.join(self.stats_dir, \"dataset_stats\")\n        try:\n            ckpt = np.load(path + \".npz\")\n            self.m2, self.s2 = ckpt[\"m2\"], ckpt[\"s2\"]\n            self.print_fn(\"Dataset stats loaded from disk.\")\n        except FileNotFoundError:\n            num_batches = int(math.ceil(self.n_samples/self.batch_size))\n            stacked_real_features = []\n            self.print_fn(\n                f\"Stacking Inception features for {self.n_samples} samples from the real dataset.\"\n            )\n            for _ in tqdm(range(num_batches)):\n                try:\n                    real_samples = next(self.dl)\n                except StopIteration:\n                    break\n                real_samples = real_samples.to(self.device)\n                real_features = self.calculate_inception_features(real_samples)\n                stacked_real_features.append(real_features)\n            stacked_real_features = torch.cat(stacked_real_features, dim=0).cpu().numpy()\n            m2 = np.mean(stacked_real_features, axis=0)\n            s2 = np.cov(stacked_real_features, rowvar=False)\n            np.savez_compressed(path, m2=m2, s2=s2)\n            self.print_fn(f\"Dataset stats cached to {path}.npz for future use.\")\n            self.m2, self.s2 = m2, s2\n        self.dataset_stats_loaded = True",
+      "occurrences": [
+        {
+          "oid": "a400fe30b32eaf93cff5558768385724bec7555d",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        }
+      ]
+    },
+    {
+      "name": "load_or_precalc_dataset_stats",
+      "code": "def load_or_precalc_dataset_stats(self):\n        path = os.path.join(self.stats_dir, \"dataset_stats\")\n        try:\n            ckpt = np.load(path + \".npz\")\n            self.m2, self.s2 = ckpt[\"m2\"], ckpt[\"s2\"]\n            self.print_fn(\"Dataset stats loaded from disk.\")\n        except FileNotFoundError:\n            num_batches = int(math.ceil(self.n_samples/self.batch_size))\n            stacked_real_features = []\n            self.print_fn(\n                f\"Stacking Inception features for {self.n_samples} samples from the real dataset.\"\n            )\n            for i in tqdm(range(num_batches)):\n                try:\n                    real_samples = next(self.dl)\n                except StopIteration:\n                    break\n                real_samples = real_samples.to(self.device)\n                real_features = self.calculate_inception_features(real_samples)\n                stacked_real_features.append(real_features)\n            stacked_real_features = torch.cat(stacked_real_features, dim=0).cpu().numpy()\n            m2 = np.mean(stacked_real_features, axis=0)\n            s2 = np.cov(stacked_real_features, rowvar=False)\n            np.savez_compressed(path, m2=m2, s2=s2)\n            self.print_fn(f\"Dataset stats cached to {path} for future use.\")\n            self.m2, self.s2 = m2, s2\n        self.dataset_stats_loaded = True",
+      "occurrences": [
+        {
+          "oid": "5e67e025453d4b9a6b0c6f675205cddf55b63ab8",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        }
+      ]
+    },
+    {
+      "name": "load_or_precalc_dataset_stats",
+      "code": "def load_or_precalc_dataset_stats(self):\n        path = os.path.join(self.stats_dir, \"dataset_stats.pkl\")\n        try:\n            ckpt = np.load(path)\n            self.m2, self.s2 = ckpt[\"m2\"], ckpt[\"s2\"]\n            self.print_fn(\"Dataset stats loaded from disk.\")\n        except FileNotFoundError:\n            num_batches = int(math.ceil(self.n_samples/self.batch_size))\n            stacked_real_features = []\n            self.print_fn(\n                f\"Stacking Inception features for {self.n_samples} samples from the real dataset.\"\n            )\n            for i in tqdm(range(num_batches)):\n                try:\n                    real_samples = next(self.dl)\n                except StopIteration:\n                    break\n                real_samples = real_samples.to(self.device)\n                real_features = self.calculate_inception_features(real_samples)\n                stacked_real_features.append(real_features)\n            stacked_real_features = torch.cat(stacked_real_features, dim=0).cpu().numpy()\n            m2 = np.mean(stacked_real_features, axis=0)\n            s2 = np.cov(stacked_real_features, rowvar=False)\n            np.savez_compressed(path, m2=m2, s2=s2)\n            self.print_fn(f\"Dataset stats cached to {path} for future use.\")\n            self.m2, self.s2 = m2, s2\n        self.dataset_stats_loaded = True",
+      "occurrences": [
+        {
+          "oid": "5a9b834931761305fa21c1c8d8ceb95dac53f90d",
+          "path": "denoising_diffusion_pytorch/fid_evaluation.py"
+        }
+      ]
+    }
+  ]
+}

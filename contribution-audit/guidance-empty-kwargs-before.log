@@ -1,0 +1,60 @@
+FFFF......                                                               [100%]
+=================================== FAILURES ===================================
+_ test_ddpm_uses_classifier_closures_without_requiring_extra_kwargs[omitted-2] _
+tests/test_guidance_without_kwargs.py:47: in test_ddpm_uses_classifier_closures_without_requiring_extra_kwargs
+    assert len(actual_calls) == len(reference_calls) == steps
+E   assert 0 == 2
+E    +  where 0 = len([])
+E    +  and   2 = len([tensor([1, 1]), tensor([0, 0])])
+----------------------------- Captured stdout call -----------------------------
+gradient:  tensor(-0.0005)
+gradient:  tensor(0.)
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling loop time step: 100%|██████████| 2/2 [00:00<00:00, 58.47it/s]
+sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling loop time step: 100%|██████████| 2/2 [00:00<00:00, 86.91it/s]
+_ test_ddpm_uses_classifier_closures_without_requiring_extra_kwargs[omitted-4] _
+tests/test_guidance_without_kwargs.py:47: in test_ddpm_uses_classifier_closures_without_requiring_extra_kwargs
+    assert len(actual_calls) == len(reference_calls) == steps
+E   assert 0 == 4
+E    +  where 0 = len([])
+E    +  and   4 = len([tensor([3, 3]), tensor([2, 2]), tensor([1, 1]), tensor([0, 0])])
+----------------------------- Captured stdout call -----------------------------
+gradient:  tensor(-0.0007)
+gradient:  tensor(-0.0003)
+gradient:  tensor(-0.0001)
+gradient:  tensor(0.)
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling loop time step: 100%|██████████| 4/4 [00:00<00:00, 213.18it/s]
+sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling loop time step: 100%|██████████| 4/4 [00:00<00:00, 105.48it/s]
+__ test_ddpm_uses_classifier_closures_without_requiring_extra_kwargs[none-2] ___
+tests/test_guidance_without_kwargs.py:47: in test_ddpm_uses_classifier_closures_without_requiring_extra_kwargs
+    assert len(actual_calls) == len(reference_calls) == steps
+E   assert 0 == 2
+E    +  where 0 = len([])
+E    +  and   2 = len([tensor([1, 1]), tensor([0, 0])])
+----------------------------- Captured stdout call -----------------------------
+gradient:  tensor(-0.0005)
+gradient:  tensor(0.)
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling loop time step: 100%|██████████| 2/2 [00:00<00:00, 123.66it/s]
+sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling loop time step: 100%|██████████| 2/2 [00:00<00:00, 190.75it/s]
+__ test_ddpm_uses_classifier_closures_without_requiring_extra_kwargs[none-4] ___
+tests/test_guidance_without_kwargs.py:47: in test_ddpm_uses_classifier_closures_without_requiring_extra_kwargs
+    assert len(actual_calls) == len(reference_calls) == steps
+E   assert 0 == 4
+E    +  where 0 = len([])
+E    +  and   4 = len([tensor([3, 3]), tensor([2, 2]), tensor([1, 1]), tensor([0, 0])])
+----------------------------- Captured stdout call -----------------------------
+gradient:  tensor(-0.0007)
+gradient:  tensor(-0.0003)
+gradient:  tensor(-0.0001)
+gradient:  tensor(0.)
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling loop time step: 100%|██████████| 4/4 [00:00<00:00, 161.70it/s]
+sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling loop time step: 100%|██████████| 4/4 [00:00<00:00, 146.60it/s]
+=========================== short test summary info ============================
+FAILED tests/test_guidance_without_kwargs.py::test_ddpm_uses_classifier_closures_without_requiring_extra_kwargs[omitted-2]
+FAILED tests/test_guidance_without_kwargs.py::test_ddpm_uses_classifier_closures_without_requiring_extra_kwargs[omitted-4]
+FAILED tests/test_guidance_without_kwargs.py::test_ddpm_uses_classifier_closures_without_requiring_extra_kwargs[none-2]
+FAILED tests/test_guidance_without_kwargs.py::test_ddpm_uses_classifier_closures_without_requiring_extra_kwargs[none-4]
+4 failed, 6 passed in 6.56s

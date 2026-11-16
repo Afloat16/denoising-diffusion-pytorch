@@ -1,0 +1,262 @@
+{
+  "heads": 112,
+  "blobs": 29,
+  "variants": [
+    {
+      "name": "condition_mean",
+      "code": "def condition_mean(self, cond_fn, mean,variance, x, t, guidance_kwargs=None):\n        \"\"\"\n        Compute the mean for the previous step, given a function cond_fn that\n        computes the gradient of a conditional log probability with respect to\n        x. In particular, cond_fn computes grad(log(p(y|x))), and we want to\n        condition on y.\n        This uses the conditioning strategy from Sohl-Dickstein et al. (2015).\n        \"\"\"\n        # this fixes a bug in the official OpenAI implementation:\n        # https://github.com/openai/guided-diffusion/issues/51 (see point 1)\n        # use the predicted mean for the previous timestep to compute gradient\n        gradient = cond_fn(mean, t, **guidance_kwargs)\n        new_mean = (\n            mean.float() + variance * gradient.float()\n        )\n        print(\"gradient: \",(variance * gradient.float()).mean())\n        return new_mean",
+      "occurrences": [
+        {
+          "oid": "8b8b3014679adf0dadb10d745e784673f69996c2",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "ee9776608fb759cb8723889c970009cfb3805215",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "5a2f26dab8758195494ab0f4aad8dd31c69ee22a",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "037a9ecf577dbbd5c51264d2391a6d26a2793c60",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "a643b823ead5b114189bf287f06f8f3adfc15357",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "502d84366b062e852871333af47e41c922215196",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "ceeaca8bd236725455aefc6b7e36120003c59079",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "9b1c4e04144aef60ba967bbddff0df37e2d3ccdd",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "2aef8ba33f13d86f7e9cef75b1ef4311ff8afc55",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "66bc83a8192cc2a9785205009ef0075100edc3a8",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "ace61d8fc8ea51f663ccb22b1ea6c1724b6168ed",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "1fc3651cc5d665d6266e46ef48d9de18a07ea756",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "a4be3a0c715c9891246a4341dd78b4248c9c9a0a",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "e506efc05ceac755364d0d3b6ca5ae4754f515c2",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "e610ae4f8a17202ea712456473a0e4bcc3815278",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "6e598885a221c748ba30265c55a0b07a1e3fbf4b",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "e8856fed1cd81db91354cb07262bdb6f62778c96",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "b41676c589dc136fa9670551c7c8e96a302713a1",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "052a148debb9563103e4802a4e2c80eedc937b2a",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        }
+      ]
+    },
+    {
+      "name": "p_sample",
+      "code": "def p_sample(self, x, t: int, x_self_cond = None, cond_fn=None, guidance_kwargs=None):\n        b, *_, device = *x.shape, x.device\n        batched_times = torch.full((b,), t, device = x.device, dtype = torch.long)\n        model_mean, variance, model_log_variance, x_start = self.p_mean_variance(\n            x = x, t = batched_times, x_self_cond = x_self_cond, clip_denoised = True\n        )\n        if exists(cond_fn) and exists(guidance_kwargs):\n            model_mean = self.condition_mean(cond_fn, model_mean, variance, x, batched_times, guidance_kwargs)\n\n        noise = torch.randn_like(x) if t > 0 else 0. # no noise if t == 0\n        pred_img = model_mean + (0.5 * model_log_variance).exp() * noise\n        return pred_img, x_start",
+      "occurrences": [
+        {
+          "oid": "8b8b3014679adf0dadb10d745e784673f69996c2",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "ee9776608fb759cb8723889c970009cfb3805215",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "5a2f26dab8758195494ab0f4aad8dd31c69ee22a",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "037a9ecf577dbbd5c51264d2391a6d26a2793c60",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "a643b823ead5b114189bf287f06f8f3adfc15357",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "502d84366b062e852871333af47e41c922215196",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "ceeaca8bd236725455aefc6b7e36120003c59079",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "9b1c4e04144aef60ba967bbddff0df37e2d3ccdd",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "2aef8ba33f13d86f7e9cef75b1ef4311ff8afc55",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "66bc83a8192cc2a9785205009ef0075100edc3a8",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "ace61d8fc8ea51f663ccb22b1ea6c1724b6168ed",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "1fc3651cc5d665d6266e46ef48d9de18a07ea756",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "a4be3a0c715c9891246a4341dd78b4248c9c9a0a",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "e506efc05ceac755364d0d3b6ca5ae4754f515c2",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        }
+      ]
+    },
+    {
+      "name": "p_sample",
+      "code": "def p_sample(self, x, t: int, x_self_cond = None, cond_fn=None, guidance_kwargs=None):\n        b, *_, device = *x.shape, x.device\n        batched_times = torch.full((b,), t, device = x.device, dtype = torch.long)\n        model_mean, variance, model_log_variance, x_start = self.p_mean_variance(\n            x = x, t = batched_times, x_self_cond = x_self_cond, clip_denoised = True\n        )\n        if exists(cond_fn) and exists(guidance_kwargs):\n            model_mean = self.condition_mean(cond_fn, model_mean, variance, x, batched_times, guidance_kwargs)\n        \n        noise = torch.randn_like(x) if t > 0 else 0. # no noise if t == 0\n        pred_img = model_mean + (0.5 * model_log_variance).exp() * noise\n        return pred_img, x_start",
+      "occurrences": [
+        {
+          "oid": "e610ae4f8a17202ea712456473a0e4bcc3815278",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "6e598885a221c748ba30265c55a0b07a1e3fbf4b",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "e8856fed1cd81db91354cb07262bdb6f62778c96",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "b41676c589dc136fa9670551c7c8e96a302713a1",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "052a148debb9563103e4802a4e2c80eedc937b2a",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "cf49802da582d279ea5c7de20ecc7d53c4ce55e0",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "7deb0e4069a7e7dc73578e1beb75c7f8c7030e24",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "ad4d9a0f333c9d8d29a2a0421cd401c0a47f3882",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "5b710b9f16e872bce70083ae2635af0a221981fe",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "bbb9d9856236248c80116d0fdf105d62db4ee00b",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "e525761e0cb38265133863b1477640662819e8b2",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "9d20279e64c8b71acd31dcfa5fab0b0a7168db7c",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "b33e41edeaf2274d3efb938150033d2df4681af4",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "c77237b188f2400391110c56c5f1e520267fb904",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "c6b7060fc95d91ecbdc047b42a426924de351179",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        }
+      ]
+    },
+    {
+      "name": "condition_mean",
+      "code": "def condition_mean(self, cond_fn, mean,variance, x, t, guidance_kwargs=None):\n        \"\"\"\n        Compute the mean for the previous step, given a function cond_fn that\n        computes the gradient of a conditional log probability with respect to\n        x. In particular, cond_fn computes grad(log(p(y|x))), and we want to\n        condition on y.\n        This uses the conditioning strategy from Sohl-Dickstein et al. (2015).\n        \"\"\"\n        gradient = cond_fn(x, t, **guidance_kwargs)\n        new_mean = (\n            mean.float() + variance * gradient.float()\n        )\n        print(\"gradient: \",(variance * gradient.float()).mean())\n        return new_mean",
+      "occurrences": [
+        {
+          "oid": "cf49802da582d279ea5c7de20ecc7d53c4ce55e0",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "7deb0e4069a7e7dc73578e1beb75c7f8c7030e24",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "ad4d9a0f333c9d8d29a2a0421cd401c0a47f3882",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "5b710b9f16e872bce70083ae2635af0a221981fe",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "bbb9d9856236248c80116d0fdf105d62db4ee00b",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "e525761e0cb38265133863b1477640662819e8b2",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "9d20279e64c8b71acd31dcfa5fab0b0a7168db7c",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "b33e41edeaf2274d3efb938150033d2df4681af4",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "c77237b188f2400391110c56c5f1e520267fb904",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "c6b7060fc95d91ecbdc047b42a426924de351179",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        }
+      ]
+    }
+  ]
+}

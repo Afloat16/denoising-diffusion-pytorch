@@ -1,0 +1,469 @@
+{
+  "heads": 112,
+  "blobs": 27,
+  "hypot_markers": [],
+  "variants": [
+    {
+      "name": "c_skip",
+      "code": "def c_skip(self, sigma):\n        return (self.sigma_data ** 2) / (sigma ** 2 + self.sigma_data ** 2)",
+      "occurrences": [
+        {
+          "oid": "c65020da212cb35d78fdf61cca21fabc6d008d5e",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "c0792bd33df4085d9fc95ea9c203d82d480e1fcb",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "7e784c34acc7cf71591c21acb3dd6f4b0e7e2eef",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "94c0f8a0162a77104322217c58a0122c1f1dbb77",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "2995a5186b29cf1fb5fb26a2c9d7d99783a1de5a",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "263b7789b848bfc781f1e9c811d71afa86704e75",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "814f497e5cf46829fe0f33474d6413a093ad98a8",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "6ebc43369e8e948febea8daa1757fe6103eb3bd5",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "fc139610c005631f77b7f684da038297693078db",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "7a6d06168d546072c786d879444eca0a6a8afe6e",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "2b62b4f6e5eeddd4e0295a5eb288cff0b0710cc5",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "7ddaf19abc0fc57dcf2835c484d4ba26bd2504d5",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "2dc40b5fffed56aa9d4705c6b8214ba06c210433",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "d430516732f5f53e73506a319a1e9739fcc8ac61",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "fa83e8615edbf97ae69aa60ccde069ac606451f5",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "8052df08b14fe73982d2f5006c8883222889a01f",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "740a1fe343c67b3bb4e5597b5870b6ab11f49941",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "2b3217e7a34536019406f7c5398fa0d2cfcd70a6",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "3204a97496d00c58354fe977ca40f18f6bfd127c",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "782121cb54387ad8b24d3da1b626b445bd9c2402",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "175d8be313d8b784b9c400009636b57980b32465",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "114dc3ed80e9bd8ccdb3471e26e7d950cf7ff216",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "c9189507d11f948464455e6badb47a9bcc1d67b3",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "1dfff2765c427384e4732c0beddfe27763bb35a9",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "002e87d531e3ddd64c6125559f2bc5c923cc7a28",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "6e938ec1e14e0a1539ee91fb848355ea6e998022",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "a7d906b57cb40dcf4539ce46126bee7ed2a8fc5d",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        }
+      ]
+    },
+    {
+      "name": "c_out",
+      "code": "def c_out(self, sigma):\n        return sigma * self.sigma_data * (self.sigma_data ** 2 + sigma ** 2) ** -0.5",
+      "occurrences": [
+        {
+          "oid": "c65020da212cb35d78fdf61cca21fabc6d008d5e",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "c0792bd33df4085d9fc95ea9c203d82d480e1fcb",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "7e784c34acc7cf71591c21acb3dd6f4b0e7e2eef",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "94c0f8a0162a77104322217c58a0122c1f1dbb77",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "2995a5186b29cf1fb5fb26a2c9d7d99783a1de5a",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "263b7789b848bfc781f1e9c811d71afa86704e75",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "814f497e5cf46829fe0f33474d6413a093ad98a8",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "6ebc43369e8e948febea8daa1757fe6103eb3bd5",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "fc139610c005631f77b7f684da038297693078db",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "7a6d06168d546072c786d879444eca0a6a8afe6e",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "2b62b4f6e5eeddd4e0295a5eb288cff0b0710cc5",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "7ddaf19abc0fc57dcf2835c484d4ba26bd2504d5",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "2dc40b5fffed56aa9d4705c6b8214ba06c210433",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "d430516732f5f53e73506a319a1e9739fcc8ac61",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "fa83e8615edbf97ae69aa60ccde069ac606451f5",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "8052df08b14fe73982d2f5006c8883222889a01f",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "740a1fe343c67b3bb4e5597b5870b6ab11f49941",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "2b3217e7a34536019406f7c5398fa0d2cfcd70a6",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "3204a97496d00c58354fe977ca40f18f6bfd127c",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "782121cb54387ad8b24d3da1b626b445bd9c2402",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "175d8be313d8b784b9c400009636b57980b32465",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "114dc3ed80e9bd8ccdb3471e26e7d950cf7ff216",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "c9189507d11f948464455e6badb47a9bcc1d67b3",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "1dfff2765c427384e4732c0beddfe27763bb35a9",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "002e87d531e3ddd64c6125559f2bc5c923cc7a28",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "6e938ec1e14e0a1539ee91fb848355ea6e998022",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "a7d906b57cb40dcf4539ce46126bee7ed2a8fc5d",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        }
+      ]
+    },
+    {
+      "name": "c_in",
+      "code": "def c_in(self, sigma):\n        return 1 * (sigma ** 2 + self.sigma_data ** 2) ** -0.5",
+      "occurrences": [
+        {
+          "oid": "c65020da212cb35d78fdf61cca21fabc6d008d5e",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "c0792bd33df4085d9fc95ea9c203d82d480e1fcb",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "7e784c34acc7cf71591c21acb3dd6f4b0e7e2eef",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "94c0f8a0162a77104322217c58a0122c1f1dbb77",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "2995a5186b29cf1fb5fb26a2c9d7d99783a1de5a",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "263b7789b848bfc781f1e9c811d71afa86704e75",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "814f497e5cf46829fe0f33474d6413a093ad98a8",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "6ebc43369e8e948febea8daa1757fe6103eb3bd5",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "fc139610c005631f77b7f684da038297693078db",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "7a6d06168d546072c786d879444eca0a6a8afe6e",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "2b62b4f6e5eeddd4e0295a5eb288cff0b0710cc5",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "7ddaf19abc0fc57dcf2835c484d4ba26bd2504d5",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "2dc40b5fffed56aa9d4705c6b8214ba06c210433",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "d430516732f5f53e73506a319a1e9739fcc8ac61",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "fa83e8615edbf97ae69aa60ccde069ac606451f5",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "8052df08b14fe73982d2f5006c8883222889a01f",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "740a1fe343c67b3bb4e5597b5870b6ab11f49941",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "2b3217e7a34536019406f7c5398fa0d2cfcd70a6",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "3204a97496d00c58354fe977ca40f18f6bfd127c",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "782121cb54387ad8b24d3da1b626b445bd9c2402",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "175d8be313d8b784b9c400009636b57980b32465",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        }
+      ]
+    },
+    {
+      "name": "loss_weight",
+      "code": "def loss_weight(self, sigma):\n        return (sigma ** 2 + self.sigma_data ** 2) * (sigma * self.sigma_data) ** -2",
+      "occurrences": [
+        {
+          "oid": "c65020da212cb35d78fdf61cca21fabc6d008d5e",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "c0792bd33df4085d9fc95ea9c203d82d480e1fcb",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "7e784c34acc7cf71591c21acb3dd6f4b0e7e2eef",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "94c0f8a0162a77104322217c58a0122c1f1dbb77",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "2995a5186b29cf1fb5fb26a2c9d7d99783a1de5a",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "263b7789b848bfc781f1e9c811d71afa86704e75",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "814f497e5cf46829fe0f33474d6413a093ad98a8",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "6ebc43369e8e948febea8daa1757fe6103eb3bd5",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "fc139610c005631f77b7f684da038297693078db",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "7a6d06168d546072c786d879444eca0a6a8afe6e",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "2b62b4f6e5eeddd4e0295a5eb288cff0b0710cc5",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "7ddaf19abc0fc57dcf2835c484d4ba26bd2504d5",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "2dc40b5fffed56aa9d4705c6b8214ba06c210433",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "d430516732f5f53e73506a319a1e9739fcc8ac61",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "fa83e8615edbf97ae69aa60ccde069ac606451f5",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "8052df08b14fe73982d2f5006c8883222889a01f",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "740a1fe343c67b3bb4e5597b5870b6ab11f49941",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "2b3217e7a34536019406f7c5398fa0d2cfcd70a6",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "3204a97496d00c58354fe977ca40f18f6bfd127c",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "782121cb54387ad8b24d3da1b626b445bd9c2402",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "175d8be313d8b784b9c400009636b57980b32465",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "114dc3ed80e9bd8ccdb3471e26e7d950cf7ff216",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "c9189507d11f948464455e6badb47a9bcc1d67b3",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "1dfff2765c427384e4732c0beddfe27763bb35a9",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "002e87d531e3ddd64c6125559f2bc5c923cc7a28",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "6e938ec1e14e0a1539ee91fb848355ea6e998022",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "a7d906b57cb40dcf4539ce46126bee7ed2a8fc5d",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        }
+      ]
+    },
+    {
+      "name": "c_in",
+      "code": "def c_in(self, sigma):\n        return (sigma ** 2 + self.sigma_data ** 2) * -0.5",
+      "occurrences": [
+        {
+          "oid": "114dc3ed80e9bd8ccdb3471e26e7d950cf7ff216",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "c9189507d11f948464455e6badb47a9bcc1d67b3",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "1dfff2765c427384e4732c0beddfe27763bb35a9",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "002e87d531e3ddd64c6125559f2bc5c923cc7a28",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "6e938ec1e14e0a1539ee91fb848355ea6e998022",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        },
+        {
+          "oid": "a7d906b57cb40dcf4539ce46126bee7ed2a8fc5d",
+          "path": "denoising_diffusion_pytorch/elucidated_diffusion.py"
+        }
+      ]
+    }
+  ]
+}

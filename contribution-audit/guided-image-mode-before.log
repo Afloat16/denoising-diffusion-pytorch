@@ -1,0 +1,79 @@
+FFF.....                                                                 [100%]
+=================================== FAILURES ===================================
+_______ test_guided_training_matches_explicit_channel_conversion[1-None] _______
+tests/test_guided_training_image_mode.py:44: in test_guided_training_matches_explicit_channel_conversion
+    trainer.train()
+denoising_diffusion_pytorch/guided_diffusion.py:923: in train
+    data = next(self.dl).to(device)
+denoising_diffusion_pytorch/guided_diffusion.py:48: in cycle
+    for data in dl:
+../../.venv-torch/lib/python3.12/site-packages/accelerate/data_loader.py:586: in __iter__
+    current_batch = next(dataloader_iter)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/data/dataloader.py:701: in __next__
+    data = self._next_data()
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/data/dataloader.py:757: in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/data/_utils/fetch.py:55: in fetch
+    return self.collate_fn(data)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:398: in default_collate
+    return collate(batch, collate_fn_map=default_collate_fn_map)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:155: in collate
+    return collate_fn_map[elem_type](batch, collate_fn_map=collate_fn_map)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:272: in collate_tensor_fn
+    return torch.stack(batch, 0, out=out)
+E   RuntimeError: stack expects each tensor to be equal size, but got [1, 4, 4] at entry 0 and [3, 4, 4] at entry 1
+----------------------------- Captured stderr call -----------------------------
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]
+_______ test_guided_training_matches_explicit_channel_conversion[3-None] _______
+tests/test_guided_training_image_mode.py:44: in test_guided_training_matches_explicit_channel_conversion
+    trainer.train()
+denoising_diffusion_pytorch/guided_diffusion.py:923: in train
+    data = next(self.dl).to(device)
+denoising_diffusion_pytorch/guided_diffusion.py:48: in cycle
+    for data in dl:
+../../.venv-torch/lib/python3.12/site-packages/accelerate/data_loader.py:586: in __iter__
+    current_batch = next(dataloader_iter)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/data/dataloader.py:701: in __next__
+    data = self._next_data()
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/data/dataloader.py:757: in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/data/_utils/fetch.py:55: in fetch
+    return self.collate_fn(data)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:398: in default_collate
+    return collate(batch, collate_fn_map=default_collate_fn_map)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:155: in collate
+    return collate_fn_map[elem_type](batch, collate_fn_map=collate_fn_map)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:272: in collate_tensor_fn
+    return torch.stack(batch, 0, out=out)
+E   RuntimeError: stack expects each tensor to be equal size, but got [1, 4, 4] at entry 0 and [3, 4, 4] at entry 1
+----------------------------- Captured stderr call -----------------------------
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]
+_______ test_guided_training_matches_explicit_channel_conversion[4-None] _______
+tests/test_guided_training_image_mode.py:44: in test_guided_training_matches_explicit_channel_conversion
+    trainer.train()
+denoising_diffusion_pytorch/guided_diffusion.py:923: in train
+    data = next(self.dl).to(device)
+denoising_diffusion_pytorch/guided_diffusion.py:48: in cycle
+    for data in dl:
+../../.venv-torch/lib/python3.12/site-packages/accelerate/data_loader.py:586: in __iter__
+    current_batch = next(dataloader_iter)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/data/dataloader.py:701: in __next__
+    data = self._next_data()
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/data/dataloader.py:757: in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/data/_utils/fetch.py:55: in fetch
+    return self.collate_fn(data)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:398: in default_collate
+    return collate(batch, collate_fn_map=default_collate_fn_map)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:155: in collate
+    return collate_fn_map[elem_type](batch, collate_fn_map=collate_fn_map)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py:272: in collate_tensor_fn
+    return torch.stack(batch, 0, out=out)
+E   RuntimeError: stack expects each tensor to be equal size, but got [1, 4, 4] at entry 0 and [3, 4, 4] at entry 1
+----------------------------- Captured stderr call -----------------------------
+  0%|          | 0/1 [00:00<?, ?it/s]  0%|          | 0/1 [00:00<?, ?it/s]
+=========================== short test summary info ============================
+FAILED tests/test_guided_training_image_mode.py::test_guided_training_matches_explicit_channel_conversion[1-None]
+FAILED tests/test_guided_training_image_mode.py::test_guided_training_matches_explicit_channel_conversion[3-None]
+FAILED tests/test_guided_training_image_mode.py::test_guided_training_matches_explicit_channel_conversion[4-None]
+3 failed, 5 passed in 6.10s

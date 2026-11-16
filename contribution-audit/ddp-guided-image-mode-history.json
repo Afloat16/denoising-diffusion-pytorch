@@ -1,0 +1,127 @@
+{
+  "unique_heads": 112,
+  "blobs": 29,
+  "trainer_constructor_variants": [
+    {
+      "code": "def __init__(\n        self,\n        diffusion_model,\n        folder,\n        *,\n        train_batch_size = 16,\n        gradient_accumulate_every = 1,\n        augment_horizontal_flip = True,\n        train_lr = 1e-4,\n        train_num_steps = 100000,\n        ema_update_every = 10,\n        ema_decay = 0.995,\n        adam_betas = (0.9, 0.99),\n        save_and_sample_every = 1000,\n        num_samples = 25,\n        results_folder = './results',\n        amp = False,\n        fp16 = False,\n        split_batches = True,\n        convert_image_to = None\n    ):\n        super().__init__()\n\n        self.accelerator = Accelerator(\n            split_batches = split_batches,\n            mixed_precision = 'fp16' if fp16 else 'no'\n        )\n\n        self.accelerator.native_amp = amp\n\n        self.model = diffusion_model\n\n        assert has_int_squareroot(num_samples), 'number of samples must have an integer square root'\n        self.num_samples = num_samples\n        self.save_and_sample_every = save_and_sample_every\n\n        self.batch_size = train_batch_size\n        self.gradient_accumulate_every = gradient_accumulate_every\n\n        self.train_num_steps = train_num_steps\n        self.image_size = diffusion_model.image_size\n\n        # dataset and dataloader\n\n        self.ds = Dataset(folder, self.image_size, augment_horizontal_flip = augment_horizontal_flip, convert_image_to = convert_image_to)\n        dl = DataLoader(self.ds, batch_size = train_batch_size, shuffle = True, pin_memory = True, num_workers = cpu_count())\n\n        dl = self.accelerator.prepare(dl)\n        self.dl = cycle(dl)\n\n        # optimizer\n\n        self.opt = Adam(diffusion_model.parameters(), lr = train_lr, betas = adam_betas)\n\n        # for logging results in a folder periodically\n\n        if self.accelerator.is_main_process:\n            self.ema = EMA(diffusion_model, beta = ema_decay, update_every = ema_update_every)\n\n        self.results_folder = Path(results_folder)\n        self.results_folder.mkdir(exist_ok = True)\n\n        # step counter state\n\n        self.step = 0\n\n        # prepare model, dataloader, optimizer with accelerator\n\n        self.model, self.opt = self.accelerator.prepare(self.model, self.opt)",
+      "occurrences": [
+        {
+          "oid": "8b8b3014679adf0dadb10d745e784673f69996c2",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "ee9776608fb759cb8723889c970009cfb3805215",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "5a2f26dab8758195494ab0f4aad8dd31c69ee22a",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "037a9ecf577dbbd5c51264d2391a6d26a2793c60",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "a643b823ead5b114189bf287f06f8f3adfc15357",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "502d84366b062e852871333af47e41c922215196",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "ceeaca8bd236725455aefc6b7e36120003c59079",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "9b1c4e04144aef60ba967bbddff0df37e2d3ccdd",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "2aef8ba33f13d86f7e9cef75b1ef4311ff8afc55",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "66bc83a8192cc2a9785205009ef0075100edc3a8",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "ace61d8fc8ea51f663ccb22b1ea6c1724b6168ed",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "1fc3651cc5d665d6266e46ef48d9de18a07ea756",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "a4be3a0c715c9891246a4341dd78b4248c9c9a0a",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "e506efc05ceac755364d0d3b6ca5ae4754f515c2",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "e610ae4f8a17202ea712456473a0e4bcc3815278",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "6e598885a221c748ba30265c55a0b07a1e3fbf4b",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "e8856fed1cd81db91354cb07262bdb6f62778c96",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "b41676c589dc136fa9670551c7c8e96a302713a1",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "052a148debb9563103e4802a4e2c80eedc937b2a",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "cf49802da582d279ea5c7de20ecc7d53c4ce55e0",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "7deb0e4069a7e7dc73578e1beb75c7f8c7030e24",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "ad4d9a0f333c9d8d29a2a0421cd401c0a47f3882",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "5b710b9f16e872bce70083ae2635af0a221981fe",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "bbb9d9856236248c80116d0fdf105d62db4ee00b",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "e525761e0cb38265133863b1477640662819e8b2",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "9d20279e64c8b71acd31dcfa5fab0b0a7168db7c",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "b33e41edeaf2274d3efb938150033d2df4681af4",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "c77237b188f2400391110c56c5f1e520267fb904",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        },
+        {
+          "oid": "c6b7060fc95d91ecbdc047b42a426924de351179",
+          "path": "denoising_diffusion_pytorch/guided_diffusion.py"
+        }
+      ]
+    }
+  ]
+}

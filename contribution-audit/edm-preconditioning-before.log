@@ -1,0 +1,56 @@
+..F..F.F.FFF....                                                         [100%]
+=================================== FAILURES ===================================
+_ test_coefficients_match_high_precision_formula_for_finite_sigmas[1e+200-None] _
+tests/test_edm_preconditioning_stability.py:56: in test_coefficients_match_high_precision_formula_for_finite_sigmas
+    actual = torch.as_tensor(getattr(diffusion, name)(sigma), dtype=torch.float64)
+denoising_diffusion_pytorch/elucidated_diffusion.py:90: in c_skip
+    return (self.sigma_data ** 2) / (sigma ** 2 + self.sigma_data ** 2)
+E   OverflowError: (34, 'Numerical result out of range')
+_ test_coefficients_match_high_precision_formula_for_finite_sigmas[1e+20-dtype5] _
+tests/test_edm_preconditioning_stability.py:58: in test_coefficients_match_high_precision_formula_for_finite_sigmas
+    torch.testing.assert_close(
+E   AssertionError: Scalars are not close!
+E   
+E   Expected 2.4999998997956167e-41 but got 0.0.
+E   Absolute difference: 2.4999998997956167e-41 (up to 1e-45 allowed)
+E   Relative difference: 1.0 (up to 0.0002 allowed)
+_ test_coefficients_match_high_precision_formula_for_finite_sigmas[1000.0-dtype7] _
+tests/test_edm_preconditioning_stability.py:58: in test_coefficients_match_high_precision_formula_for_finite_sigmas
+    torch.testing.assert_close(
+E   AssertionError: Scalars are not close!
+E   
+E   Expected 2.4999993750001564e-07 but got 0.0.
+E   Absolute difference: 2.4999993750001564e-07 (up to 1e-45 allowed)
+E   Relative difference: 1.0 (up to 0.0002 allowed)
+_ test_native_edm_loss_and_model_gradients_match_decimal_reference[dtype1-values1] _
+tests/test_edm_preconditioning_stability.py:93: in test_native_edm_loss_and_model_gradients_match_decimal_reference
+    assert torch.isfinite(actual).all()
+E   assert tensor(False)
+E    +  where tensor(False) = <built-in method all of Tensor object at 0x7f0641ede620>()
+E    +    where <built-in method all of Tensor object at 0x7f0641ede620> = tensor([False,  True,  True,  True]).all
+E    +      where tensor([False,  True,  True,  True]) = <built-in method isfinite of type object at 0x7f0664f92980>(tensor([   inf, 1.2890, 0.8087, 2.3569], grad_fn=<MulBackward0>))
+E    +        where <built-in method isfinite of type object at 0x7f0664f92980> = torch.isfinite
+_ test_native_edm_loss_and_model_gradients_match_decimal_reference[dtype2-values2] _
+tests/test_edm_preconditioning_stability.py:93: in test_native_edm_loss_and_model_gradients_match_decimal_reference
+    assert torch.isfinite(actual).all()
+E   assert tensor(False)
+E    +  where tensor(False) = <built-in method all of Tensor object at 0x7f0640b21770>()
+E    +    where <built-in method all of Tensor object at 0x7f0640b21770> = tensor([ True,  True, False, False]).all
+E    +      where tensor([ True,  True, False, False]) = <built-in method isfinite of type object at 0x7f0664f92980>(tensor([0.8423, 0.0814,    nan,    nan], grad_fn=<MulBackward0>))
+E    +        where <built-in method isfinite of type object at 0x7f0664f92980> = torch.isfinite
+_ test_native_edm_loss_and_model_gradients_match_decimal_reference[dtype3-values3] _
+tests/test_edm_preconditioning_stability.py:93: in test_native_edm_loss_and_model_gradients_match_decimal_reference
+    assert torch.isfinite(actual).all()
+E   assert tensor(False)
+E    +  where tensor(False) = <built-in method all of Tensor object at 0x7f0641f99e50>()
+E    +    where <built-in method all of Tensor object at 0x7f0641f99e50> = tensor([ True, False, False, False]).all
+E    +      where tensor([ True, False, False, False]) = <built-in method isfinite of type object at 0x7f0664f92980>(tensor([0.8422,    inf,    inf,    inf], grad_fn=<MulBackward0>))
+E    +        where <built-in method isfinite of type object at 0x7f0664f92980> = torch.isfinite
+=========================== short test summary info ============================
+FAILED tests/test_edm_preconditioning_stability.py::test_coefficients_match_high_precision_formula_for_finite_sigmas[1e+200-None]
+FAILED tests/test_edm_preconditioning_stability.py::test_coefficients_match_high_precision_formula_for_finite_sigmas[1e+20-dtype5]
+FAILED tests/test_edm_preconditioning_stability.py::test_coefficients_match_high_precision_formula_for_finite_sigmas[1000.0-dtype7]
+FAILED tests/test_edm_preconditioning_stability.py::test_native_edm_loss_and_model_gradients_match_decimal_reference[dtype1-values1]
+FAILED tests/test_edm_preconditioning_stability.py::test_native_edm_loss_and_model_gradients_match_decimal_reference[dtype2-values2]
+FAILED tests/test_edm_preconditioning_stability.py::test_native_edm_loss_and_model_gradients_match_decimal_reference[dtype3-values3]
+6 failed, 10 passed in 6.52s
