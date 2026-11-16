@@ -1,0 +1,63 @@
+FFF.                                                                     [100%]
+=================================== FAILURES ===================================
+_________ test_xm_preserves_static_condition_tensors_when_chunking[1] __________
+tests/test_xm_static_conditions.py:44: in test_xm_preserves_static_condition_tensors_when_chunking
+    torch.testing.assert_close(actual, expected)
+E   AssertionError: Scalars are not close!
+E   
+E   Expected 0.6805501580238342 but got 0.5338293313980103.
+E   Absolute difference: 0.14672082662582397 (up to 1e-05 allowed)
+E   Relative difference: 0.21559149593303822 (up to 1.3e-06 allowed)
+_________ test_xm_preserves_static_condition_tensors_when_chunking[2] __________
+tests/test_xm_static_conditions.py:39: in test_xm_preserves_static_condition_tensors_when_chunking
+    actual = wrapper(
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+denoising_diffusion_pytorch/xm.py:118: in forward
+    loss = self.flow_model(*chunk_args, **chunk_kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:766: in forward
+    return self.p_losses(img, times, *args, loss_reduction = loss_reduction, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:729: in p_losses
+    model_out = self.model(x, t, **model_forward_kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+tests/test_xm_static_conditions.py:17: in forward
+    return x * feature_scale + self.weight * condition[:, None, None]
+E   RuntimeError: The size of tensor a (6) must match the size of tensor b (2) at non-singleton dimension 2
+_________ test_xm_preserves_static_condition_tensors_when_chunking[4] __________
+tests/test_xm_static_conditions.py:39: in test_xm_preserves_static_condition_tensors_when_chunking
+    actual = wrapper(
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+denoising_diffusion_pytorch/xm.py:118: in forward
+    loss = self.flow_model(*chunk_args, **chunk_kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:766: in forward
+    return self.p_losses(img, times, *args, loss_reduction = loss_reduction, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:729: in p_losses
+    model_out = self.model(x, t, **model_forward_kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+tests/test_xm_static_conditions.py:17: in forward
+    return x * feature_scale + self.weight * condition[:, None, None]
+E   RuntimeError: The size of tensor a (6) must match the size of tensor b (4) at non-singleton dimension 2
+=========================== short test summary info ============================
+FAILED tests/test_xm_static_conditions.py::test_xm_preserves_static_condition_tensors_when_chunking[1]
+FAILED tests/test_xm_static_conditions.py::test_xm_preserves_static_condition_tensors_when_chunking[2]
+FAILED tests/test_xm_static_conditions.py::test_xm_preserves_static_condition_tensors_when_chunking[4]
+3 failed, 1 passed in 6.16s
