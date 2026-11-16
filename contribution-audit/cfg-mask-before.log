@@ -1,0 +1,76 @@
+.F.F.F.F.F.F.F.F                                                         [100%]
+=================================== FAILURES ===================================
+__ test_null_guidance_branch_ignores_conditional_keep_mask[0.0-0.0-all_keep] ___
+tests/test_cfg_unconditional_mask.py:39: in test_null_guidance_branch_ignores_conditional_keep_mask
+    torch.testing.assert_close(null_logits, unconditional, rtol=0, atol=0)
+E   AssertionError: Tensor-likes are not equal!
+E   
+E   Mismatched elements: 32 / 32 (100.0%)
+E   Greatest absolute difference: 0.128094881772995 at index (1, 0, 1, 3)
+E   Greatest relative difference: 0.3922923505306244 at index (0, 0, 0, 1)
+____ test_null_guidance_branch_ignores_conditional_keep_mask[0.0-0.0-mixed] ____
+tests/test_cfg_unconditional_mask.py:39: in test_null_guidance_branch_ignores_conditional_keep_mask
+    torch.testing.assert_close(null_logits, unconditional, rtol=0, atol=0)
+E   AssertionError: Tensor-likes are not equal!
+E   
+E   Mismatched elements: 16 / 32 (50.0%)
+E   Greatest absolute difference: 0.11240613460540771 at index (0, 0, 0, 0)
+E   Greatest relative difference: 0.3922923505306244 at index (0, 0, 0, 1)
+__ test_null_guidance_branch_ignores_conditional_keep_mask[0.0-2.0-all_keep] ___
+tests/test_cfg_unconditional_mask.py:39: in test_null_guidance_branch_ignores_conditional_keep_mask
+    torch.testing.assert_close(null_logits, unconditional, rtol=0, atol=0)
+E   AssertionError: Tensor-likes are not equal!
+E   
+E   Mismatched elements: 32 / 32 (100.0%)
+E   Greatest absolute difference: 0.128094881772995 at index (1, 0, 1, 3)
+E   Greatest relative difference: 0.3922923505306244 at index (0, 0, 0, 1)
+____ test_null_guidance_branch_ignores_conditional_keep_mask[0.0-2.0-mixed] ____
+tests/test_cfg_unconditional_mask.py:39: in test_null_guidance_branch_ignores_conditional_keep_mask
+    torch.testing.assert_close(null_logits, unconditional, rtol=0, atol=0)
+E   AssertionError: Tensor-likes are not equal!
+E   
+E   Mismatched elements: 16 / 32 (50.0%)
+E   Greatest absolute difference: 0.11240613460540771 at index (0, 0, 0, 0)
+E   Greatest relative difference: 0.3922923505306244 at index (0, 0, 0, 1)
+__ test_null_guidance_branch_ignores_conditional_keep_mask[0.5-0.0-all_keep] ___
+tests/test_cfg_unconditional_mask.py:39: in test_null_guidance_branch_ignores_conditional_keep_mask
+    torch.testing.assert_close(null_logits, unconditional, rtol=0, atol=0)
+E   AssertionError: Tensor-likes are not equal!
+E   
+E   Mismatched elements: 32 / 32 (100.0%)
+E   Greatest absolute difference: 0.128094881772995 at index (1, 0, 1, 3)
+E   Greatest relative difference: 0.3922923505306244 at index (0, 0, 0, 1)
+____ test_null_guidance_branch_ignores_conditional_keep_mask[0.5-0.0-mixed] ____
+tests/test_cfg_unconditional_mask.py:39: in test_null_guidance_branch_ignores_conditional_keep_mask
+    torch.testing.assert_close(null_logits, unconditional, rtol=0, atol=0)
+E   AssertionError: Tensor-likes are not equal!
+E   
+E   Mismatched elements: 16 / 32 (50.0%)
+E   Greatest absolute difference: 0.11240613460540771 at index (0, 0, 0, 0)
+E   Greatest relative difference: 0.3922923505306244 at index (0, 0, 0, 1)
+__ test_null_guidance_branch_ignores_conditional_keep_mask[0.5-2.0-all_keep] ___
+tests/test_cfg_unconditional_mask.py:39: in test_null_guidance_branch_ignores_conditional_keep_mask
+    torch.testing.assert_close(null_logits, unconditional, rtol=0, atol=0)
+E   AssertionError: Tensor-likes are not equal!
+E   
+E   Mismatched elements: 32 / 32 (100.0%)
+E   Greatest absolute difference: 0.128094881772995 at index (1, 0, 1, 3)
+E   Greatest relative difference: 0.3922923505306244 at index (0, 0, 0, 1)
+____ test_null_guidance_branch_ignores_conditional_keep_mask[0.5-2.0-mixed] ____
+tests/test_cfg_unconditional_mask.py:39: in test_null_guidance_branch_ignores_conditional_keep_mask
+    torch.testing.assert_close(null_logits, unconditional, rtol=0, atol=0)
+E   AssertionError: Tensor-likes are not equal!
+E   
+E   Mismatched elements: 16 / 32 (50.0%)
+E   Greatest absolute difference: 0.11240613460540771 at index (0, 0, 0, 0)
+E   Greatest relative difference: 0.3922923505306244 at index (0, 0, 0, 1)
+=========================== short test summary info ============================
+FAILED tests/test_cfg_unconditional_mask.py::test_null_guidance_branch_ignores_conditional_keep_mask[0.0-0.0-all_keep]
+FAILED tests/test_cfg_unconditional_mask.py::test_null_guidance_branch_ignores_conditional_keep_mask[0.0-0.0-mixed]
+FAILED tests/test_cfg_unconditional_mask.py::test_null_guidance_branch_ignores_conditional_keep_mask[0.0-2.0-all_keep]
+FAILED tests/test_cfg_unconditional_mask.py::test_null_guidance_branch_ignores_conditional_keep_mask[0.0-2.0-mixed]
+FAILED tests/test_cfg_unconditional_mask.py::test_null_guidance_branch_ignores_conditional_keep_mask[0.5-0.0-all_keep]
+FAILED tests/test_cfg_unconditional_mask.py::test_null_guidance_branch_ignores_conditional_keep_mask[0.5-0.0-mixed]
+FAILED tests/test_cfg_unconditional_mask.py::test_null_guidance_branch_ignores_conditional_keep_mask[0.5-2.0-all_keep]
+FAILED tests/test_cfg_unconditional_mask.py::test_null_guidance_branch_ignores_conditional_keep_mask[0.5-2.0-mixed]
+8 failed, 8 passed in 8.50s

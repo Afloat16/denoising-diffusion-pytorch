@@ -1,0 +1,100 @@
+.F.F.FFFF                                                                [100%]
+=================================== FAILURES ===================================
+__________ test_native_training_matches_legacy_keyword_adapter[True] ___________
+tests/test_karras1d_self_conditioning.py:56: in test_native_training_matches_legacy_keyword_adapter
+    loss = actual(images, times=times, noise=noise)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:766: in forward
+    return self.p_losses(img, times, *args, loss_reduction = loss_reduction, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:729: in p_losses
+    model_out = self.model(x, t, **model_forward_kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+E   TypeError: KarrasUnet1D.forward() got an unexpected keyword argument 'x_self_cond'
+________ test_native_ddpm_and_ddim_match_legacy_keyword_adapter[2-True] ________
+tests/test_karras1d_self_conditioning.py:78: in test_native_ddpm_and_ddim_match_legacy_keyword_adapter
+    result = actual.sample(batch_size=2)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:670: in sample
+    return sample_fn(shape, return_noise = return_noise, model_forward_kwargs = model_forward_kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:639: in ddim_sample
+    pred_noise, x_start, *_ = self.model_predictions(img, time_cond, self_cond, clip_x_start = clip_denoised, model_forward_kwargs = model_forward_kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:557: in model_predictions
+    model_output = self.model(x, t, **model_forward_kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+E   TypeError: KarrasUnet1D.forward() got an unexpected keyword argument 'x_self_cond'
+----------------------------- Captured stderr call -----------------------------
+
+sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]
+sampling loop time step:  50%|█████     | 1/2 [00:00<00:00, 178.35it/s]
+________ test_native_ddpm_and_ddim_match_legacy_keyword_adapter[4-True] ________
+tests/test_karras1d_self_conditioning.py:78: in test_native_ddpm_and_ddim_match_legacy_keyword_adapter
+    result = actual.sample(batch_size=2)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:670: in sample
+    return sample_fn(shape, return_noise = return_noise, model_forward_kwargs = model_forward_kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:614: in p_sample_loop
+    img, x_start = self.p_sample(img, t, self_cond, model_forward_kwargs = model_forward_kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:598: in p_sample
+    model_mean, _, model_log_variance, x_start = self.p_mean_variance(x = x, t = batched_times, x_self_cond = x_self_cond, clip_denoised = clip_denoised, model_forward_kwargs = model_forward_kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:583: in p_mean_variance
+    preds = self.model_predictions(
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:557: in model_predictions
+    model_output = self.model(x, t, **model_forward_kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+E   TypeError: KarrasUnet1D.forward() got an unexpected keyword argument 'x_self_cond'
+----------------------------- Captured stderr call -----------------------------
+
+sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]
+sampling loop time step:  25%|██▌       | 1/4 [00:00<00:00, 169.05it/s]
+___ test_self_condition_alias_preserves_legacy_forward_and_gradients[False] ____
+tests/test_karras1d_self_conditioning.py:94: in test_self_condition_alias_preserves_legacy_forward_and_gradients
+    actual = model(x, times, x_self_cond=condition)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+E   TypeError: KarrasUnet1D.forward() got an unexpected keyword argument 'x_self_cond'
+____ test_self_condition_alias_preserves_legacy_forward_and_gradients[True] ____
+tests/test_karras1d_self_conditioning.py:94: in test_self_condition_alias_preserves_legacy_forward_and_gradients
+    actual = model(x, times, x_self_cond=condition)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+E   TypeError: KarrasUnet1D.forward() got an unexpected keyword argument 'x_self_cond'
+________________ test_rejects_ambiguous_self_condition_aliases _________________
+tests/test_karras1d_self_conditioning.py:112: in test_rejects_ambiguous_self_condition_aliases
+    model(x, torch.tensor([1, 3]), self_cond=x, x_self_cond=x)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+E   TypeError: KarrasUnet1D.forward() got an unexpected keyword argument 'x_self_cond'
+=========================== short test summary info ============================
+FAILED tests/test_karras1d_self_conditioning.py::test_native_training_matches_legacy_keyword_adapter[True]
+FAILED tests/test_karras1d_self_conditioning.py::test_native_ddpm_and_ddim_match_legacy_keyword_adapter[2-True]
+FAILED tests/test_karras1d_self_conditioning.py::test_native_ddpm_and_ddim_match_legacy_keyword_adapter[4-True]
+FAILED tests/test_karras1d_self_conditioning.py::test_self_condition_alias_preserves_legacy_forward_and_gradients[False]
+FAILED tests/test_karras1d_self_conditioning.py::test_self_condition_alias_preserves_legacy_forward_and_gradients[True]
+FAILED tests/test_karras1d_self_conditioning.py::test_rejects_ambiguous_self_condition_aliases
+6 failed, 3 passed in 5.34s
