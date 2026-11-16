@@ -402,7 +402,12 @@
     },
     "novelty": "All 50 historical source blobs and 15 p_losses variants reachable from the original fork and PR heads were inspected. No log-space loss weighting implementation was present. This is independent of the prior continuous-time clamp-direction correction.",
     "history": "ddp-log-snr-history.json",
-    "status": "validated",
+    "status": "published",
+    "pr": 423,
+    "url": "https://github.com/lucidrains/denoising-diffusion-pytorch/pull/423",
+    "state": "open",
+    "merged_at": null,
+    "maintainer_can_modify": false,
     "files": [
       "denoising_diffusion_pytorch/simple_diffusion.py",
       "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py",
@@ -428,7 +433,12 @@
     },
     "novelty": "All 27 historical elucidated-diffusion source blobs reachable from the original fork and PR heads retain scalar schedule extraction; no bulk conversion was present. This is independent of existing one-step schedule and DPM++ self-conditioning fixes.",
     "history": "ddp-edm-schedule-history.json",
-    "status": "validated",
+    "status": "published",
+    "pr": 424,
+    "url": "https://github.com/lucidrains/denoising-diffusion-pytorch/pull/424",
+    "state": "open",
+    "merged_at": null,
+    "maintainer_can_modify": false,
     "files": [
       "denoising_diffusion_pytorch/elucidated_diffusion.py",
       "tests/test_edm_schedule_transfer.py"
