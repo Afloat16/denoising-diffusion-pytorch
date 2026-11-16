@@ -718,7 +718,7 @@ class GaussianDiffusion1D(Module):
                 x_self_cond = self.model_predictions(
                     x, t, model_forward_kwargs = model_forward_kwargs
                 ).pred_x_start
-                x_self_cond.detach_()
+                x_self_cond = x_self_cond.detach()
 
             model_forward_kwargs = {**model_forward_kwargs, 'x_self_cond': x_self_cond}
 
