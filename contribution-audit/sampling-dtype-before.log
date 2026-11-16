@@ -1,0 +1,596 @@
+..........FFFFFFFFFFFFFFFFFFFF                                           [100%]
+=================================== FAILURES ===================================
+_ test_sampler_initial_noise_matches_diffusion_dtype[dtype1-p_sample_loop-denoising_diffusion_pytorch] _
+tests/test_sampling_noise_dtype.py:65: in test_sampler_initial_noise_matches_diffusion_dtype
+    output = getattr(diffusion, sampler)(shape)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch.py:693: in p_sample_loop
+    img, x_start = self.p_sample(img, t, self_cond)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch.py:677: in p_sample
+    model_mean, _, model_log_variance, x_start = self.p_mean_variance(x = x, t = batched_times, x_self_cond = x_self_cond, clip_denoised = True)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch.py:664: in p_mean_variance
+    preds = self.model_predictions(x, t, x_self_cond)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch.py:639: in model_predictions
+    model_output = self.model(x, t, x_self_cond)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+tests/test_sampling_noise_dtype.py:32: in forward
+    return self.conv(x)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:554: in forward
+    return self._conv_forward(input, self.weight, self.bias)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:549: in _conv_forward
+    return F.conv2d(
+E   RuntimeError: Input type (float) and bias type (double) should be the same
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]
+_ test_sampler_initial_noise_matches_diffusion_dtype[dtype1-p_sample_loop-denoising_diffusion_pytorch_1d] _
+tests/test_sampling_noise_dtype.py:65: in test_sampler_initial_noise_matches_diffusion_dtype
+    output = getattr(diffusion, sampler)(shape)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:614: in p_sample_loop
+    img, x_start = self.p_sample(img, t, self_cond, model_forward_kwargs = model_forward_kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:598: in p_sample
+    model_mean, _, model_log_variance, x_start = self.p_mean_variance(x = x, t = batched_times, x_self_cond = x_self_cond, clip_denoised = clip_denoised, model_forward_kwargs = model_forward_kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:583: in p_mean_variance
+    preds = self.model_predictions(
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:557: in model_predictions
+    model_output = self.model(x, t, **model_forward_kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+tests/test_sampling_noise_dtype.py:32: in forward
+    return self.conv(x)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:375: in forward
+    return self._conv_forward(input, self.weight, self.bias)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:370: in _conv_forward
+    return F.conv1d(
+E   RuntimeError: Input type (float) and bias type (double) should be the same
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]
+_ test_sampler_initial_noise_matches_diffusion_dtype[dtype1-p_sample_loop-guided_diffusion] _
+tests/test_sampling_noise_dtype.py:65: in test_sampler_initial_noise_matches_diffusion_dtype
+    output = getattr(diffusion, sampler)(shape)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/guided_diffusion.py:637: in p_sample_loop
+    img, x_start = self.p_sample(img, t, self_cond, cond_fn, guidance_kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/guided_diffusion.py:616: in p_sample
+    model_mean, variance, model_log_variance, x_start = self.p_mean_variance(
+denoising_diffusion_pytorch/guided_diffusion.py:584: in p_mean_variance
+    preds = self.model_predictions(x, t, x_self_cond)
+denoising_diffusion_pytorch/guided_diffusion.py:562: in model_predictions
+    model_output = self.model(x, t, x_self_cond)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+tests/test_sampling_noise_dtype.py:32: in forward
+    return self.conv(x)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:554: in forward
+    return self._conv_forward(input, self.weight, self.bias)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:549: in _conv_forward
+    return F.conv2d(
+E   RuntimeError: Input type (float) and bias type (double) should be the same
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]
+_ test_sampler_initial_noise_matches_diffusion_dtype[dtype1-p_sample_loop-repaint] _
+tests/test_sampling_noise_dtype.py:65: in test_sampler_initial_noise_matches_diffusion_dtype
+    output = getattr(diffusion, sampler)(shape)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/repaint.py:713: in p_sample_loop
+    img, x_start = self.p_sample(x=img, t=t, x_self_cond=self_cond, gt=gt, mask=mask)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/repaint.py:680: in p_sample
+    model_mean, _, model_log_variance, x_start = self.p_mean_variance(
+denoising_diffusion_pytorch/repaint.py:653: in p_mean_variance
+    preds = self.model_predictions(x, t, x_self_cond)
+denoising_diffusion_pytorch/repaint.py:628: in model_predictions
+    model_output = self.model(x, t, x_self_cond)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+tests/test_sampling_noise_dtype.py:32: in forward
+    return self.conv(x)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:554: in forward
+    return self._conv_forward(input, self.weight, self.bias)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:549: in _conv_forward
+    return F.conv2d(
+E   RuntimeError: Input type (float) and bias type (double) should be the same
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]
+_ test_sampler_initial_noise_matches_diffusion_dtype[dtype1-p_sample_loop-classifier_free_guidance] _
+tests/test_sampling_noise_dtype.py:61: in test_sampler_initial_noise_matches_diffusion_dtype
+    output = getattr(diffusion, sampler)(
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/classifier_free_guidance.py:718: in p_sample_loop
+    img, x_start = self.p_sample(img, t, classes, cond_scale, rescaled_phi)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/classifier_free_guidance.py:704: in p_sample
+    model_mean, _, model_log_variance, x_start = self.p_mean_variance(x = x, t = batched_times, classes = classes, cond_scale = cond_scale, rescaled_phi = rescaled_phi, clip_denoised = clip_denoised)
+denoising_diffusion_pytorch/classifier_free_guidance.py:691: in p_mean_variance
+    preds = self.model_predictions(x, t, classes, cond_scale, rescaled_phi)
+denoising_diffusion_pytorch/classifier_free_guidance.py:660: in model_predictions
+    model_output, model_output_null = self.model.forward_with_cond_scale(x, t, classes, cond_scale = cond_scale, rescaled_phi = rescaled_phi)
+tests/test_sampling_noise_dtype.py:35: in forward_with_cond_scale
+    output = self.forward(x, times)
+tests/test_sampling_noise_dtype.py:32: in forward
+    return self.conv(x)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:554: in forward
+    return self._conv_forward(input, self.weight, self.bias)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:549: in _conv_forward
+    return F.conv2d(
+E   RuntimeError: Input type (float) and bias type (double) should be the same
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]
+_ test_sampler_initial_noise_matches_diffusion_dtype[dtype1-ddim_sample-denoising_diffusion_pytorch] _
+tests/test_sampling_noise_dtype.py:65: in test_sampler_initial_noise_matches_diffusion_dtype
+    output = getattr(diffusion, sampler)(shape)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch.py:717: in ddim_sample
+    pred_noise, x_start, *_ = self.model_predictions(img, time_cond, self_cond, clip_x_start = True, rederive_pred_noise = True)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch.py:639: in model_predictions
+    model_output = self.model(x, t, x_self_cond)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+tests/test_sampling_noise_dtype.py:32: in forward
+    return self.conv(x)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:554: in forward
+    return self._conv_forward(input, self.weight, self.bias)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:549: in _conv_forward
+    return F.conv2d(
+E   RuntimeError: Input type (float) and bias type (double) should be the same
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]
+_ test_sampler_initial_noise_matches_diffusion_dtype[dtype1-ddim_sample-denoising_diffusion_pytorch_1d] _
+tests/test_sampling_noise_dtype.py:65: in test_sampler_initial_noise_matches_diffusion_dtype
+    output = getattr(diffusion, sampler)(shape)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:639: in ddim_sample
+    pred_noise, x_start, *_ = self.model_predictions(img, time_cond, self_cond, clip_x_start = clip_denoised, model_forward_kwargs = model_forward_kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:557: in model_predictions
+    model_output = self.model(x, t, **model_forward_kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+tests/test_sampling_noise_dtype.py:32: in forward
+    return self.conv(x)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:375: in forward
+    return self._conv_forward(input, self.weight, self.bias)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:370: in _conv_forward
+    return F.conv1d(
+E   RuntimeError: Input type (float) and bias type (double) should be the same
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]
+_ test_sampler_initial_noise_matches_diffusion_dtype[dtype1-ddim_sample-guided_diffusion] _
+tests/test_sampling_noise_dtype.py:65: in test_sampler_initial_noise_matches_diffusion_dtype
+    output = getattr(diffusion, sampler)(shape)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/guided_diffusion.py:661: in ddim_sample
+    pred_noise, x_start, *_ = self.model_predictions(img, time_cond, self_cond, clip_x_start = True)
+denoising_diffusion_pytorch/guided_diffusion.py:562: in model_predictions
+    model_output = self.model(x, t, x_self_cond)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+tests/test_sampling_noise_dtype.py:32: in forward
+    return self.conv(x)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:554: in forward
+    return self._conv_forward(input, self.weight, self.bias)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:549: in _conv_forward
+    return F.conv2d(
+E   RuntimeError: Input type (float) and bias type (double) should be the same
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]
+_ test_sampler_initial_noise_matches_diffusion_dtype[dtype1-ddim_sample-repaint] _
+tests/test_sampling_noise_dtype.py:65: in test_sampler_initial_noise_matches_diffusion_dtype
+    output = getattr(diffusion, sampler)(shape)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/repaint.py:747: in ddim_sample
+    pred_noise, x_start, *_ = self.model_predictions(img, time_cond, self_cond, clip_x_start = True, rederive_pred_noise = True)
+denoising_diffusion_pytorch/repaint.py:628: in model_predictions
+    model_output = self.model(x, t, x_self_cond)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+tests/test_sampling_noise_dtype.py:32: in forward
+    return self.conv(x)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:554: in forward
+    return self._conv_forward(input, self.weight, self.bias)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:549: in _conv_forward
+    return F.conv2d(
+E   RuntimeError: Input type (float) and bias type (double) should be the same
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]
+_ test_sampler_initial_noise_matches_diffusion_dtype[dtype1-ddim_sample-classifier_free_guidance] _
+tests/test_sampling_noise_dtype.py:61: in test_sampler_initial_noise_matches_diffusion_dtype
+    output = getattr(diffusion, sampler)(
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/classifier_free_guidance.py:737: in ddim_sample
+    pred_noise, x_start, *_ = self.model_predictions(img, time_cond, classes, cond_scale = cond_scale, rescaled_phi = rescaled_phi, clip_x_start = clip_denoised)
+denoising_diffusion_pytorch/classifier_free_guidance.py:660: in model_predictions
+    model_output, model_output_null = self.model.forward_with_cond_scale(x, t, classes, cond_scale = cond_scale, rescaled_phi = rescaled_phi)
+tests/test_sampling_noise_dtype.py:35: in forward_with_cond_scale
+    output = self.forward(x, times)
+tests/test_sampling_noise_dtype.py:32: in forward
+    return self.conv(x)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:554: in forward
+    return self._conv_forward(input, self.weight, self.bias)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:549: in _conv_forward
+    return F.conv2d(
+E   RuntimeError: Input type (float) and bias type (double) should be the same
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]
+_ test_sampler_initial_noise_matches_diffusion_dtype[dtype2-p_sample_loop-denoising_diffusion_pytorch] _
+tests/test_sampling_noise_dtype.py:65: in test_sampler_initial_noise_matches_diffusion_dtype
+    output = getattr(diffusion, sampler)(shape)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch.py:693: in p_sample_loop
+    img, x_start = self.p_sample(img, t, self_cond)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch.py:677: in p_sample
+    model_mean, _, model_log_variance, x_start = self.p_mean_variance(x = x, t = batched_times, x_self_cond = x_self_cond, clip_denoised = True)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch.py:664: in p_mean_variance
+    preds = self.model_predictions(x, t, x_self_cond)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch.py:639: in model_predictions
+    model_output = self.model(x, t, x_self_cond)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+tests/test_sampling_noise_dtype.py:32: in forward
+    return self.conv(x)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:554: in forward
+    return self._conv_forward(input, self.weight, self.bias)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:549: in _conv_forward
+    return F.conv2d(
+E   RuntimeError: Input type (float) and bias type (c10::Half) should be the same
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]
+_ test_sampler_initial_noise_matches_diffusion_dtype[dtype2-p_sample_loop-denoising_diffusion_pytorch_1d] _
+tests/test_sampling_noise_dtype.py:65: in test_sampler_initial_noise_matches_diffusion_dtype
+    output = getattr(diffusion, sampler)(shape)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:614: in p_sample_loop
+    img, x_start = self.p_sample(img, t, self_cond, model_forward_kwargs = model_forward_kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:598: in p_sample
+    model_mean, _, model_log_variance, x_start = self.p_mean_variance(x = x, t = batched_times, x_self_cond = x_self_cond, clip_denoised = clip_denoised, model_forward_kwargs = model_forward_kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:583: in p_mean_variance
+    preds = self.model_predictions(
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:557: in model_predictions
+    model_output = self.model(x, t, **model_forward_kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+tests/test_sampling_noise_dtype.py:32: in forward
+    return self.conv(x)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:375: in forward
+    return self._conv_forward(input, self.weight, self.bias)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:370: in _conv_forward
+    return F.conv1d(
+E   RuntimeError: Input type (float) and bias type (c10::Half) should be the same
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]
+_ test_sampler_initial_noise_matches_diffusion_dtype[dtype2-p_sample_loop-guided_diffusion] _
+tests/test_sampling_noise_dtype.py:65: in test_sampler_initial_noise_matches_diffusion_dtype
+    output = getattr(diffusion, sampler)(shape)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/guided_diffusion.py:637: in p_sample_loop
+    img, x_start = self.p_sample(img, t, self_cond, cond_fn, guidance_kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/guided_diffusion.py:616: in p_sample
+    model_mean, variance, model_log_variance, x_start = self.p_mean_variance(
+denoising_diffusion_pytorch/guided_diffusion.py:584: in p_mean_variance
+    preds = self.model_predictions(x, t, x_self_cond)
+denoising_diffusion_pytorch/guided_diffusion.py:562: in model_predictions
+    model_output = self.model(x, t, x_self_cond)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+tests/test_sampling_noise_dtype.py:32: in forward
+    return self.conv(x)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:554: in forward
+    return self._conv_forward(input, self.weight, self.bias)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:549: in _conv_forward
+    return F.conv2d(
+E   RuntimeError: Input type (float) and bias type (c10::Half) should be the same
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]
+_ test_sampler_initial_noise_matches_diffusion_dtype[dtype2-p_sample_loop-repaint] _
+tests/test_sampling_noise_dtype.py:65: in test_sampler_initial_noise_matches_diffusion_dtype
+    output = getattr(diffusion, sampler)(shape)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/repaint.py:713: in p_sample_loop
+    img, x_start = self.p_sample(x=img, t=t, x_self_cond=self_cond, gt=gt, mask=mask)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/repaint.py:680: in p_sample
+    model_mean, _, model_log_variance, x_start = self.p_mean_variance(
+denoising_diffusion_pytorch/repaint.py:653: in p_mean_variance
+    preds = self.model_predictions(x, t, x_self_cond)
+denoising_diffusion_pytorch/repaint.py:628: in model_predictions
+    model_output = self.model(x, t, x_self_cond)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+tests/test_sampling_noise_dtype.py:32: in forward
+    return self.conv(x)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:554: in forward
+    return self._conv_forward(input, self.weight, self.bias)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:549: in _conv_forward
+    return F.conv2d(
+E   RuntimeError: Input type (float) and bias type (c10::Half) should be the same
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]
+_ test_sampler_initial_noise_matches_diffusion_dtype[dtype2-p_sample_loop-classifier_free_guidance] _
+tests/test_sampling_noise_dtype.py:61: in test_sampler_initial_noise_matches_diffusion_dtype
+    output = getattr(diffusion, sampler)(
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/classifier_free_guidance.py:718: in p_sample_loop
+    img, x_start = self.p_sample(img, t, classes, cond_scale, rescaled_phi)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/classifier_free_guidance.py:704: in p_sample
+    model_mean, _, model_log_variance, x_start = self.p_mean_variance(x = x, t = batched_times, classes = classes, cond_scale = cond_scale, rescaled_phi = rescaled_phi, clip_denoised = clip_denoised)
+denoising_diffusion_pytorch/classifier_free_guidance.py:691: in p_mean_variance
+    preds = self.model_predictions(x, t, classes, cond_scale, rescaled_phi)
+denoising_diffusion_pytorch/classifier_free_guidance.py:660: in model_predictions
+    model_output, model_output_null = self.model.forward_with_cond_scale(x, t, classes, cond_scale = cond_scale, rescaled_phi = rescaled_phi)
+tests/test_sampling_noise_dtype.py:35: in forward_with_cond_scale
+    output = self.forward(x, times)
+tests/test_sampling_noise_dtype.py:32: in forward
+    return self.conv(x)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:554: in forward
+    return self._conv_forward(input, self.weight, self.bias)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:549: in _conv_forward
+    return F.conv2d(
+E   RuntimeError: Input type (float) and bias type (c10::Half) should be the same
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]
+_ test_sampler_initial_noise_matches_diffusion_dtype[dtype2-ddim_sample-denoising_diffusion_pytorch] _
+tests/test_sampling_noise_dtype.py:65: in test_sampler_initial_noise_matches_diffusion_dtype
+    output = getattr(diffusion, sampler)(shape)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch.py:717: in ddim_sample
+    pred_noise, x_start, *_ = self.model_predictions(img, time_cond, self_cond, clip_x_start = True, rederive_pred_noise = True)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch.py:639: in model_predictions
+    model_output = self.model(x, t, x_self_cond)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+tests/test_sampling_noise_dtype.py:32: in forward
+    return self.conv(x)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:554: in forward
+    return self._conv_forward(input, self.weight, self.bias)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:549: in _conv_forward
+    return F.conv2d(
+E   RuntimeError: Input type (float) and bias type (c10::Half) should be the same
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]
+_ test_sampler_initial_noise_matches_diffusion_dtype[dtype2-ddim_sample-denoising_diffusion_pytorch_1d] _
+tests/test_sampling_noise_dtype.py:65: in test_sampler_initial_noise_matches_diffusion_dtype
+    output = getattr(diffusion, sampler)(shape)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:639: in ddim_sample
+    pred_noise, x_start, *_ = self.model_predictions(img, time_cond, self_cond, clip_x_start = clip_denoised, model_forward_kwargs = model_forward_kwargs)
+denoising_diffusion_pytorch/denoising_diffusion_pytorch_1d.py:557: in model_predictions
+    model_output = self.model(x, t, **model_forward_kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+tests/test_sampling_noise_dtype.py:32: in forward
+    return self.conv(x)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:375: in forward
+    return self._conv_forward(input, self.weight, self.bias)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:370: in _conv_forward
+    return F.conv1d(
+E   RuntimeError: Input type (float) and bias type (c10::Half) should be the same
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]
+_ test_sampler_initial_noise_matches_diffusion_dtype[dtype2-ddim_sample-guided_diffusion] _
+tests/test_sampling_noise_dtype.py:65: in test_sampler_initial_noise_matches_diffusion_dtype
+    output = getattr(diffusion, sampler)(shape)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/guided_diffusion.py:661: in ddim_sample
+    pred_noise, x_start, *_ = self.model_predictions(img, time_cond, self_cond, clip_x_start = True)
+denoising_diffusion_pytorch/guided_diffusion.py:562: in model_predictions
+    model_output = self.model(x, t, x_self_cond)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+tests/test_sampling_noise_dtype.py:32: in forward
+    return self.conv(x)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:554: in forward
+    return self._conv_forward(input, self.weight, self.bias)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:549: in _conv_forward
+    return F.conv2d(
+E   RuntimeError: Input type (float) and bias type (c10::Half) should be the same
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]
+_ test_sampler_initial_noise_matches_diffusion_dtype[dtype2-ddim_sample-repaint] _
+tests/test_sampling_noise_dtype.py:65: in test_sampler_initial_noise_matches_diffusion_dtype
+    output = getattr(diffusion, sampler)(shape)
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/repaint.py:747: in ddim_sample
+    pred_noise, x_start, *_ = self.model_predictions(img, time_cond, self_cond, clip_x_start = True, rederive_pred_noise = True)
+denoising_diffusion_pytorch/repaint.py:628: in model_predictions
+    model_output = self.model(x, t, x_self_cond)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+tests/test_sampling_noise_dtype.py:32: in forward
+    return self.conv(x)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:554: in forward
+    return self._conv_forward(input, self.weight, self.bias)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:549: in _conv_forward
+    return F.conv2d(
+E   RuntimeError: Input type (float) and bias type (c10::Half) should be the same
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]
+_ test_sampler_initial_noise_matches_diffusion_dtype[dtype2-ddim_sample-classifier_free_guidance] _
+tests/test_sampling_noise_dtype.py:61: in test_sampler_initial_noise_matches_diffusion_dtype
+    output = getattr(diffusion, sampler)(
+../../.venv-torch/lib/python3.12/site-packages/torch/utils/_contextlib.py:116: in decorate_context
+    return func(*args, **kwargs)
+denoising_diffusion_pytorch/classifier_free_guidance.py:737: in ddim_sample
+    pred_noise, x_start, *_ = self.model_predictions(img, time_cond, classes, cond_scale = cond_scale, rescaled_phi = rescaled_phi, clip_x_start = clip_denoised)
+denoising_diffusion_pytorch/classifier_free_guidance.py:660: in model_predictions
+    model_output, model_output_null = self.model.forward_with_cond_scale(x, t, classes, cond_scale = cond_scale, rescaled_phi = rescaled_phi)
+tests/test_sampling_noise_dtype.py:35: in forward_with_cond_scale
+    output = self.forward(x, times)
+tests/test_sampling_noise_dtype.py:32: in forward
+    return self.conv(x)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1736: in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/module.py:1747: in _call_impl
+    return forward_call(*args, **kwargs)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:554: in forward
+    return self._conv_forward(input, self.weight, self.bias)
+../../.venv-torch/lib/python3.12/site-packages/torch/nn/modules/conv.py:549: in _conv_forward
+    return F.conv2d(
+E   RuntimeError: Input type (float) and bias type (c10::Half) should be the same
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling loop time step:   0%|          | 0/2 [00:00<?, ?it/s]
+=========================== short test summary info ============================
+FAILED tests/test_sampling_noise_dtype.py::test_sampler_initial_noise_matches_diffusion_dtype[dtype1-p_sample_loop-denoising_diffusion_pytorch]
+FAILED tests/test_sampling_noise_dtype.py::test_sampler_initial_noise_matches_diffusion_dtype[dtype1-p_sample_loop-denoising_diffusion_pytorch_1d]
+FAILED tests/test_sampling_noise_dtype.py::test_sampler_initial_noise_matches_diffusion_dtype[dtype1-p_sample_loop-guided_diffusion]
+FAILED tests/test_sampling_noise_dtype.py::test_sampler_initial_noise_matches_diffusion_dtype[dtype1-p_sample_loop-repaint]
+FAILED tests/test_sampling_noise_dtype.py::test_sampler_initial_noise_matches_diffusion_dtype[dtype1-p_sample_loop-classifier_free_guidance]
+FAILED tests/test_sampling_noise_dtype.py::test_sampler_initial_noise_matches_diffusion_dtype[dtype1-ddim_sample-denoising_diffusion_pytorch]
+FAILED tests/test_sampling_noise_dtype.py::test_sampler_initial_noise_matches_diffusion_dtype[dtype1-ddim_sample-denoising_diffusion_pytorch_1d]
+FAILED tests/test_sampling_noise_dtype.py::test_sampler_initial_noise_matches_diffusion_dtype[dtype1-ddim_sample-guided_diffusion]
+FAILED tests/test_sampling_noise_dtype.py::test_sampler_initial_noise_matches_diffusion_dtype[dtype1-ddim_sample-repaint]
+FAILED tests/test_sampling_noise_dtype.py::test_sampler_initial_noise_matches_diffusion_dtype[dtype1-ddim_sample-classifier_free_guidance]
+FAILED tests/test_sampling_noise_dtype.py::test_sampler_initial_noise_matches_diffusion_dtype[dtype2-p_sample_loop-denoising_diffusion_pytorch]
+FAILED tests/test_sampling_noise_dtype.py::test_sampler_initial_noise_matches_diffusion_dtype[dtype2-p_sample_loop-denoising_diffusion_pytorch_1d]
+FAILED tests/test_sampling_noise_dtype.py::test_sampler_initial_noise_matches_diffusion_dtype[dtype2-p_sample_loop-guided_diffusion]
+FAILED tests/test_sampling_noise_dtype.py::test_sampler_initial_noise_matches_diffusion_dtype[dtype2-p_sample_loop-repaint]
+FAILED tests/test_sampling_noise_dtype.py::test_sampler_initial_noise_matches_diffusion_dtype[dtype2-p_sample_loop-classifier_free_guidance]
+FAILED tests/test_sampling_noise_dtype.py::test_sampler_initial_noise_matches_diffusion_dtype[dtype2-ddim_sample-denoising_diffusion_pytorch]
+FAILED tests/test_sampling_noise_dtype.py::test_sampler_initial_noise_matches_diffusion_dtype[dtype2-ddim_sample-denoising_diffusion_pytorch_1d]
+FAILED tests/test_sampling_noise_dtype.py::test_sampler_initial_noise_matches_diffusion_dtype[dtype2-ddim_sample-guided_diffusion]
+FAILED tests/test_sampling_noise_dtype.py::test_sampler_initial_noise_matches_diffusion_dtype[dtype2-ddim_sample-repaint]
+FAILED tests/test_sampling_noise_dtype.py::test_sampler_initial_noise_matches_diffusion_dtype[dtype2-ddim_sample-classifier_free_guidance]
+20 failed, 10 passed in 8.38s

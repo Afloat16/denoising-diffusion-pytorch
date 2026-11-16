@@ -1,0 +1,28 @@
+FFFF........                                                             [100%]
+=================================== FAILURES ===================================
+_ test_scalar_attention_setting_matches_explicit_stages[False-dim_mults0-denoising_diffusion_pytorch] _
+tests/test_explicit_linear_attention.py:26: in test_scalar_attention_setting_matches_explicit_stages
+    assert isinstance(stage[2], expected_type)
+E   AssertionError: assert False
+E    +  where False = isinstance(Attention(\n  (norm): RMSNorm()\n  (attend): Attend(\n    (attn_dropout): Dropout(p=0.0, inplace=False)\n  )\n  (to_qkv): Conv2d(8, 12, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  (to_out): Conv2d(4, 8, kernel_size=(1, 1), stride=(1, 1))\n), <class 'denoising_diffusion_pytorch.denoising_diffusion_pytorch.LinearAttention'>)
+_ test_scalar_attention_setting_matches_explicit_stages[False-dim_mults0-repaint] _
+tests/test_explicit_linear_attention.py:26: in test_scalar_attention_setting_matches_explicit_stages
+    assert isinstance(stage[2], expected_type)
+E   AssertionError: assert False
+E    +  where False = isinstance(Attention(\n  (norm): RMSNorm()\n  (attend): Attend(\n    (attn_dropout): Dropout(p=0.0, inplace=False)\n  )\n  (to_qkv): Conv2d(8, 12, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  (to_out): Conv2d(4, 8, kernel_size=(1, 1), stride=(1, 1))\n), <class 'denoising_diffusion_pytorch.repaint.LinearAttention'>)
+_ test_scalar_attention_setting_matches_explicit_stages[False-dim_mults1-denoising_diffusion_pytorch] _
+tests/test_explicit_linear_attention.py:26: in test_scalar_attention_setting_matches_explicit_stages
+    assert isinstance(stage[2], expected_type)
+E   AssertionError: assert False
+E    +  where False = isinstance(Attention(\n  (norm): RMSNorm()\n  (attend): Attend(\n    (attn_dropout): Dropout(p=0.0, inplace=False)\n  )\n  (to_qkv): Conv2d(8, 12, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  (to_out): Conv2d(4, 8, kernel_size=(1, 1), stride=(1, 1))\n), <class 'denoising_diffusion_pytorch.denoising_diffusion_pytorch.LinearAttention'>)
+_ test_scalar_attention_setting_matches_explicit_stages[False-dim_mults1-repaint] _
+tests/test_explicit_linear_attention.py:26: in test_scalar_attention_setting_matches_explicit_stages
+    assert isinstance(stage[2], expected_type)
+E   AssertionError: assert False
+E    +  where False = isinstance(Attention(\n  (norm): RMSNorm()\n  (attend): Attend(\n    (attn_dropout): Dropout(p=0.0, inplace=False)\n  )\n  (to_qkv): Conv2d(8, 12, kernel_size=(1, 1), stride=(1, 1), bias=False)\n  (to_out): Conv2d(4, 8, kernel_size=(1, 1), stride=(1, 1))\n), <class 'denoising_diffusion_pytorch.repaint.LinearAttention'>)
+=========================== short test summary info ============================
+FAILED tests/test_explicit_linear_attention.py::test_scalar_attention_setting_matches_explicit_stages[False-dim_mults0-denoising_diffusion_pytorch]
+FAILED tests/test_explicit_linear_attention.py::test_scalar_attention_setting_matches_explicit_stages[False-dim_mults0-repaint]
+FAILED tests/test_explicit_linear_attention.py::test_scalar_attention_setting_matches_explicit_stages[False-dim_mults1-denoising_diffusion_pytorch]
+FAILED tests/test_explicit_linear_attention.py::test_scalar_attention_setting_matches_explicit_stages[False-dim_mults1-repaint]
+4 failed, 8 passed in 6.56s
