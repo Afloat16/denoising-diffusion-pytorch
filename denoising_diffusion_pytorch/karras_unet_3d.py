@@ -482,6 +482,9 @@ class Attention(Module):
 class KarrasUnet3D(Module):
     """
     going by figure 21. config G
+
+    factorize_space_time_attn applies separate spatial and temporal attention
+    in every attention-enabled encoder and decoder block.
     """
 
     def __init__(
@@ -585,7 +588,8 @@ class KarrasUnet3D(Module):
             emb_dim = emb_dim,
             attn_dim_head = attn_dim_head,
             attn_res_mp_add_t = attn_res_mp_add_t,
-            attn_flash = attn_flash
+            attn_flash = attn_flash,
+            factorize_space_time_attn = factorize_space_time_attn
         )
 
         # unet encoder and decoders
@@ -636,7 +640,6 @@ class KarrasUnet3D(Module):
                 has_attn = curr_image_res in attn_res,
                 upsample = True,
                 upsample_config = down_and_upsample_config,
-                factorize_space_time_attn = factorize_space_time_attn,
                 **block_kwargs
             )
 
@@ -654,7 +657,6 @@ class KarrasUnet3D(Module):
                 downsample = True,
                 downsample_config = down_and_upsample_config,
                 has_attn = has_attn,
-                factorize_space_time_attn = factorize_space_time_attn,
                 **block_kwargs
             )
 
