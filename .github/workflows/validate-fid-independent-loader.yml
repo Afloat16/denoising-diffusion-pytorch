@@ -1,0 +1,98 @@
+name: Validate independent FID data loading
+
+on:
+  push:
+    branches:
+      - validation/fid-independent-loader-20261116
+
+permissions:
+  contents: read
+
+jobs:
+  cpu:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 12
+    env:
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTEST_DISABLE_PLUGIN_AUTOLOAD: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install native CPU dependencies
+        run: |
+          python -m pip install --no-cache-dir torch==2.5.1 torchvision==0.20.1 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install --no-cache-dir numpy==1.26.4 scipy==1.13.1 pillow==11.3.0 pytest==8.3.5 accelerate==1.15.0 einops==0.8.2 ema-pytorch==0.8.3 pytorch-fid==0.3.0 huggingface-hub==0.25.2 safetensors==0.5.3 requests==2.32.5 urllib3==2.5.0 ruff==0.15.1
+          python -c "import torch, torchvision, accelerate; print(torch.__version__, torchvision.__version__, accelerate.__version__)"
+      - name: Verify original production behavior
+        run: |
+          git show c8155b1dc622e3f1ef0d53dc6e5a570ca105bcec:denoising_diffusion_pytorch/denoising_diffusion_pytorch.py > denoising_diffusion_pytorch/denoising_diffusion_pytorch.py
+          git show c8155b1dc622e3f1ef0d53dc6e5a570ca105bcec:denoising_diffusion_pytorch/repaint.py > denoising_diffusion_pytorch/repaint.py
+          set +e
+          python -m pytest tests/test_fid_training_iterator.py -q --tb=short --basetemp=validation-baseline --junitxml=baseline.xml > baseline.log 2>&1
+          result=$?
+          set -e
+          git restore --source=HEAD --worktree -- denoising_diffusion_pytorch/denoising_diffusion_pytorch.py denoising_diffusion_pytorch/repaint.py
+          cat baseline.log
+          test "$result" -eq 1
+          python - <<'PY'
+          import json
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+          suite = ET.parse("baseline.xml").getroot().find("testsuite")
+          assert suite.get("tests") == "6", suite.attrib
+          assert suite.get("failures") == "4", suite.attrib
+          assert suite.get("errors") == "0", suite.attrib
+          assert suite.get("skipped") == "0", suite.attrib
+          for case in suite.iter("testcase"):
+              failure = case.find("failure")
+              if failure is None:
+                  continue
+              assert "Operation not permitted" not in failure.text, failure.text
+              if "test_real_statistics" in case.get("name"):
+                  assert "FID consumed the training iterator" in failure.text, failure.text
+          first_rank = list(Path("validation-baseline").glob("**/rank-0.json"))
+          assert len(first_rank) == 2, first_rank
+          for phase in first_rank:
+              assert json.loads(phase.read_text())["phase"] == "collecting_real_statistics"
+              peer = phase.with_name("rank-1.json")
+              assert json.loads(peer.read_text())["phase"] == "waiting_for_real_statistics"
+          PY
+      - name: Verify corrected native training and statistics
+        if: always()
+        run: |
+          python -m pytest tests/test_fid_training_iterator.py -q --tb=short --basetemp=validation-fixed --junitxml=fixed.xml > fixed.log 2>&1
+          cat fixed.log
+          python - <<'PY'
+          import json
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+          suite = ET.parse("fixed.xml").getroot().find("testsuite")
+          assert suite.get("tests") == "6", suite.attrib
+          assert suite.get("failures") == suite.get("errors") == suite.get("skipped") == "0", suite.attrib
+          phases = list(Path("validation-fixed").glob("**/rank-*.json"))
+          assert len(phases) == 4, phases
+          for phase in phases:
+              assert json.loads(phase.read_text())["phase"] == "second_training_step_and_gradient_sync_complete"
+          PY
+          python -m ruff check --select E9,F,I tests/test_fid_training_iterator.py
+          git diff --check
+      - name: Save validation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fid-independent-loader-validation
+          path: |
+            baseline.log
+            baseline.xml
+            fixed.log
+            fixed.xml
+            validation-baseline/**/rank-*.json
+            validation-fixed/**/rank-*.json
+          retention-days: 7
