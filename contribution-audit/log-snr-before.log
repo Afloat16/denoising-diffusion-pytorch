@@ -1,0 +1,125 @@
+..FFF.FF..FF......FFF.....F.                                             [100%]
+=================================== FAILURES ===================================
+_ test_native_uvit_loss_matches_high_precision_weights[None-eps-1000.0-time_dtype0] _
+tests/test_stable_log_snr_weights.py:75: in test_native_uvit_loss_matches_high_precision_weights
+    check_native_loss_and_gradients(diffusion, times, objective, gamma)
+tests/test_stable_log_snr_weights.py:42: in check_native_loss_and_gradients
+    assert torch.isfinite(actual).all()
+E   assert tensor(False)
+E    +  where tensor(False) = <built-in method all of Tensor object at 0x7fe58febbf70>()
+E    +    where <built-in method all of Tensor object at 0x7fe58febbf70> = tensor([False, False,  True, False, False]).all
+E    +      where tensor([False, False,  True, False, False]) = <built-in method isfinite of type object at 0x7fe5b2f92980>(tensor([   nan,    nan, 0.0584,    nan,    nan], grad_fn=<MulBackward0>))
+E    +        where <built-in method isfinite of type object at 0x7fe5b2f92980> = torch.isfinite
+_ test_native_uvit_loss_matches_high_precision_weights[None-eps-1000.0-time_dtype1] _
+tests/test_stable_log_snr_weights.py:75: in test_native_uvit_loss_matches_high_precision_weights
+    check_native_loss_and_gradients(diffusion, times, objective, gamma)
+tests/test_stable_log_snr_weights.py:42: in check_native_loss_and_gradients
+    assert torch.isfinite(actual).all()
+E   assert tensor(False)
+E    +  where tensor(False) = <built-in method all of Tensor object at 0x7fe5992c0780>()
+E    +    where <built-in method all of Tensor object at 0x7fe5992c0780> = tensor([False, False,  True,  True, False]).all
+E    +      where tensor([False, False,  True,  True, False]) = <built-in method isfinite of type object at 0x7fe5b2f92980>(tensor([   nan,    nan, 0.0584, 0.4501,    nan], grad_fn=<MulBackward0>))
+E    +        where <built-in method isfinite of type object at 0x7fe5b2f92980> = torch.isfinite
+_ test_native_uvit_loss_matches_high_precision_weights[None-v-5.0-time_dtype0] _
+tests/test_stable_log_snr_weights.py:75: in test_native_uvit_loss_matches_high_precision_weights
+    check_native_loss_and_gradients(diffusion, times, objective, gamma)
+tests/test_stable_log_snr_weights.py:52: in check_native_loss_and_gradients
+    torch.testing.assert_close(
+E   AssertionError: Tensor-likes are not close!
+E   
+E   Mismatched elements: 1 / 8 (12.5%)
+E   Greatest absolute difference: 3.6153593100607395e-05 at index (4,) (up to 2e-06 allowed)
+E   Greatest relative difference: 0.023070506751537323 at index (4,) (up to 0.015 allowed)
+_ test_native_uvit_loss_matches_high_precision_weights[None-v-1000.0-time_dtype0] _
+tests/test_stable_log_snr_weights.py:75: in test_native_uvit_loss_matches_high_precision_weights
+    check_native_loss_and_gradients(diffusion, times, objective, gamma)
+tests/test_stable_log_snr_weights.py:42: in check_native_loss_and_gradients
+    assert torch.isfinite(actual).all()
+E   assert tensor(False)
+E    +  where tensor(False) = <built-in method all of Tensor object at 0x7fe58fef2990>()
+E    +    where <built-in method all of Tensor object at 0x7fe58fef2990> = tensor([False, False,  True,  True,  True]).all
+E    +      where tensor([False, False,  True,  True,  True]) = <built-in method isfinite of type object at 0x7fe5b2f92980>(tensor([   nan,    nan, 0.0454, 0.0000, 0.0000], grad_fn=<MulBackward0>))
+E    +        where <built-in method isfinite of type object at 0x7fe5b2f92980> = torch.isfinite
+_ test_native_uvit_loss_matches_high_precision_weights[None-v-1000.0-time_dtype1] _
+tests/test_stable_log_snr_weights.py:75: in test_native_uvit_loss_matches_high_precision_weights
+    check_native_loss_and_gradients(diffusion, times, objective, gamma)
+tests/test_stable_log_snr_weights.py:42: in check_native_loss_and_gradients
+    assert torch.isfinite(actual).all()
+E   assert tensor(False)
+E    +  where tensor(False) = <built-in method all of Tensor object at 0x7fe58fe97ca0>()
+E    +    where <built-in method all of Tensor object at 0x7fe58fe97ca0> = tensor([False, False,  True,  True,  True]).all
+E    +      where tensor([False, False,  True,  True,  True]) = <built-in method isfinite of type object at 0x7fe5b2f92980>(tensor([       nan,        nan, 4.5373e-02, 2.6625e-44, 0.0000e+00],\n       grad_fn=<MulBackward0>))
+E    +        where <built-in method isfinite of type object at 0x7fe5b2f92980> = torch.isfinite
+_ test_native_uvit_loss_matches_high_precision_weights[0.0-eps-1000.0-time_dtype0] _
+tests/test_stable_log_snr_weights.py:75: in test_native_uvit_loss_matches_high_precision_weights
+    check_native_loss_and_gradients(diffusion, times, objective, gamma)
+tests/test_stable_log_snr_weights.py:42: in check_native_loss_and_gradients
+    assert torch.isfinite(actual).all()
+E   assert tensor(False)
+E    +  where tensor(False) = <built-in method all of Tensor object at 0x7fe5992c1ea0>()
+E    +    where <built-in method all of Tensor object at 0x7fe5992c1ea0> = tensor([ True,  True,  True, False, False]).all
+E    +      where tensor([ True,  True,  True, False, False]) = <built-in method isfinite of type object at 0x7fe5b2f92980>(tensor([0., 0., 0., nan, nan], grad_fn=<MulBackward0>))
+E    +        where <built-in method isfinite of type object at 0x7fe5b2f92980> = torch.isfinite
+_ test_native_uvit_loss_matches_high_precision_weights[0.0-eps-1000.0-time_dtype1] _
+tests/test_stable_log_snr_weights.py:75: in test_native_uvit_loss_matches_high_precision_weights
+    check_native_loss_and_gradients(diffusion, times, objective, gamma)
+tests/test_stable_log_snr_weights.py:42: in check_native_loss_and_gradients
+    assert torch.isfinite(actual).all()
+E   assert tensor(False)
+E    +  where tensor(False) = <built-in method all of Tensor object at 0x7fe58e823f70>()
+E    +    where <built-in method all of Tensor object at 0x7fe58e823f70> = tensor([ True,  True,  True,  True, False]).all
+E    +      where tensor([ True,  True,  True,  True, False]) = <built-in method isfinite of type object at 0x7fe5b2f92980>(tensor([0., 0., 0., 0., nan], grad_fn=<MulBackward0>))
+E    +        where <built-in method isfinite of type object at 0x7fe5b2f92980> = torch.isfinite
+_ test_native_uvit_loss_matches_high_precision_weights[5.0-eps-1000.0-time_dtype0] _
+tests/test_stable_log_snr_weights.py:75: in test_native_uvit_loss_matches_high_precision_weights
+    check_native_loss_and_gradients(diffusion, times, objective, gamma)
+tests/test_stable_log_snr_weights.py:42: in check_native_loss_and_gradients
+    assert torch.isfinite(actual).all()
+E   assert tensor(False)
+E    +  where tensor(False) = <built-in method all of Tensor object at 0x7fe58fe948c0>()
+E    +    where <built-in method all of Tensor object at 0x7fe58fe948c0> = tensor([ True,  True,  True, False, False]).all
+E    +      where tensor([ True,  True,  True, False, False]) = <built-in method isfinite of type object at 0x7fe5b2f92980>(tensor([0.0000, 0.0000, 0.0584,    nan,    nan], grad_fn=<MulBackward0>))
+E    +        where <built-in method isfinite of type object at 0x7fe5b2f92980> = torch.isfinite
+_ test_native_uvit_loss_matches_high_precision_weights[5.0-eps-1000.0-time_dtype1] _
+tests/test_stable_log_snr_weights.py:75: in test_native_uvit_loss_matches_high_precision_weights
+    check_native_loss_and_gradients(diffusion, times, objective, gamma)
+tests/test_stable_log_snr_weights.py:42: in check_native_loss_and_gradients
+    assert torch.isfinite(actual).all()
+E   assert tensor(False)
+E    +  where tensor(False) = <built-in method all of Tensor object at 0x7fe58e7efd40>()
+E    +    where <built-in method all of Tensor object at 0x7fe58e7efd40> = tensor([ True,  True,  True,  True, False]).all
+E    +      where tensor([ True,  True,  True,  True, False]) = <built-in method isfinite of type object at 0x7fe5b2f92980>(tensor([0.0000, 0.0000, 0.0584, 0.4501,    nan], grad_fn=<MulBackward0>))
+E    +        where <built-in method isfinite of type object at 0x7fe5b2f92980> = torch.isfinite
+_ test_native_uvit_loss_matches_high_precision_weights[5.0-v-5.0-time_dtype0] __
+tests/test_stable_log_snr_weights.py:75: in test_native_uvit_loss_matches_high_precision_weights
+    check_native_loss_and_gradients(diffusion, times, objective, gamma)
+tests/test_stable_log_snr_weights.py:52: in check_native_loss_and_gradients
+    torch.testing.assert_close(
+E   AssertionError: Tensor-likes are not close!
+E   
+E   Mismatched elements: 1 / 1152 (0.1%)
+E   Greatest absolute difference: 8.093236829154193e-06 at index (2, 3, 1, 2) (up to 2e-06 allowed)
+E   Greatest relative difference: 0.047920193523168564 at index (2, 3, 1, 2) (up to 0.015 allowed)
+_ test_continuous_cosine_weight_does_not_drop_high_snr_samples[5.0-time_dtype0] _
+tests/test_stable_log_snr_weights.py:91: in test_continuous_cosine_weight_does_not_drop_high_snr_samples
+    check_native_loss_and_gradients(diffusion, times, 'eps', gamma)
+tests/test_stable_log_snr_weights.py:44: in check_native_loss_and_gradients
+    torch.testing.assert_close(actual, expected, rtol=tolerance, atol=1e-10)
+E   AssertionError: Tensor-likes are not close!
+E   
+E   Mismatched elements: 2 / 6 (33.3%)
+E   Greatest absolute difference: 2.5259587346226908e-05 at index (0,) (up to 1e-10 allowed)
+E   Greatest relative difference: 1.0 at index (0,) (up to 0.015 allowed)
+=========================== short test summary info ============================
+FAILED tests/test_stable_log_snr_weights.py::test_native_uvit_loss_matches_high_precision_weights[None-eps-1000.0-time_dtype0]
+FAILED tests/test_stable_log_snr_weights.py::test_native_uvit_loss_matches_high_precision_weights[None-eps-1000.0-time_dtype1]
+FAILED tests/test_stable_log_snr_weights.py::test_native_uvit_loss_matches_high_precision_weights[None-v-5.0-time_dtype0]
+FAILED tests/test_stable_log_snr_weights.py::test_native_uvit_loss_matches_high_precision_weights[None-v-1000.0-time_dtype0]
+FAILED tests/test_stable_log_snr_weights.py::test_native_uvit_loss_matches_high_precision_weights[None-v-1000.0-time_dtype1]
+FAILED tests/test_stable_log_snr_weights.py::test_native_uvit_loss_matches_high_precision_weights[0.0-eps-1000.0-time_dtype0]
+FAILED tests/test_stable_log_snr_weights.py::test_native_uvit_loss_matches_high_precision_weights[0.0-eps-1000.0-time_dtype1]
+FAILED tests/test_stable_log_snr_weights.py::test_native_uvit_loss_matches_high_precision_weights[5.0-eps-1000.0-time_dtype0]
+FAILED tests/test_stable_log_snr_weights.py::test_native_uvit_loss_matches_high_precision_weights[5.0-eps-1000.0-time_dtype1]
+FAILED tests/test_stable_log_snr_weights.py::test_native_uvit_loss_matches_high_precision_weights[5.0-v-5.0-time_dtype0]
+FAILED tests/test_stable_log_snr_weights.py::test_continuous_cosine_weight_does_not_drop_high_snr_samples[5.0-time_dtype0]
+11 failed, 17 passed in 6.86s

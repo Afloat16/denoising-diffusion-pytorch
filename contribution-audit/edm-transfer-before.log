@@ -1,0 +1,220 @@
+FFFFFFFFFFFFFFFFFF                                                       [100%]
+=================================== FAILURES ===================================
+______ test_heun_sampling_avoids_per_step_scalar_transfers[False-none-2] _______
+tests/test_edm_schedule_transfer.py:58: in test_heun_sampling_avoids_per_step_scalar_transfers
+    assert item_calls == [], f'sampling extracted {len(item_calls)} scalars individually'
+E   AssertionError: sampling extracted 6 scalars individually
+E   assert [torch.Size([...orch.Size([])] == []
+E     
+E     Left contains 6 more items, first extra item: torch.Size([])
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling time step: 100%|██████████| 2/2 [00:00<00:00, 74.41it/s]
+sampling time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling time step: 100%|██████████| 2/2 [00:00<00:00, 98.49it/s]
+______ test_heun_sampling_avoids_per_step_scalar_transfers[False-none-4] _______
+tests/test_edm_schedule_transfer.py:58: in test_heun_sampling_avoids_per_step_scalar_transfers
+    assert item_calls == [], f'sampling extracted {len(item_calls)} scalars individually'
+E   AssertionError: sampling extracted 12 scalars individually
+E   assert [torch.Size([...Size([]), ...] == []
+E     
+E     Left contains 12 more items, first extra item: torch.Size([])
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling time step: 100%|██████████| 4/4 [00:00<00:00, 121.79it/s]
+sampling time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling time step: 100%|██████████| 4/4 [00:00<00:00, 135.92it/s]
+______ test_heun_sampling_avoids_per_step_scalar_transfers[False-none-8] _______
+tests/test_edm_schedule_transfer.py:58: in test_heun_sampling_avoids_per_step_scalar_transfers
+    assert item_calls == [], f'sampling extracted {len(item_calls)} scalars individually'
+E   AssertionError: sampling extracted 24 scalars individually
+E   assert [torch.Size([...Size([]), ...] == []
+E     
+E     Left contains 24 more items, first extra item: torch.Size([])
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling time step:   0%|          | 0/8 [00:00<?, ?it/s]sampling time step: 100%|██████████| 8/8 [00:00<00:00, 103.76it/s]
+sampling time step:   0%|          | 0/8 [00:00<?, ?it/s]sampling time step:  75%|███████▌  | 6/8 [00:00<00:00, 44.77it/s]sampling time step: 100%|██████████| 8/8 [00:00<00:00, 51.00it/s]
+_______ test_heun_sampling_avoids_per_step_scalar_transfers[False-all-2] _______
+tests/test_edm_schedule_transfer.py:58: in test_heun_sampling_avoids_per_step_scalar_transfers
+    assert item_calls == [], f'sampling extracted {len(item_calls)} scalars individually'
+E   AssertionError: sampling extracted 6 scalars individually
+E   assert [torch.Size([...orch.Size([])] == []
+E     
+E     Left contains 6 more items, first extra item: torch.Size([])
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling time step: 100%|██████████| 2/2 [00:00<00:00, 95.24it/s]
+sampling time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling time step: 100%|██████████| 2/2 [00:00<00:00, 112.33it/s]
+_______ test_heun_sampling_avoids_per_step_scalar_transfers[False-all-4] _______
+tests/test_edm_schedule_transfer.py:58: in test_heun_sampling_avoids_per_step_scalar_transfers
+    assert item_calls == [], f'sampling extracted {len(item_calls)} scalars individually'
+E   AssertionError: sampling extracted 12 scalars individually
+E   assert [torch.Size([...Size([]), ...] == []
+E     
+E     Left contains 12 more items, first extra item: torch.Size([])
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling time step: 100%|██████████| 4/4 [00:00<00:00, 111.43it/s]
+sampling time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling time step: 100%|██████████| 4/4 [00:00<00:00, 110.22it/s]
+_______ test_heun_sampling_avoids_per_step_scalar_transfers[False-all-8] _______
+tests/test_edm_schedule_transfer.py:58: in test_heun_sampling_avoids_per_step_scalar_transfers
+    assert item_calls == [], f'sampling extracted {len(item_calls)} scalars individually'
+E   AssertionError: sampling extracted 24 scalars individually
+E   assert [torch.Size([...Size([]), ...] == []
+E     
+E     Left contains 24 more items, first extra item: torch.Size([])
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling time step:   0%|          | 0/8 [00:00<?, ?it/s]sampling time step: 100%|██████████| 8/8 [00:00<00:00, 103.50it/s]
+sampling time step:   0%|          | 0/8 [00:00<?, ?it/s]sampling time step: 100%|██████████| 8/8 [00:00<00:00, 95.41it/s]
+_____ test_heun_sampling_avoids_per_step_scalar_transfers[False-partial-2] _____
+tests/test_edm_schedule_transfer.py:58: in test_heun_sampling_avoids_per_step_scalar_transfers
+    assert item_calls == [], f'sampling extracted {len(item_calls)} scalars individually'
+E   AssertionError: sampling extracted 6 scalars individually
+E   assert [torch.Size([...orch.Size([])] == []
+E     
+E     Left contains 6 more items, first extra item: torch.Size([])
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling time step: 100%|██████████| 2/2 [00:00<00:00, 93.90it/s]
+sampling time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling time step: 100%|██████████| 2/2 [00:00<00:00, 121.31it/s]
+_____ test_heun_sampling_avoids_per_step_scalar_transfers[False-partial-4] _____
+tests/test_edm_schedule_transfer.py:58: in test_heun_sampling_avoids_per_step_scalar_transfers
+    assert item_calls == [], f'sampling extracted {len(item_calls)} scalars individually'
+E   AssertionError: sampling extracted 12 scalars individually
+E   assert [torch.Size([...Size([]), ...] == []
+E     
+E     Left contains 12 more items, first extra item: torch.Size([])
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling time step: 100%|██████████| 4/4 [00:00<00:00, 117.00it/s]
+sampling time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling time step: 100%|██████████| 4/4 [00:00<00:00, 108.19it/s]
+_____ test_heun_sampling_avoids_per_step_scalar_transfers[False-partial-8] _____
+tests/test_edm_schedule_transfer.py:58: in test_heun_sampling_avoids_per_step_scalar_transfers
+    assert item_calls == [], f'sampling extracted {len(item_calls)} scalars individually'
+E   AssertionError: sampling extracted 24 scalars individually
+E   assert [torch.Size([...Size([]), ...] == []
+E     
+E     Left contains 24 more items, first extra item: torch.Size([])
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling time step:   0%|          | 0/8 [00:00<?, ?it/s]sampling time step: 100%|██████████| 8/8 [00:00<00:00, 109.57it/s]
+sampling time step:   0%|          | 0/8 [00:00<?, ?it/s]sampling time step: 100%|██████████| 8/8 [00:00<00:00, 96.09it/s]
+_______ test_heun_sampling_avoids_per_step_scalar_transfers[True-none-2] _______
+tests/test_edm_schedule_transfer.py:58: in test_heun_sampling_avoids_per_step_scalar_transfers
+    assert item_calls == [], f'sampling extracted {len(item_calls)} scalars individually'
+E   AssertionError: sampling extracted 6 scalars individually
+E   assert [torch.Size([...orch.Size([])] == []
+E     
+E     Left contains 6 more items, first extra item: torch.Size([])
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling time step: 100%|██████████| 2/2 [00:00<00:00, 111.74it/s]
+sampling time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling time step: 100%|██████████| 2/2 [00:00<00:00, 101.70it/s]
+_______ test_heun_sampling_avoids_per_step_scalar_transfers[True-none-4] _______
+tests/test_edm_schedule_transfer.py:58: in test_heun_sampling_avoids_per_step_scalar_transfers
+    assert item_calls == [], f'sampling extracted {len(item_calls)} scalars individually'
+E   AssertionError: sampling extracted 12 scalars individually
+E   assert [torch.Size([...Size([]), ...] == []
+E     
+E     Left contains 12 more items, first extra item: torch.Size([])
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling time step:  75%|███████▌  | 3/4 [00:00<00:00, 16.82it/s]sampling time step: 100%|██████████| 4/4 [00:00<00:00, 20.27it/s]
+sampling time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling time step: 100%|██████████| 4/4 [00:00<00:00, 79.35it/s]
+_______ test_heun_sampling_avoids_per_step_scalar_transfers[True-none-8] _______
+tests/test_edm_schedule_transfer.py:58: in test_heun_sampling_avoids_per_step_scalar_transfers
+    assert item_calls == [], f'sampling extracted {len(item_calls)} scalars individually'
+E   AssertionError: sampling extracted 24 scalars individually
+E   assert [torch.Size([...Size([]), ...] == []
+E     
+E     Left contains 24 more items, first extra item: torch.Size([])
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling time step:   0%|          | 0/8 [00:00<?, ?it/s]sampling time step: 100%|██████████| 8/8 [00:00<00:00, 100.18it/s]
+sampling time step:   0%|          | 0/8 [00:00<?, ?it/s]sampling time step: 100%|██████████| 8/8 [00:00<00:00, 122.28it/s]
+_______ test_heun_sampling_avoids_per_step_scalar_transfers[True-all-2] ________
+tests/test_edm_schedule_transfer.py:58: in test_heun_sampling_avoids_per_step_scalar_transfers
+    assert item_calls == [], f'sampling extracted {len(item_calls)} scalars individually'
+E   AssertionError: sampling extracted 6 scalars individually
+E   assert [torch.Size([...orch.Size([])] == []
+E     
+E     Left contains 6 more items, first extra item: torch.Size([])
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling time step: 100%|██████████| 2/2 [00:00<00:00, 115.79it/s]
+sampling time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling time step: 100%|██████████| 2/2 [00:00<00:00, 174.16it/s]
+_______ test_heun_sampling_avoids_per_step_scalar_transfers[True-all-4] ________
+tests/test_edm_schedule_transfer.py:58: in test_heun_sampling_avoids_per_step_scalar_transfers
+    assert item_calls == [], f'sampling extracted {len(item_calls)} scalars individually'
+E   AssertionError: sampling extracted 12 scalars individually
+E   assert [torch.Size([...Size([]), ...] == []
+E     
+E     Left contains 12 more items, first extra item: torch.Size([])
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling time step: 100%|██████████| 4/4 [00:00<00:00, 126.39it/s]
+sampling time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling time step: 100%|██████████| 4/4 [00:00<00:00, 86.56it/s]
+_______ test_heun_sampling_avoids_per_step_scalar_transfers[True-all-8] ________
+tests/test_edm_schedule_transfer.py:58: in test_heun_sampling_avoids_per_step_scalar_transfers
+    assert item_calls == [], f'sampling extracted {len(item_calls)} scalars individually'
+E   AssertionError: sampling extracted 24 scalars individually
+E   assert [torch.Size([...Size([]), ...] == []
+E     
+E     Left contains 24 more items, first extra item: torch.Size([])
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling time step:   0%|          | 0/8 [00:00<?, ?it/s]sampling time step: 100%|██████████| 8/8 [00:00<00:00, 101.34it/s]
+sampling time step:   0%|          | 0/8 [00:00<?, ?it/s]sampling time step: 100%|██████████| 8/8 [00:00<00:00, 107.90it/s]
+_____ test_heun_sampling_avoids_per_step_scalar_transfers[True-partial-2] ______
+tests/test_edm_schedule_transfer.py:58: in test_heun_sampling_avoids_per_step_scalar_transfers
+    assert item_calls == [], f'sampling extracted {len(item_calls)} scalars individually'
+E   AssertionError: sampling extracted 6 scalars individually
+E   assert [torch.Size([...orch.Size([])] == []
+E     
+E     Left contains 6 more items, first extra item: torch.Size([])
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling time step: 100%|██████████| 2/2 [00:00<00:00, 149.44it/s]
+sampling time step:   0%|          | 0/2 [00:00<?, ?it/s]sampling time step: 100%|██████████| 2/2 [00:00<00:00, 145.54it/s]
+_____ test_heun_sampling_avoids_per_step_scalar_transfers[True-partial-4] ______
+tests/test_edm_schedule_transfer.py:58: in test_heun_sampling_avoids_per_step_scalar_transfers
+    assert item_calls == [], f'sampling extracted {len(item_calls)} scalars individually'
+E   AssertionError: sampling extracted 12 scalars individually
+E   assert [torch.Size([...Size([]), ...] == []
+E     
+E     Left contains 12 more items, first extra item: torch.Size([])
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling time step: 100%|██████████| 4/4 [00:00<00:00, 112.12it/s]
+sampling time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling time step: 100%|██████████| 4/4 [00:00<00:00, 114.76it/s]
+_____ test_heun_sampling_avoids_per_step_scalar_transfers[True-partial-8] ______
+tests/test_edm_schedule_transfer.py:58: in test_heun_sampling_avoids_per_step_scalar_transfers
+    assert item_calls == [], f'sampling extracted {len(item_calls)} scalars individually'
+E   AssertionError: sampling extracted 24 scalars individually
+E   assert [torch.Size([...Size([]), ...] == []
+E     
+E     Left contains 24 more items, first extra item: torch.Size([])
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling time step:   0%|          | 0/8 [00:00<?, ?it/s]sampling time step: 100%|██████████| 8/8 [00:00<00:00, 103.61it/s]
+sampling time step:   0%|          | 0/8 [00:00<?, ?it/s]sampling time step: 100%|██████████| 8/8 [00:00<00:00, 90.04it/s]
+=========================== short test summary info ============================
+FAILED tests/test_edm_schedule_transfer.py::test_heun_sampling_avoids_per_step_scalar_transfers[False-none-2]
+FAILED tests/test_edm_schedule_transfer.py::test_heun_sampling_avoids_per_step_scalar_transfers[False-none-4]
+FAILED tests/test_edm_schedule_transfer.py::test_heun_sampling_avoids_per_step_scalar_transfers[False-none-8]
+FAILED tests/test_edm_schedule_transfer.py::test_heun_sampling_avoids_per_step_scalar_transfers[False-all-2]
+FAILED tests/test_edm_schedule_transfer.py::test_heun_sampling_avoids_per_step_scalar_transfers[False-all-4]
+FAILED tests/test_edm_schedule_transfer.py::test_heun_sampling_avoids_per_step_scalar_transfers[False-all-8]
+FAILED tests/test_edm_schedule_transfer.py::test_heun_sampling_avoids_per_step_scalar_transfers[False-partial-2]
+FAILED tests/test_edm_schedule_transfer.py::test_heun_sampling_avoids_per_step_scalar_transfers[False-partial-4]
+FAILED tests/test_edm_schedule_transfer.py::test_heun_sampling_avoids_per_step_scalar_transfers[False-partial-8]
+FAILED tests/test_edm_schedule_transfer.py::test_heun_sampling_avoids_per_step_scalar_transfers[True-none-2]
+FAILED tests/test_edm_schedule_transfer.py::test_heun_sampling_avoids_per_step_scalar_transfers[True-none-4]
+FAILED tests/test_edm_schedule_transfer.py::test_heun_sampling_avoids_per_step_scalar_transfers[True-none-8]
+FAILED tests/test_edm_schedule_transfer.py::test_heun_sampling_avoids_per_step_scalar_transfers[True-all-2]
+FAILED tests/test_edm_schedule_transfer.py::test_heun_sampling_avoids_per_step_scalar_transfers[True-all-4]
+FAILED tests/test_edm_schedule_transfer.py::test_heun_sampling_avoids_per_step_scalar_transfers[True-all-8]
+FAILED tests/test_edm_schedule_transfer.py::test_heun_sampling_avoids_per_step_scalar_transfers[True-partial-2]
+FAILED tests/test_edm_schedule_transfer.py::test_heun_sampling_avoids_per_step_scalar_transfers[True-partial-4]
+FAILED tests/test_edm_schedule_transfer.py::test_heun_sampling_avoids_per_step_scalar_transfers[True-partial-8]
+18 failed in 5.98s

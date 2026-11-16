@@ -1,0 +1,299 @@
+{
+  "heads": [
+    "008e8ead08773df21c2f7090d546edb770a5e0eb",
+    "01c6bedaa085889109947b766379228fc91605ea",
+    "087d1540b9493ab05b91c95b295854e092ada52f",
+    "0eba20b01d7b1183dbb691777b4bed1ce9602f43",
+    "0f165a49e2b812a017e49a683c51df35bb575551",
+    "10aa317e53914ee2a7a9e9b847a0242fff078dd6",
+    "1546505e1db652d4adc348ff9cfdfe191c5dbf84",
+    "16dd6bb0fa7e8eb6e6b1c4a4547a22454c4d6b52",
+    "183561e9c44cda597594ce03f2f75dca8f1112a9",
+    "1868d940ae5cc3728e6fd02ce2baa21849f9bade",
+    "1a48236b5b325b1c5ce5a0aad7179ed5b0ac2e29",
+    "1aa21ddca5431531c393e0b3789cf1b6805be149",
+    "1b1f46901a432a4b7217c79c8dd2496751634681",
+    "1cf1a1441761ea2cadaadab7cdd3e48f7cd108c0",
+    "266f633963f49dcb8d80039d7aecc76a3f148187",
+    "286a66a1d7dabe26d52fe2307e28f17f03fdd199",
+    "2ac3f94a80938a3ec2ed39c4c4234041ee0e0c19",
+    "303bf4034d3b15a179996564e652cea05de76d4d",
+    "3493a8e7e52d1f5ae33494561e773d0bdb10321a",
+    "36bbecc4e94e01c17ecd588b51301bef561f8b7e",
+    "398fdd77431180762af79e907716642ca8192a65",
+    "3ada50a630f19367a0c6502958f22adc487cc29f",
+    "3de8ff5728689dbfc9aad0e3e4a7e146f340ea02",
+    "4033b5eee00637a8c846d9c78c4d44bc2b041195",
+    "42a9e793ad6623bb93d3b4dd4b97760ca51084aa",
+    "43b9ce843bc9b565cdd027d8357aced316a0f403",
+    "44b34aa12f7ebab1c6c00bc81b794948a478dfef",
+    "47536c92d502dfc9dd9f3ce7faa6b0c60444826b",
+    "4b8ed648b6d99063e4b4997bd043c1f7d9b24d49",
+    "4d7159d150fd773a5276944467ff041c106ce6bf",
+    "4eecb97f516b69af943d9181c30a13f01481fabe",
+    "4f61439742d1f135daec7ba4694e3323efae0172",
+    "523f151acf5b9f36c24fe01411bde6e01c4a4552",
+    "57f57bb2fd1b4dce840d290ac33266ef25eec90f",
+    "58f7e7620abcf540667c8834baa52ff94409f41c",
+    "59dcf6c65d8806a8e4086f6e4eecbb2451b77d88",
+    "5b0b528c4c5ff9ad0f6b5c8453e693360835a95a",
+    "5db64fec4bc1c34dac5ecdde5d9e6ffdc7b32c97",
+    "60a773da9a8a8e180fffd7345b55c39d508a9ffe",
+    "622081b3a0b0af3d29b10c3bf2995d8a16169293",
+    "64ecad2d487fbe37d29dfc1aef401b7c6a668045",
+    "6529b17779afcfa3a599937e5bac49dee8bae078",
+    "66383024dcd37442b785c74afa70c19dd6360ba7",
+    "66eff9bef9199931fa6f1a47b479aee996ec2490",
+    "691d8b3a068a1a2f62349d63fddd962b72d4baa1",
+    "6f492dae7b685fabf62dbd57b5420b604d822267",
+    "6f761b6a3ef5200a8d63a481391f2ed8c24540f3",
+    "73591cf1ad4ddcd63484675ce65b16169aa90307",
+    "7755321814cb53d756f418fbac06784ce87ba9c6",
+    "7a554eef147b6e30589053a69a38dbc4f5eab41b",
+    "7c0cd05c272ecb5067e85f0a667fbbcce6b36727",
+    "83af2467e7d1c2d9149cc71a8339974c0d623fcf",
+    "86f7b397ef5f9b664ff9055db861d81168507ae2",
+    "87b417c9cceabd37e34d7e544709d947b9240094",
+    "895aa4a94904e41c866df29829071071510c4911",
+    "8a628f14116b65171f1a7cf9f0a0cd419701bdc3",
+    "8e2c4a602cd700da75b2aa3d14ca2033d92069f0",
+    "9802d4277a7383ba31dc1e39eca3e2a036e313a8",
+    "9b5d7e411863f90a71498e3ec919bd88a532db72",
+    "9d19341dd03e9d7848469bd0a6fd1e92df4465b1",
+    "9dd937950210252e0cb576ca1724d3cd47ee6995",
+    "9f537ccb091af9142d766ded523c47cdf471ee44",
+    "9f77c49d3c6adb6d94a94aa72570f655f2a1170d",
+    "a33931ef6925793ba3bd14148008afdd4d1e916d",
+    "a3a455df8915e8c2a0a29840a5d290c5e05334c0",
+    "a51a3d3dcae26154079a89540cbb458fb7b7ac13",
+    "a6d2b9cdcc6f9a0a6bfdb709bf1e7f433c90a762",
+    "a7f4b667b38dbaaffa16dcabf4aae55c30e7a3a9",
+    "ad5a5f4f7f4fd3547436f1c92eaf63f2fffb1a37",
+    "b0323ce887d592019580571f2eda29c5baabf5c3",
+    "b11c61bc106bf9786c4de3805c29ca0afe972ea1",
+    "b25168ef3cc7c0ebe66353b0eadd4ae3d71571b3",
+    "b2e73147d23a979385d41c838d4620cfbf98b9d2",
+    "b302b5b85b740bcedd32c5c78554000b0ccfaa44",
+    "b84d5b121f19234423f305071aedc34f6a349d7f",
+    "ba81d3f729b98a0b4e73cd3a811f8f064b99219a",
+    "bce1564a470b0441c0db8a21805d0f6a8d61f890",
+    "bd84742df5d19ca5d36d9204427e98c989db2d7c",
+    "c05f59ea87892dc658b32b03ce1af67be8225ce7",
+    "c099b08834418c670f111fad2ccd84ada8163da6",
+    "c3664234818669c36d9978f3e0491ed503373120",
+    "c8834260d8188a7ab77ebcd04206896bef6c9036",
+    "cc3b2803671092c8fb635372bb7e1af8e0bde0ad",
+    "cc7a4398a23ee5038e831934641fd8ce600d5c64",
+    "cddcf887b3065cf659ec52dd63e747b1c0df0ec7",
+    "d56107cd11832375e8d27243329b09c9578e05cd",
+    "d770f3f886afd25ccd2f2b6695fc4885f3fb46ee",
+    "d85b8bbe2e00242575e38c5df46014ef0e860ed4",
+    "d870451a94050ce0c73e444649a6e19742dcc605",
+    "d97bc0278c7254e898ac27a237f1bb743807f240",
+    "da1a6ade9394e826734217656825b3e1c4a41757",
+    "db578f5368dc5d2d720995db85be2827e1657be9",
+    "dd4c4f1611c97b97b103106623416a53732dfa5b",
+    "dd75c664a7f8251fcb83cae235431bd4a3938e12",
+    "df9f7fbf4b7321d0b1fb699f7da6013aa2df9712",
+    "dfb3a57d9a1d9b579cfab18bf25e29e26196b316",
+    "dfcf324bd376b52c8c1e11d9c2edb523120853c5",
+    "e050bfb9c37fec7deaf7cb039a33971146001af5",
+    "e09d64075a41eea5153c48b8d96f336956e973e6",
+    "e46a89e2bc05800d2e4432e79ac9a2265d70b16e",
+    "e4a4e4acaa67fab9b89fb286eac344489127f973",
+    "e875f37d078ac2594436bb85e19b78fc6d2320d5",
+    "e9ec55c978ed98b6f78fc80cbd41982a9aacff1b",
+    "eae84efa32b3c8968130431dfce0fa8619d06830",
+    "ecd45821bcc515bdb9d8c40454a51777e4a55eac",
+    "edc6d5136a5edddfc7a4960bdb64365c7282a451",
+    "f03b3f2bbdcce23fbe235895a95d24ba8cb3df50",
+    "f2cd75bc22980e7fca412f78b37b55a1b8dbdcb1",
+    "f3c0534c9dc566db81ccf3deb6e63215bb74024d",
+    "f4123fa04a76771105d8b3d11f45a5924599de23",
+    "f77c6f6d214acdb0d52d62025a85097c234fe08c",
+    "fa51e93a0f67f7e8a5b7e77a5235cd4947bdb3a2"
+  ],
+  "variants": [
+    {
+      "blob": "c65020da212cb35d78fdf61cca21fabc6d008d5e",
+      "tolist_lines": [],
+      "item_lines": [
+        "            sigma, sigma_next, gamma = map(lambda t: t.item(), (sigma, sigma_next, gamma))",
+        "            denoised = self.preconditioned_network_forward(images, sigmas[i].item())"
+      ]
+    },
+    {
+      "blob": "c0792bd33df4085d9fc95ea9c203d82d480e1fcb",
+      "tolist_lines": [],
+      "item_lines": [
+        "            sigma, sigma_next, gamma = map(lambda t: t.item(), (sigma, sigma_next, gamma))",
+        "            denoised = self.preconditioned_network_forward(images, sigmas[i].item())"
+      ]
+    },
+    {
+      "blob": "7e784c34acc7cf71591c21acb3dd6f4b0e7e2eef",
+      "tolist_lines": [],
+      "item_lines": [
+        "            sigma, sigma_next, gamma = map(lambda t: t.item(), (sigma, sigma_next, gamma))",
+        "            denoised = self.preconditioned_network_forward(images, sigmas[i].item(), self_cond)"
+      ]
+    },
+    {
+      "blob": "94c0f8a0162a77104322217c58a0122c1f1dbb77",
+      "tolist_lines": [],
+      "item_lines": [
+        "            sigma, sigma_next, gamma = map(lambda t: t.item(), (sigma, sigma_next, gamma))",
+        "            denoised = self.preconditioned_network_forward(images, sigmas[i].item())"
+      ]
+    },
+    {
+      "blob": "2995a5186b29cf1fb5fb26a2c9d7d99783a1de5a",
+      "tolist_lines": [],
+      "item_lines": [
+        "            sigma, sigma_next, gamma = map(lambda t: t.item(), (sigma, sigma_next, gamma))",
+        "            denoised = self.preconditioned_network_forward(images, sigmas[i].item())"
+      ]
+    },
+    {
+      "blob": "263b7789b848bfc781f1e9c811d71afa86704e75",
+      "tolist_lines": [],
+      "item_lines": [
+        "            sigma, sigma_next, gamma = map(lambda t: t.item(), (sigma, sigma_next, gamma))",
+        "            denoised = self.preconditioned_network_forward(images, sigmas[i].item())"
+      ]
+    },
+    {
+      "blob": "814f497e5cf46829fe0f33474d6413a093ad98a8",
+      "tolist_lines": [],
+      "item_lines": [
+        "            sigma, sigma_next, gamma = map(lambda t: t.item(), (sigma, sigma_next, gamma))",
+        "            denoised = self.preconditioned_network_forward(images, sigmas[i].item())"
+      ]
+    },
+    {
+      "blob": "6ebc43369e8e948febea8daa1757fe6103eb3bd5",
+      "tolist_lines": [],
+      "item_lines": [
+        "            sigma, sigma_next, gamma = map(lambda t: t.item(), (sigma, sigma_next, gamma))",
+        "            denoised = self.preconditioned_network_forward(images, sigmas[i].item())"
+      ]
+    },
+    {
+      "blob": "fc139610c005631f77b7f684da038297693078db",
+      "tolist_lines": [],
+      "item_lines": [
+        "            sigma, sigma_next, gamma = map(lambda t: t.item(), (sigma, sigma_next, gamma))",
+        "           denoised = self.preconditioned_network_forward(images, sigmas[i].item())"
+      ]
+    },
+    {
+      "blob": "7a6d06168d546072c786d879444eca0a6a8afe6e",
+      "tolist_lines": [],
+      "item_lines": [
+        "            sigma, sigma_next, gamma = map(lambda t: t.item(), (sigma, sigma_next, gamma))",
+        "           denoised = self.preconditioned_network_forward(images, sigmas[i].item())"
+      ]
+    },
+    {
+      "blob": "2b62b4f6e5eeddd4e0295a5eb288cff0b0710cc5",
+      "tolist_lines": [],
+      "item_lines": [
+        "            sigma, sigma_next, gamma = map(lambda t: t.item(), (sigma, sigma_next, gamma))"
+      ]
+    },
+    {
+      "blob": "7ddaf19abc0fc57dcf2835c484d4ba26bd2504d5",
+      "tolist_lines": [],
+      "item_lines": [
+        "            sigma, sigma_next, gamma = map(lambda t: t.item(), (sigma, sigma_next, gamma))"
+      ]
+    },
+    {
+      "blob": "2dc40b5fffed56aa9d4705c6b8214ba06c210433",
+      "tolist_lines": [],
+      "item_lines": [
+        "            sigma, sigma_next, gamma = map(lambda t: t.item(), (sigma, sigma_next, gamma))"
+      ]
+    },
+    {
+      "blob": "d430516732f5f53e73506a319a1e9739fcc8ac61",
+      "tolist_lines": [],
+      "item_lines": [
+        "            sigma, sigma_next, gamma = map(lambda t: t.item(), (sigma, sigma_next, gamma))"
+      ]
+    },
+    {
+      "blob": "fa83e8615edbf97ae69aa60ccde069ac606451f5",
+      "tolist_lines": [],
+      "item_lines": [
+        "            sigma, sigma_next, gamma = map(lambda t: t.item(), (sigma, sigma_next, gamma))"
+      ]
+    },
+    {
+      "blob": "8052df08b14fe73982d2f5006c8883222889a01f",
+      "tolist_lines": [],
+      "item_lines": [
+        "            sigma, sigma_next, gamma = map(lambda t: t.item(), (sigma, sigma_next, gamma))"
+      ]
+    },
+    {
+      "blob": "740a1fe343c67b3bb4e5597b5870b6ab11f49941",
+      "tolist_lines": [],
+      "item_lines": [
+        "            sigma, sigma_next, gamma = map(lambda t: t.item(), (sigma, sigma_next, gamma))"
+      ]
+    },
+    {
+      "blob": "2b3217e7a34536019406f7c5398fa0d2cfcd70a6",
+      "tolist_lines": [],
+      "item_lines": [
+        "            sigma, sigma_next, gamma = map(lambda t: t.item(), (sigma, sigma_next, gamma))"
+      ]
+    },
+    {
+      "blob": "3204a97496d00c58354fe977ca40f18f6bfd127c",
+      "tolist_lines": [],
+      "item_lines": []
+    },
+    {
+      "blob": "782121cb54387ad8b24d3da1b626b445bd9c2402",
+      "tolist_lines": [],
+      "item_lines": []
+    },
+    {
+      "blob": "175d8be313d8b784b9c400009636b57980b32465",
+      "tolist_lines": [],
+      "item_lines": []
+    },
+    {
+      "blob": "114dc3ed80e9bd8ccdb3471e26e7d950cf7ff216",
+      "tolist_lines": [],
+      "item_lines": []
+    },
+    {
+      "blob": "c9189507d11f948464455e6badb47a9bcc1d67b3",
+      "tolist_lines": [],
+      "item_lines": []
+    },
+    {
+      "blob": "1dfff2765c427384e4732c0beddfe27763bb35a9",
+      "tolist_lines": [],
+      "item_lines": []
+    },
+    {
+      "blob": "002e87d531e3ddd64c6125559f2bc5c923cc7a28",
+      "tolist_lines": [],
+      "item_lines": []
+    },
+    {
+      "blob": "6e938ec1e14e0a1539ee91fb848355ea6e998022",
+      "tolist_lines": [],
+      "item_lines": []
+    },
+    {
+      "blob": "a7d906b57cb40dcf4539ce46126bee7ed2a8fc5d",
+      "tolist_lines": [],
+      "item_lines": []
+    }
+  ]
+}

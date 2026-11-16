@@ -1,0 +1,945 @@
+{
+  "heads": {
+    "fork": [
+      {
+        "branch": "fix/cfg-unit-scale-batch-contract",
+        "sha": "df9f7fbf4b7321d0b1fb699f7da6013aa2df9712"
+      },
+      {
+        "branch": "fix/checkpoint-global-ema-owner-20261112",
+        "sha": "9d19341dd03e9d7848469bd0a6fd1e92df4465b1"
+      },
+      {
+        "branch": "fix/ddim-classifier-score-guidance-20261112",
+        "sha": "f03b3f2bbdcce23fbe235895a95d24ba8cb3df50"
+      },
+      {
+        "branch": "fix/edm-single-step-sampling-20261112",
+        "sha": "9b5d7e411863f90a71498e3ec919bd88a532db72"
+      },
+      {
+        "branch": "fix/explicit-training-timestep-contract",
+        "sha": "3493a8e7e52d1f5ae33494561e773d0bdb10321a"
+      },
+      {
+        "branch": "fix/fid-independent-evaluation-loader-20261116",
+        "sha": "f2cd75bc22980e7fca412f78b37b55a1b8dbdcb1"
+      },
+      {
+        "branch": "fix/fid-real-sample-budget",
+        "sha": "bd84742df5d19ca5d36d9204427e98c989db2d7c"
+      },
+      {
+        "branch": "fix/fid-sampler-training-mode-20261112",
+        "sha": "a51a3d3dcae26154079a89540cbb458fb7b7ac13"
+      },
+      {
+        "branch": "fix/finite-cfg-rescale",
+        "sha": "523f151acf5b9f36c24fe01411bde6e01c4a4552"
+      },
+      {
+        "branch": "fix/finite-single-step-edm-sampling-20261112",
+        "sha": "3ada50a630f19367a0c6502958f22adc487cc29f"
+      },
+      {
+        "branch": "fix/guided-channel-rmsnorm-20261112",
+        "sha": "1868d940ae5cc3728e6fd02ce2baa21849f9bade"
+      },
+      {
+        "branch": "fix/guided-ddim-complete-history",
+        "sha": "36bbecc4e94e01c17ecd588b51301bef561f8b7e"
+      },
+      {
+        "branch": "fix/guided-unet-initial-width-20261112",
+        "sha": "64ecad2d487fbe37d29dfc1aef401b7c6a668045"
+      },
+      {
+        "branch": "fix/image-dataset-discovery",
+        "sha": "183561e9c44cda597594ce03f2f75dca8f1112a9"
+      },
+      {
+        "branch": "fix/immiscible-assigned-noise-target",
+        "sha": "47536c92d502dfc9dd9f3ce7faa6b0c60444826b"
+      },
+      {
+        "branch": "fix/interpolation-data-normalization-20261112",
+        "sha": "c8834260d8188a7ab77ebcd04206896bef6c9036"
+      },
+      {
+        "branch": "fix/karras3d-factorized-attention-stages-20261116",
+        "sha": "f3c0534c9dc566db81ccf3deb6e63215bb74024d"
+      },
+      {
+        "branch": "fix/karras3d-zero-downsampling-stages-20261112",
+        "sha": "4eecb97f516b69af943d9181c30a13f01481fabe"
+      },
+      {
+        "branch": "fix/karras-class-conditioning-dtype",
+        "sha": "b84d5b121f19234423f305071aedc34f6a349d7f"
+      },
+      {
+        "branch": "fix/karras-continuous-diffusion-interface-20261112",
+        "sha": "86f7b397ef5f9b664ff9055db861d81168507ae2"
+      },
+      {
+        "branch": "fix/karras-convolution-input-magnitude-20261112",
+        "sha": "0f165a49e2b812a017e49a683c51df35bb575551"
+      },
+      {
+        "branch": "fix/karras-residual-balance-20261112",
+        "sha": "ba81d3f729b98a0b4e73cd3a811f8f064b99219a"
+      },
+      {
+        "branch": "fix/learned-prediction-objectives-20261002",
+        "sha": "1cf1a1441761ea2cadaadab7cdd3e48f7cd108c0"
+      },
+      {
+        "branch": "fix/learned-variance-loss-precision-20261112",
+        "sha": "eae84efa32b3c8968130431dfce0fa8619d06830"
+      },
+      {
+        "branch": "fix/manual-attention-score-precision-20261112",
+        "sha": "da1a6ade9394e826734217656825b3e1c4a41757"
+      },
+      {
+        "branch": "fix/oct2-ddp-dpmpp-self-conditioning",
+        "sha": "9802d4277a7383ba31dc1e39eca3e2a036e313a8"
+      },
+      {
+        "branch": "fix/offset-noise-input-ownership-20261112",
+        "sha": "83af2467e7d1c2d9149cc71a8339974c0d623fcf"
+      },
+      {
+        "branch": "fix/preserve-offset-noise-inputs-20261112",
+        "sha": "b302b5b85b740bcedd32c5c78554000b0ccfaa44"
+      },
+      {
+        "branch": "fix/repaint-normalization-20261029",
+        "sha": "bce1564a470b0441c0db8a21805d0f6a8d61f890"
+      },
+      {
+        "branch": "fix/repaint-resampling-20261029",
+        "sha": "4d7159d150fd773a5276944467ff041c106ce6bf"
+      },
+      {
+        "branch": "fix/restore-best-fid-on-resume-20261112",
+        "sha": "6f761b6a3ef5200a8d63a481391f2ed8c24540f3"
+      },
+      {
+        "branch": "fix/sampling-history-memory-20261112",
+        "sha": "622081b3a0b0af3d29b10c3bf2995d8a16169293"
+      },
+      {
+        "branch": "fix/sdpa-custom-attention-scale",
+        "sha": "4033b5eee00637a8c846d9c78c4d44bc2b041195"
+      },
+      {
+        "branch": "fix/self-conditioning-view-safe-detach-20261116",
+        "sha": "6529b17779afcfa3a599937e5bac49dee8bae078"
+      },
+      {
+        "branch": "fix/simple-diffusion-clipping-20261029",
+        "sha": "66383024dcd37442b785c74afa70c19dd6360ba7"
+      },
+      {
+        "branch": "fix/uvit-paired-image-transforms-20261112",
+        "sha": "0eba20b01d7b1183dbb691777b4bed1ce9602f43"
+      },
+      {
+        "branch": "fix/weighted-reverse-sampling-20261002",
+        "sha": "43b9ce843bc9b565cdd027d8357aced316a0f403"
+      },
+      {
+        "branch": "fix/1d-conditioning",
+        "sha": "398fdd77431180762af79e907716642ca8192a65"
+      },
+      {
+        "branch": "fix-interpolation-timestep-20261011",
+        "sha": "44b34aa12f7ebab1c6c00bc81b794948a478dfef"
+      },
+      {
+        "branch": "main",
+        "sha": "7755321814cb53d756f418fbac06784ce87ba9c6"
+      },
+      {
+        "branch": "perf/ddp-accumulation-boundary-20261112",
+        "sha": "d870451a94050ce0c73e444649a6e19742dcc605"
+      },
+      {
+        "branch": "perf/learned-schedule-shared-endpoints-20261112",
+        "sha": "dfb3a57d9a1d9b579cfab18bf25e29e26196b316"
+      },
+      {
+        "branch": "perf/streaming-fid-feature-statistics-20261112",
+        "sha": "1546505e1db652d4adc348ff9cfdfe191c5dbf84"
+      },
+      {
+        "branch": "quality/2026-10-09-learned-objective",
+        "sha": "4b8ed648b6d99063e4b4997bd043c1f7d9b24d49"
+      },
+      {
+        "branch": "validation/ddp-accumulation-20261112",
+        "sha": "59dcf6c65d8806a8e4086f6e4eecbb2451b77d88"
+      },
+      {
+        "branch": "validation/draft-fixes-20260930",
+        "sha": "cddcf887b3065cf659ec52dd63e747b1c0df0ec7"
+      },
+      {
+        "branch": "validation/fid-independent-loader-20261116",
+        "sha": "16dd6bb0fa7e8eb6e6b1c4a4547a22454c4d6b52"
+      }
+    ],
+    "prs": [
+      {
+        "number": 410,
+        "sha": "86f7b397ef5f9b664ff9055db861d81168507ae2",
+        "title": "Expose KarrasUnet Fourier conditioning to continuous diffusion wrappers"
+      },
+      {
+        "number": 409,
+        "sha": "dfb3a57d9a1d9b579cfab18bf25e29e26196b316",
+        "title": "Evaluate learned noise-schedule endpoints once per call"
+      },
+      {
+        "number": 408,
+        "sha": "4eecb97f516b69af943d9181c30a13f01481fabe",
+        "title": "Allow scalar block counts in KarrasUnet3D without downsampling"
+      },
+      {
+        "number": 407,
+        "sha": "0eba20b01d7b1183dbb691777b4bed1ce9602f43",
+        "title": "Enable paired UViT image transforms with the configured channels"
+      },
+      {
+        "number": 406,
+        "sha": "64ecad2d487fbe37d29dfc1aef401b7c6a668045",
+        "title": "Honor custom initial widths in the guided Unet"
+      },
+      {
+        "number": 405,
+        "sha": "eae84efa32b3c8968130431dfce0fa8619d06830",
+        "title": "Evaluate learned-variance loss terms in float32 for low-precision inputs"
+      },
+      {
+        "number": 404,
+        "sha": "1546505e1db652d4adc348ff9cfdfe191c5dbf84",
+        "title": "Accumulate FID moments without retaining feature batches"
+      },
+      {
+        "number": 403,
+        "sha": "d870451a94050ce0c73e444649a6e19742dcc605",
+        "title": "Synchronize DDP gradients once per accumulated update"
+      },
+      {
+        "number": 402,
+        "sha": "c8834260d8188a7ab77ebcd04206896bef6c9036",
+        "title": "Honor data normalization in interpolation APIs"
+      },
+      {
+        "number": 401,
+        "sha": "6f761b6a3ef5200a8d63a481391f2ed8c24540f3",
+        "title": "Preserve best FID when resuming standard and RePaint trainers"
+      },
+      {
+        "number": 400,
+        "sha": "3ada50a630f19367a0c6502958f22adc487cc29f",
+        "title": "Keep one-step elucidated diffusion sampling finite"
+      },
+      {
+        "number": 399,
+        "sha": "b302b5b85b740bcedd32c5c78554000b0ccfaa44",
+        "title": "Preserve supplied noise when applying diffusion offsets"
+      },
+      {
+        "number": 398,
+        "sha": "3493a8e7e52d1f5ae33494561e773d0bdb10321a",
+        "title": "Honor externally sampled timesteps across diffusion training variants"
+      },
+      {
+        "number": 397,
+        "sha": "183561e9c44cda597594ce03f2f75dca8f1112a9",
+        "title": "Keep image dataset discovery stable across trainers"
+      },
+      {
+        "number": 396,
+        "sha": "b84d5b121f19234423f305071aedc34f6a349d7f",
+        "title": "Preserve the embedding dtype in Karras class conditioning"
+      },
+      {
+        "number": 395,
+        "sha": "bd84742df5d19ca5d36d9204427e98c989db2d7c",
+        "title": "Honor the requested real-image sample count when computing FID statistics"
+      },
+      {
+        "number": 394,
+        "sha": "36bbecc4e94e01c17ecd588b51301bef561f8b7e",
+        "title": "Fix guided DDIM sampling history to include each updated state"
+      },
+      {
+        "number": 393,
+        "sha": "4d7159d150fd773a5276944467ff041c106ce6bf",
+        "title": "Keep RePaint resampling aligned with the current noise level"
+      },
+      {
+        "number": 392,
+        "sha": "bce1564a470b0441c0db8a21805d0f6a8d61f890",
+        "title": "Respect the normalization setting for RePaint ground truth"
+      },
+      {
+        "number": 391,
+        "sha": "66383024dcd37442b785c74afa70c19dd6360ba7",
+        "title": "Honor the clipping setting in simple diffusion"
+      },
+      {
+        "number": 390,
+        "sha": "4033b5eee00637a8c846d9c78c4d44bc2b041195",
+        "title": "Preserve custom attention scales in the SDPA backend"
+      },
+      {
+        "number": 389,
+        "sha": "db578f5368dc5d2d720995db85be2827e1657be9",
+        "title": "Respect the requested real FID sample count"
+      },
+      {
+        "number": 388,
+        "sha": "087d1540b9493ab05b91c95b295854e092ada52f",
+        "title": "Recompute 1D DDIM noise after clipping"
+      },
+      {
+        "number": 387,
+        "sha": "f77c6f6d214acdb0d52d62025a85097c234fe08c",
+        "title": "Rebuild incomplete FID statistics caches"
+      },
+      {
+        "number": 386,
+        "sha": "895aa4a94904e41c866df29829071071510c4911",
+        "title": "Return the initial noise from 1D DDIM sampling"
+      },
+      {
+        "number": 381,
+        "sha": "44b34aa12f7ebab1c6c00bc81b794948a478dfef",
+        "title": "Fix interpolation reverse-timestep alignment"
+      },
+      {
+        "number": 380,
+        "sha": "4b8ed648b6d99063e4b4997bd043c1f7d9b24d49",
+        "title": "Honor the selected objective in learned-variance diffusion"
+      },
+      {
+        "number": 379,
+        "sha": "b2e73147d23a979385d41c838d4620cfbf98b9d2",
+        "title": "fix: KarrasUnet3D attention crashes when attention width differs from dim"
+      },
+      {
+        "number": 378,
+        "sha": "d770f3f886afd25ccd2f2b6695fc4885f3fb46ee",
+        "title": "fix: WeightedObjectiveGaussianDiffusion.sample() raises TypeError"
+      },
+      {
+        "number": 377,
+        "sha": "9802d4277a7383ba31dc1e39eca3e2a036e313a8",
+        "title": "fix: carry self conditioning through EDM DPM++ sampling"
+      },
+      {
+        "number": 376,
+        "sha": "523f151acf5b9f36c24fe01411bde6e01c4a4552",
+        "title": "fix: keep CFG rescaling finite for zero-variance predictions"
+      },
+      {
+        "number": 375,
+        "sha": "47536c92d502dfc9dd9f3ce7faa6b0c60444826b",
+        "title": "fix: align immiscible training targets with assigned noise"
+      },
+      {
+        "number": 374,
+        "sha": "df9f7fbf4b7321d0b1fb699f7da6013aa2df9712",
+        "title": "fix: return conditional and unconditional predictions at unit CFG scale"
+      },
+      {
+        "number": 373,
+        "sha": "398fdd77431180762af79e907716642ca8192a65",
+        "title": "fix: route conditions consistently in 1D diffusion"
+      },
+      {
+        "number": 372,
+        "sha": "4f61439742d1f135daec7ba4694e3323efae0172",
+        "title": "fix: add missing imports (__version__, partial, identity) that crash save() and model_predictions()"
+      },
+      {
+        "number": 371,
+        "sha": "dd75c664a7f8251fcb83cae235431bd4a3938e12",
+        "title": "fix(karras_unet_1d): use Conv1d instead of Conv2d in MPFeedForward"
+      },
+      {
+        "number": 370,
+        "sha": "10aa317e53914ee2a7a9e9b847a0242fff078dd6",
+        "title": "fix: SinusoidalPosEmb crashes under .half() with standard long timesteps"
+      },
+      {
+        "number": 367,
+        "sha": "266f633963f49dcb8d80039d7aecc76a3f148187",
+        "title": "ci: update GitHub Actions checkout and setup-python to latest versions"
+      },
+      {
+        "number": 366,
+        "sha": "e050bfb9c37fec7deaf7cb039a33971146001af5",
+        "title": "ci: update GitHub Actions checkout and setup-python to latest versions"
+      },
+      {
+        "number": 363,
+        "sha": "ecd45821bcc515bdb9d8c40454a51777e4a55eac",
+        "title": "Fix min-SNR loss weight clamp direction in continuous time diffusion"
+      },
+      {
+        "number": 358,
+        "sha": "f4123fa04a76771105d8b3d11f45a5924599de23",
+        "title": "fix deprecated sdpa_kernel usage"
+      },
+      {
+        "number": 356,
+        "sha": "303bf4034d3b15a179996564e652cea05de76d4d",
+        "title": "Image Sampling from Saved Model Weights (Addresses Issue #353)"
+      },
+      {
+        "number": 330,
+        "sha": "a3a455df8915e8c2a0a29840a5d290c5e05334c0",
+        "title": "Comment"
+      },
+      {
+        "number": 324,
+        "sha": "b11c61bc106bf9786c4de3805c29ca0afe972ea1",
+        "title": "Add mask check for repaint efficiency unconditional sampling"
+      },
+      {
+        "number": 322,
+        "sha": "1b1f46901a432a4b7217c79c8dd2496751634681",
+        "title": "Fix RePaint: use ground-truth in the last in-painting step"
+      },
+      {
+        "number": 321,
+        "sha": "c05f59ea87892dc658b32b03ce1af67be8225ce7",
+        "title": "Extra Arg in Guided Diffusion"
+      },
+      {
+        "number": 320,
+        "sha": "a7f4b667b38dbaaffa16dcabf4aae55c30e7a3a9",
+        "title": "Bugfix: Fix p_sample input args and resample loop of Repaint method"
+      },
+      {
+        "number": 318,
+        "sha": "60a773da9a8a8e180fffd7345b55c39d508a9ffe",
+        "title": "Repaint improvements"
+      },
+      {
+        "number": 314,
+        "sha": "e875f37d078ac2594436bb85e19b78fc6d2320d5",
+        "title": "Fix scale calculation in attention mechanism"
+      },
+      {
+        "number": 312,
+        "sha": "9dd937950210252e0cb576ca1724d3cd47ee6995",
+        "title": "Add RePaint"
+      },
+      {
+        "number": 306,
+        "sha": "e09d64075a41eea5153c48b8d96f336956e973e6",
+        "title": "support non-square images"
+      },
+      {
+        "number": 303,
+        "sha": "5b0b528c4c5ff9ad0f6b5c8453e693360835a95a",
+        "title": "Create devcontainer.json"
+      },
+      {
+        "number": 299,
+        "sha": "286a66a1d7dabe26d52fe2307e28f17f03fdd199",
+        "title": "Update attend.py by removing redundant starred expression."
+      },
+      {
+        "number": 296,
+        "sha": "8a628f14116b65171f1a7cf9f0a0cd419701bdc3",
+        "title": "Update karras_unet_3d.py"
+      },
+      {
+        "number": 287,
+        "sha": "42a9e793ad6623bb93d3b4dd4b97760ca51084aa",
+        "title": "begin work on the karras unet"
+      },
+      {
+        "number": 285,
+        "sha": "ad5a5f4f7f4fd3547436f1c92eaf63f2fffb1a37",
+        "title": "18 gen data quality measure"
+      },
+      {
+        "number": 284,
+        "sha": "ad5a5f4f7f4fd3547436f1c92eaf63f2fffb1a37",
+        "title": "18 gen data quality measure"
+      },
+      {
+        "number": 280,
+        "sha": "8e2c4a602cd700da75b2aa3d14ca2033d92069f0",
+        "title": "Experiments"
+      },
+      {
+        "number": 277,
+        "sha": "c099b08834418c670f111fad2ccd84ada8163da6",
+        "title": "[BugFix]: Use the predicted mean to compute guidance gradient"
+      },
+      {
+        "number": 273,
+        "sha": "cc3b2803671092c8fb635372bb7e1af8e0bde0ad",
+        "title": "successful launch"
+      },
+      {
+        "number": 264,
+        "sha": "d56107cd11832375e8d27243329b09c9578e05cd",
+        "title": "fix error for datasets with several channel numbers"
+      },
+      {
+        "number": 261,
+        "sha": "dd4c4f1611c97b97b103106623416a53732dfa5b",
+        "title": "small convenience for setting fewer channels"
+      },
+      {
+        "number": 260,
+        "sha": "9f537ccb091af9142d766ded523c47cdf471ee44",
+        "title": "Easily adjust the number of downsamples in the usage demo instead of \u2026"
+      },
+      {
+        "number": 258,
+        "sha": "01c6bedaa085889109947b766379228fc91605ea",
+        "title": "Fix reduction to perform averaging"
+      },
+      {
+        "number": 252,
+        "sha": "a33931ef6925793ba3bd14148008afdd4d1e916d",
+        "title": "Create project.toml"
+      },
+      {
+        "number": 243,
+        "sha": "87b417c9cceabd37e34d7e544709d947b9240094",
+        "title": "Check time"
+      },
+      {
+        "number": 242,
+        "sha": "c3664234818669c36d9978f3e0491ed503373120",
+        "title": "Grdf"
+      },
+      {
+        "number": 228,
+        "sha": "cc7a4398a23ee5038e831934641fd8ce600d5c64",
+        "title": "Bind `self.calculate_fid` for the case when FID is not requested."
+      },
+      {
+        "number": 227,
+        "sha": "9f77c49d3c6adb6d94a94aa72570f655f2a1170d",
+        "title": "Robust batched FID calculation"
+      },
+      {
+        "number": 204,
+        "sha": "1aa21ddca5431531c393e0b3789cf1b6805be149",
+        "title": "Add Trainer1D for 1D diffusion"
+      },
+      {
+        "number": 196,
+        "sha": "58f7e7620abcf540667c8834baa52ff94409f41c",
+        "title": "fix Support for different channel images"
+      },
+      {
+        "number": 186,
+        "sha": "e9ec55c978ed98b6f78fc80cbd41982a9aacff1b",
+        "title": "fix bug"
+      },
+      {
+        "number": 178,
+        "sha": "a6d2b9cdcc6f9a0a6bfdb709bf1e7f433c90a762",
+        "title": "add fid-score feature"
+      },
+      {
+        "number": 174,
+        "sha": "691d8b3a068a1a2f62349d63fddd962b72d4baa1",
+        "title": "0217"
+      },
+      {
+        "number": 167,
+        "sha": "fa51e93a0f67f7e8a5b7e77a5235cd4947bdb3a2",
+        "title": "Update README.md"
+      },
+      {
+        "number": 165,
+        "sha": "008e8ead08773df21c2f7090d546edb770a5e0eb",
+        "title": "fix `GaussianDiffusion.ddim_sample()`"
+      },
+      {
+        "number": 161,
+        "sha": "b0323ce887d592019580571f2eda29c5baabf5c3",
+        "title": "prepare for adding new Salimans paper"
+      },
+      {
+        "number": 160,
+        "sha": "3de8ff5728689dbfc9aad0e3e4a7e146f340ea02",
+        "title": "guided diffusion with external guidance function"
+      },
+      {
+        "number": 152,
+        "sha": "57f57bb2fd1b4dce840d290ac33266ef25eec90f",
+        "title": "Fix self conditioning for elucidated diffusion"
+      },
+      {
+        "number": 148,
+        "sha": "66eff9bef9199931fa6f1a47b479aee996ec2490",
+        "title": "Added DPM-Solver++ sampling thanks to Katherine Crowson"
+      },
+      {
+        "number": 139,
+        "sha": "edc6d5136a5edddfc7a4960bdb64365c7282a451",
+        "title": "eta=0"
+      },
+      {
+        "number": 129,
+        "sha": "7a554eef147b6e30589053a69a38dbc4f5eab41b",
+        "title": "Segmentation mapping with triplet loss"
+      },
+      {
+        "number": 125,
+        "sha": "1a48236b5b325b1c5ce5a0aad7179ed5b0ac2e29",
+        "title": "Update README.md"
+      },
+      {
+        "number": 102,
+        "sha": "2ac3f94a80938a3ec2ed39c4c4234041ee0e0c19",
+        "title": "Added gradient clipping."
+      },
+      {
+        "number": 90,
+        "sha": "d85b8bbe2e00242575e38c5df46014ef0e860ed4",
+        "title": "fix torch.cumprod"
+      },
+      {
+        "number": 85,
+        "sha": "7c0cd05c272ecb5067e85f0a667fbbcce6b36727",
+        "title": "Trainer.load can use GPU's other than cuda:0"
+      },
+      {
+        "number": 84,
+        "sha": "6f492dae7b685fabf62dbd57b5420b604d822267",
+        "title": "fix pred_noise after clipping denoised"
+      },
+      {
+        "number": 83,
+        "sha": "e4a4e4acaa67fab9b89fb286eac344489127f973",
+        "title": "Fix ddim"
+      },
+      {
+        "number": 82,
+        "sha": "e46a89e2bc05800d2e4432e79ac9a2265d70b16e",
+        "title": "Update step before training checkpoint"
+      },
+      {
+        "number": 75,
+        "sha": "b25168ef3cc7c0ebe66353b0eadd4ae3d71571b3",
+        "title": "Free some resources after each step to avoid OOM"
+      },
+      {
+        "number": 54,
+        "sha": "dfcf324bd376b52c8c1e11d9c2edb523120853c5",
+        "title": "Added multi GPU training support"
+      },
+      {
+        "number": 52,
+        "sha": "d97bc0278c7254e898ac27a237f1bb743807f240",
+        "title": "Solve issue #26"
+      },
+      {
+        "number": 51,
+        "sha": "5db64fec4bc1c34dac5ecdde5d9e6ffdc7b32c97",
+        "title": "(wip) some basic scaffold for elucidating diffusion and derived values"
+      },
+      {
+        "number": 24,
+        "sha": "73591cf1ad4ddcd63484675ce65b16169aa90307",
+        "title": "updated citation in README"
+      }
+    ]
+  },
+  "blobs": 50,
+  "stable_weight_markers": [],
+  "variants": [
+    {
+      "code": "def p_losses(self, x_start, times, noise = None, loss_reduction = 'mean'):\n        noise = default(noise, lambda: torch.randn_like(x_start))\n\n        x, log_snr = self.q_sample(x_start = x_start, times = times, noise = noise)\n        model_out = self.model(x, log_snr)\n\n        losses = F.mse_loss(model_out, noise, reduction = 'none')\n        losses = reduce(losses, 'b ... -> b', 'mean')\n\n        if self.min_snr_loss_weight:\n            snr = log_snr.exp()\n            loss_weight = snr.clamp(max = self.min_snr_gamma) / snr\n            losses = losses * loss_weight\n\n        if loss_reduction == 'none':\n            return losses\n\n        return losses.mean()",
+      "occurrences": [
+        {
+          "blob": "fe9201781f29925bc93948268e83ae89abc2a090",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        },
+        {
+          "blob": "667dd50f7e3ee797174f32a7925ecc192bded45e",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        },
+        {
+          "blob": "f78db3de918a761efca51bcccb6fe0a254415de2",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        },
+        {
+          "blob": "b80e53a11125727233c4cf34d00fcd14eb9669cd",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        }
+      ]
+    },
+    {
+      "code": "def p_losses(self, x_start, times, noise = None, loss_reduction = 'mean'):\n        noise = default(noise, lambda: torch.randn_like(x_start))\n\n        x, log_snr = self.q_sample(x_start = x_start, times = times, noise = noise)\n        model_out = self.model(x, log_snr)\n\n        if self.pred_objective == 'v':\n            padded_log_snr = right_pad_dims_to(x, log_snr)\n            alpha, sigma = padded_log_snr.sigmoid().sqrt(), (-padded_log_snr).sigmoid().sqrt()\n            target = alpha * noise - sigma * x_start\n\n        elif self.pred_objective == 'eps':\n            target = noise\n\n        loss = F.mse_loss(model_out, target, reduction = 'none')\n\n        loss = reduce(loss, 'b ... -> b', 'mean')\n\n        snr = log_snr.exp()\n\n        maybe_clip_snr = snr.clone()\n        if self.min_snr_loss_weight:\n            maybe_clip_snr.clamp_(max = self.min_snr_gamma)\n\n        if self.pred_objective == 'v':\n            loss_weight = maybe_clip_snr / (snr + 1)\n\n        elif self.pred_objective == 'eps':\n            loss_weight = maybe_clip_snr / snr\n\n        losses = loss * loss_weight\n\n        if loss_reduction == 'none':\n            return losses\n\n        return losses.mean()",
+      "occurrences": [
+        {
+          "blob": "c87f08956ad3f4fa3e5fe44d7f1c6428ab581c8f",
+          "path": "denoising_diffusion_pytorch/simple_diffusion.py"
+        },
+        {
+          "blob": "f2f39dfc416df3b5515187b1add55d9db85e038a",
+          "path": "denoising_diffusion_pytorch/simple_diffusion.py"
+        },
+        {
+          "blob": "9e73dc1321cce84eb5f198b85f2036b9e52fae6c",
+          "path": "denoising_diffusion_pytorch/simple_diffusion.py"
+        },
+        {
+          "blob": "235459ddb322e9d5788b4f630ae3708026751dcd",
+          "path": "denoising_diffusion_pytorch/simple_diffusion.py"
+        }
+      ]
+    },
+    {
+      "code": "def p_losses(self, x_start, times, noise = None):\n        noise = default(noise, lambda: torch.randn_like(x_start))\n\n        x, log_snr = self.q_sample(x_start = x_start, times = times, noise = noise)\n        model_out = self.model(x, log_snr)\n\n        losses = F.mse_loss(model_out, noise, reduction = 'none')\n        losses = reduce(losses, 'b ... -> b', 'mean')\n\n        if self.min_snr_loss_weight:\n            snr = log_snr.exp()\n            loss_weight = snr.clamp(max = self.min_snr_gamma) / snr\n            losses = losses * loss_weight\n\n        return losses.mean()",
+      "occurrences": [
+        {
+          "blob": "0c535ffc686f57c3e330686e7a841c8e2b832274",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        }
+      ]
+    },
+    {
+      "code": "def p_losses(self, x_start, times, noise = None):\n        noise = default(noise, lambda: torch.randn_like(x_start))\n\n        x, log_snr = self.q_sample(x_start = x_start, times = times, noise = noise)\n        model_out = self.model(x, log_snr)\n\n        if self.pred_objective == 'v':\n            padded_log_snr = right_pad_dims_to(x, log_snr)\n            alpha, sigma = padded_log_snr.sigmoid().sqrt(), (-padded_log_snr).sigmoid().sqrt()\n            target = alpha * noise - sigma * x_start\n\n        elif self.pred_objective == 'eps':\n            target = noise\n\n        loss = F.mse_loss(model_out, target, reduction = 'none')\n\n        loss = reduce(loss, 'b ... -> b', 'mean')\n\n        snr = log_snr.exp()\n\n        maybe_clip_snr = snr.clone()\n        if self.min_snr_loss_weight:\n            maybe_clip_snr.clamp_(max = self.min_snr_gamma)\n\n        if self.pred_objective == 'v':\n            loss_weight = maybe_clip_snr / (snr + 1)\n\n        elif self.pred_objective == 'eps':\n            loss_weight = maybe_clip_snr / snr\n\n        return (loss * loss_weight).mean()",
+      "occurrences": [
+        {
+          "blob": "2b5b1b37893de82a9e4bdccf822d5248e6deada0",
+          "path": "denoising_diffusion_pytorch/simple_diffusion.py"
+        },
+        {
+          "blob": "6be766ca7a55a7cb94f254c8c6203fe541d5e93d",
+          "path": "denoising_diffusion_pytorch/simple_diffusion.py"
+        },
+        {
+          "blob": "26bbad00e5658a0a6ac6680c0723fcd16c7ba19e",
+          "path": "denoising_diffusion_pytorch/simple_diffusion.py"
+        },
+        {
+          "blob": "1ed21574dc4d9eafa63fbf013fde055ccf57ea4e",
+          "path": "denoising_diffusion_pytorch/simple_diffusion.py"
+        },
+        {
+          "blob": "2335479685c84526fd378956b1ec26d74ed2898d",
+          "path": "denoising_diffusion_pytorch/simple_diffusion.py"
+        },
+        {
+          "blob": "a0bbe6ad13ef663aa62306cd4116a0664767f447",
+          "path": "denoising_diffusion_pytorch/simple_diffusion.py"
+        },
+        {
+          "blob": "289fcaabb6d647ac631b831a6e6cc0d6cc7f0c4b",
+          "path": "denoising_diffusion_pytorch/simple_diffusion.py"
+        }
+      ]
+    },
+    {
+      "code": "def p_losses(self, x_start, times, noise = None):\n        noise = default(noise, lambda: torch.randn_like(x_start))\n\n        x, log_snr = self.q_sample(x_start = x_start, times = times, noise = noise)\n        model_out = self.model(x, log_snr)\n\n        losses = F.mse_loss(model_out, noise, reduction = 'none')\n        losses = reduce(losses, 'b ... -> b', 'mean')\n\n        if self.min_snr_loss_weight:\n            snr = log_snr.exp()\n            loss_weight = snr.clamp(min = self.min_snr_gamma) / snr\n            losses = losses * loss_weight\n\n        return losses.mean()",
+      "occurrences": [
+        {
+          "blob": "df1940bf988bbb75af48d9ef87916a1c78f9a1e9",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        },
+        {
+          "blob": "9ceccdbd8ac9c5519528dc7ecf9d0b56948d6a67",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        },
+        {
+          "blob": "4af03fcd46c31926abd040babda0822c5e95cc8a",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        }
+      ]
+    },
+    {
+      "code": "def p_losses(self, x_start, times, noise = None):\n        noise = default(noise, lambda: torch.randn_like(x_start))\n\n        x, log_snr = self.q_sample(x_start = x_start, times = times, noise = noise)\n        model_out = self.model(x, log_snr)\n\n        losses = self.loss_fn(model_out, noise, reduction = 'none')\n        losses = reduce(losses, 'b ... -> b', 'mean')\n\n        if self.min_snr_loss_weight:\n            snr = log_snr.exp()\n            loss_weight = snr.clamp(min = self.min_snr_gamma) / snr\n            losses = losses * loss_weight\n\n        return losses.mean()",
+      "occurrences": [
+        {
+          "blob": "d445d46963a262911bf208168753b3202c08cc9c",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        }
+      ]
+    },
+    {
+      "code": "def p_losses(self, x_start, times, noise = None):\n        noise = default(noise, lambda: torch.randn_like(x_start))\n\n        x, log_snr = self.q_sample(x_start = x_start, times = times, noise = noise)\n        model_out = self.model(x, log_snr)\n\n        if self.pred_objective == 'v':\n            padded_log_snr = right_pad_dims_to(x, log_snr)\n            alpha, sigma = padded_log_snr.sigmoid().sqrt(), (-padded_log_snr).sigmoid().sqrt()\n            target = alpha * noise - sigma * x_start\n\n        elif self.pred_objective == 'eps':\n            target = noise\n\n        loss = F.mse_loss(model_out, target, reduction = 'none')\n\n        loss = reduce(loss, 'b ... -> b', 'mean')\n\n        snr = log_snr.exp()\n\n        maybe_clip_snr = snr.clone()\n        if self.min_snr_loss_weight:\n            maybe_clip_snr.clamp_(min = self.min_snr_gamma)\n\n        if self.pred_objective == 'v':\n            loss_weight = maybe_clip_snr / (snr + 1)\n\n        elif self.pred_objective == 'eps':\n            loss_weight = maybe_clip_snr / snr\n\n        return (loss * loss_weight).mean()",
+      "occurrences": [
+        {
+          "blob": "7c309a45f2834b9c4c6b948b895c94e12bd4d601",
+          "path": "denoising_diffusion_pytorch/simple_diffusion.py"
+        }
+      ]
+    },
+    {
+      "code": "def p_losses(self, x_start, times, noise = None):\n        noise = default(noise, lambda: torch.randn_like(x_start))\n\n        x, log_snr = self.q_sample(x_start = x_start, times = times, noise = noise)\n        model_out = self.model(x, log_snr)\n\n        if self.pred_objective == 'v':\n            padded_log_snr = right_pad_dims_to(x, log_snr)\n            alpha, sigma = padded_log_snr.sigmoid().sqrt(), (-padded_log_snr).sigmoid().sqrt()\n            target = alpha * noise - sigma * x_start\n\n        elif self.pred_objective == 'eps':\n            target = noise\n\n        return F.mse_loss(model_out, target)",
+      "occurrences": [
+        {
+          "blob": "6303e3ed4e21385f895f27397a2858dca0401fbd",
+          "path": "denoising_diffusion_pytorch/simple_diffusion.py"
+        },
+        {
+          "blob": "15bdad10780954bb6f98e20f1624542335145c60",
+          "path": "denoising_diffusion_pytorch/simple_diffusion.py"
+        },
+        {
+          "blob": "fab322f996fc4d7bb69fa590945ad6972db58c99",
+          "path": "denoising_diffusion_pytorch/simple_diffusion.py"
+        }
+      ]
+    },
+    {
+      "code": "def p_losses(self, x_start, times, noise = None):\n        noise = default(noise, lambda: torch.randn_like(x_start))\n\n        x, log_snr = self.q_sample(x_start = x_start, times = times, noise = noise)\n        model_out = self.model(x, log_snr)\n\n        losses = self.loss_fn(model_out, noise, reduction = 'none')\n        losses = reduce(losses, 'b ... -> b', 'mean')\n\n        if self.p2_loss_weight_gamma >= 0:\n            # following eq 8. in https://arxiv.org/abs/2204.00227\n            loss_weight = (self.p2_loss_weight_k + log_snr.exp()) ** -self.p2_loss_weight_gamma\n            losses = losses * loss_weight\n\n        return losses.mean()",
+      "occurrences": [
+        {
+          "blob": "3d455d32d01653f8d7cf9fafbda349e782e123d5",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        },
+        {
+          "blob": "7822d8b0543fe7d163b00d70ae63b51ec99e8a22",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        },
+        {
+          "blob": "63e4123b5cea96094ed2abf99f9fd91c24bed79f",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        }
+      ]
+    },
+    {
+      "code": "def p_losses(self, x_start, times, noise = None):\n        noise = default(noise, lambda: torch.randn_like(x_start))\n\n        x, log_snr = self.q_sample(x_start = x_start, times = times, noise = noise)\n        model_out = self.model(x, log_snr)\n\n        if self.pred_objective == 'v':\n            padded_log_snr = right_pad_dims_to(x, log_snr)\n            alpha, sigma = padded_log_snr.sigmoid().sqrt(), (-padded_log_snr).sigmoid().sqrt()\n            target = alpha * noise - sigma * x_start\n\n        elif self.pred_objective == 'eps':\n            target = noise\n\n        return F.mse_loss(model_out, noise)",
+      "occurrences": [
+        {
+          "blob": "047196a99631dbc448595087a87df8b5a272b7b9",
+          "path": "denoising_diffusion_pytorch/simple_diffusion.py"
+        },
+        {
+          "blob": "9d01e786e73f36313f1cf5c70ef75a10e1579976",
+          "path": "denoising_diffusion_pytorch/simple_diffusion.py"
+        },
+        {
+          "blob": "a289587d2d91d2e7921798be92e4333edc06976e",
+          "path": "denoising_diffusion_pytorch/simple_diffusion.py"
+        },
+        {
+          "blob": "39eb6e7ffd1e6507728d510e7b606e2cc70170b6",
+          "path": "denoising_diffusion_pytorch/simple_diffusion.py"
+        }
+      ]
+    },
+    {
+      "code": "def p_losses(self, x_start, times, noise = None):\n        noise = default(noise, lambda: torch.randn_like(x_start))\n\n        x, log_snr = self.q_sample(x_start = x_start, times = times, noise = noise)\n        model_out = self.model(x, log_snr)\n\n        return F.mse_loss(model_out, noise)",
+      "occurrences": [
+        {
+          "blob": "3f3ef9db1f8134ea444a10f134805ea43005e943",
+          "path": "denoising_diffusion_pytorch/simple_diffusion.py"
+        },
+        {
+          "blob": "f9331fec35105824038b533dbafd076fafc5cd35",
+          "path": "denoising_diffusion_pytorch/simple_diffusion.py"
+        },
+        {
+          "blob": "66407e7b07c83276a41e369382b9d5694a6a83bd",
+          "path": "denoising_diffusion_pytorch/simple_diffusion.py"
+        },
+        {
+          "blob": "fe383023d92c74b3bac92cbbcc112fb29b17433a",
+          "path": "denoising_diffusion_pytorch/simple_diffusion.py"
+        }
+      ]
+    },
+    {
+      "code": "def p_losses(self, x_start, times, noise = None):\n        noise = default(noise, lambda: torch.randn_like(x_start))\n\n        x, log_snr = self.q_sample(x_start = x_start, times = times, noise = noise)\n        model_out = self.denoise_fn(x, log_snr)\n\n        losses = self.loss_fn(model_out, noise, reduction = 'none')\n        losses = reduce(losses, 'b ... -> b', 'mean')\n\n        if self.p2_loss_weight_gamma >= 0:\n            # following eq 8. in https://arxiv.org/abs/2204.00227\n            loss_weight = (self.p2_loss_weight_k + log_snr.exp()) ** -self.p2_loss_weight_gamma\n            losses = losses * loss_weight\n\n        return losses.mean()",
+      "occurrences": [
+        {
+          "blob": "8fca9c51e6fe5c74de7cea80ac885b595e60163e",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        },
+        {
+          "blob": "fc45bd7693526c0fa64589f7343eec64b2597d88",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        },
+        {
+          "blob": "a0a9db0088dcc5b1207dc28a9eb1cd6b1baa3caf",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        }
+      ]
+    },
+    {
+      "code": "def p_losses(self, x_start, times, noise = None):\n        noise = default(noise, lambda: torch.randn_like(x_start))\n\n        x, log_snr = self.q_sample(x_start = x_start, times = times, noise = noise)\n        model_out = self.denoise_fn(x, log_snr)\n\n        losses = self.loss_fn(model_out, noise, reduction = 'none')\n        losses = losses.mean(dim = tuple(range(1, losses.ndim)))\n\n        if self.p2_loss_weight_gamma >= 0:\n            # following eq 8. in https://arxiv.org/abs/2204.00227\n            loss_weight = (self.p2_loss_weight_k + log_snr.exp()) ** -self.p2_loss_weight_gamma\n            losses = losses * loss_weight\n\n        return losses.mean()",
+      "occurrences": [
+        {
+          "blob": "e570de5afe07c14e1fec17c483e0d4aa505f6fe4",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        }
+      ]
+    },
+    {
+      "code": "def p_losses(self, x_start, times, noise = None):\n        noise = default(noise, lambda: torch.randn_like(x_start))\n\n        x, log_snr = self.q_sample(x_start = x_start, times = times, noise = noise)\n\n        model_out = self.denoise_fn(x, log_snr)\n        return self.loss_fn(model_out, noise)",
+      "occurrences": [
+        {
+          "blob": "ad9504504fc9a16f36eb4956fd3bceae2535ece0",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        },
+        {
+          "blob": "9e50abcef07685038358d687df398985b1fc3a03",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        },
+        {
+          "blob": "addea5b9bc4723700a19b9cac19a7414ac7011b5",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        },
+        {
+          "blob": "1a490c9de855d03ea048b1d2f07104c0ad7fdd87",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        },
+        {
+          "blob": "0cc5a99e3a4bee45efacf15285795132f6a14238",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        },
+        {
+          "blob": "b4fa37c844eecea0ba7a93106e4d8c63510b3ffd",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        },
+        {
+          "blob": "69ae277283dde36dc06015bd9d2c8a3de7010893",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        },
+        {
+          "blob": "e99405140225cee089f771caef356b9da97612b6",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        }
+      ]
+    },
+    {
+      "code": "def p_losses(self, x_start, times, noise = None):\n        noise = default(noise, lambda: torch.randn_like(x_start))\n\n        x, log_snr = self.q_sample(x_start = x_start, times = times, noise = noise)\n\n        model_out = self.denoise_fn(x, log_snr * self.cond_scale)\n        return self.loss_fn(model_out, noise)",
+      "occurrences": [
+        {
+          "blob": "74a41b5a4eb88615fdb0d70a8913422ad70a3aaf",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        },
+        {
+          "blob": "063be8bc3b4007d50f63c8277593c85dd07fb558",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        },
+        {
+          "blob": "3a4f91a283dcd844b772384a17e3d930a343da20",
+          "path": "denoising_diffusion_pytorch/continuous_time_gaussian_diffusion.py"
+        }
+      ]
+    }
+  ]
+}
