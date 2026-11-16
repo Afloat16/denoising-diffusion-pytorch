@@ -1,0 +1,158 @@
+FFFFFFFF........FFFFFF..                                                 [100%]
+=================================== FAILURES ===================================
+_ test_none_times_matches_omitted_shared_times[False-2-denoising_diffusion_pytorch] _
+tests/test_xm_none_shared_random.py:79: in test_none_times_matches_omitted_shared_times
+    compare_loss_and_gradients(diffusion, reference, images, kwargs, reference_kwargs, chunk)
+tests/test_xm_none_shared_random.py:42: in compare_loss_and_gradients
+    torch.testing.assert_close(result, reference, rtol=0, atol=0)
+E   AssertionError: Scalars are not equal!
+E   
+E   Expected 0.11888906359672546 but got 0.46269214153289795.
+E   Absolute difference: 0.3438030779361725
+E   Relative difference: 2.891797340606203
+_ test_none_times_matches_omitted_shared_times[False-2-denoising_diffusion_pytorch_1d] _
+tests/test_xm_none_shared_random.py:79: in test_none_times_matches_omitted_shared_times
+    compare_loss_and_gradients(diffusion, reference, images, kwargs, reference_kwargs, chunk)
+tests/test_xm_none_shared_random.py:42: in compare_loss_and_gradients
+    torch.testing.assert_close(result, reference, rtol=0, atol=0)
+E   AssertionError: Scalars are not equal!
+E   
+E   Expected 0.34461691975593567 but got 1.411665916442871.
+E   Absolute difference: 1.0670489966869354
+E   Relative difference: 3.0963337419492927
+_ test_none_times_matches_omitted_shared_times[False-2-continuous_time_gaussian_diffusion] _
+tests/test_xm_none_shared_random.py:79: in test_none_times_matches_omitted_shared_times
+    compare_loss_and_gradients(diffusion, reference, images, kwargs, reference_kwargs, chunk)
+tests/test_xm_none_shared_random.py:42: in compare_loss_and_gradients
+    torch.testing.assert_close(result, reference, rtol=0, atol=0)
+E   AssertionError: Scalars are not equal!
+E   
+E   Expected 1.8394091129302979 but got 2.1844165325164795.
+E   Absolute difference: 0.34500741958618164
+E   Relative difference: 0.1875642656986528
+_ test_none_times_matches_omitted_shared_times[False-2-v_param_continuous_time_gaussian_diffusion] _
+tests/test_xm_none_shared_random.py:79: in test_none_times_matches_omitted_shared_times
+    compare_loss_and_gradients(diffusion, reference, images, kwargs, reference_kwargs, chunk)
+tests/test_xm_none_shared_random.py:42: in compare_loss_and_gradients
+    torch.testing.assert_close(result, reference, rtol=0, atol=0)
+E   AssertionError: Scalars are not equal!
+E   
+E   Expected 1.1660895347595215 but got 0.6081323027610779.
+E   Absolute difference: 0.5579572319984436
+E   Relative difference: 0.4784857554814684
+_ test_none_times_matches_omitted_shared_times[False-6-denoising_diffusion_pytorch] _
+tests/test_xm_none_shared_random.py:79: in test_none_times_matches_omitted_shared_times
+    compare_loss_and_gradients(diffusion, reference, images, kwargs, reference_kwargs, chunk)
+tests/test_xm_none_shared_random.py:42: in compare_loss_and_gradients
+    torch.testing.assert_close(result, reference, rtol=0, atol=0)
+E   AssertionError: Scalars are not equal!
+E   
+E   Expected 0.11888906359672546 but got 0.008037573657929897.
+E   Absolute difference: 0.11085148993879557
+E   Relative difference: 0.93239433960727
+_ test_none_times_matches_omitted_shared_times[False-6-denoising_diffusion_pytorch_1d] _
+tests/test_xm_none_shared_random.py:79: in test_none_times_matches_omitted_shared_times
+    compare_loss_and_gradients(diffusion, reference, images, kwargs, reference_kwargs, chunk)
+tests/test_xm_none_shared_random.py:42: in compare_loss_and_gradients
+    torch.testing.assert_close(result, reference, rtol=0, atol=0)
+E   AssertionError: Scalars are not equal!
+E   
+E   Expected 1.3909549713134766 but got 1.430050253868103.
+E   Absolute difference: 0.039095282554626465
+E   Relative difference: 0.028106792355548974
+_ test_none_times_matches_omitted_shared_times[False-6-continuous_time_gaussian_diffusion] _
+tests/test_xm_none_shared_random.py:79: in test_none_times_matches_omitted_shared_times
+    compare_loss_and_gradients(diffusion, reference, images, kwargs, reference_kwargs, chunk)
+tests/test_xm_none_shared_random.py:42: in compare_loss_and_gradients
+    torch.testing.assert_close(result, reference, rtol=0, atol=0)
+E   AssertionError: Scalars are not equal!
+E   
+E   Expected 1.6909754276275635 but got 1.8720364570617676.
+E   Absolute difference: 0.1810610294342041
+E   Relative difference: 0.1070749027312789
+_ test_none_times_matches_omitted_shared_times[False-6-v_param_continuous_time_gaussian_diffusion] _
+tests/test_xm_none_shared_random.py:79: in test_none_times_matches_omitted_shared_times
+    compare_loss_and_gradients(diffusion, reference, images, kwargs, reference_kwargs, chunk)
+tests/test_xm_none_shared_random.py:42: in compare_loss_and_gradients
+    torch.testing.assert_close(result, reference, rtol=0, atol=0)
+E   AssertionError: Scalars are not equal!
+E   
+E   Expected 1.1256802082061768 but got 0.9877792596817017.
+E   Absolute difference: 0.1379009485244751
+E   Relative difference: 0.12250455104316581
+_________ test_none_cfg_shared_inputs_match_omitted_defaults[times-2] __________
+tests/test_xm_none_shared_random.py:116: in test_none_cfg_shared_inputs_match_omitted_defaults
+    compare_loss_and_gradients(diffusion, reference, images, kwargs, reference_kwargs, chunk)
+tests/test_xm_none_shared_random.py:42: in compare_loss_and_gradients
+    torch.testing.assert_close(result, reference, rtol=0, atol=0)
+E   AssertionError: Scalars are not equal!
+E   
+E   Expected 0.8502933979034424 but got 0.67349773645401.
+E   Absolute difference: 0.17679566144943237
+E   Relative difference: 0.20792312616486872
+_________ test_none_cfg_shared_inputs_match_omitted_defaults[times-6] __________
+tests/test_xm_none_shared_random.py:116: in test_none_cfg_shared_inputs_match_omitted_defaults
+    compare_loss_and_gradients(diffusion, reference, images, kwargs, reference_kwargs, chunk)
+tests/test_xm_none_shared_random.py:42: in compare_loss_and_gradients
+    torch.testing.assert_close(result, reference, rtol=0, atol=0)
+E   AssertionError: Scalars are not equal!
+E   
+E   Expected 0.8502934575080872 but got 0.727182924747467.
+E   Absolute difference: 0.12311053276062012
+E   Relative difference: 0.14478593440129958
+_____ test_none_cfg_shared_inputs_match_omitted_defaults[cond_keep_mask-2] _____
+tests/test_xm_none_shared_random.py:116: in test_none_cfg_shared_inputs_match_omitted_defaults
+    compare_loss_and_gradients(diffusion, reference, images, kwargs, reference_kwargs, chunk)
+tests/test_xm_none_shared_random.py:42: in compare_loss_and_gradients
+    torch.testing.assert_close(result, reference, rtol=0, atol=0)
+E   AssertionError: Scalars are not equal!
+E   
+E   Expected 0.8502933979034424 but got 0.7257980108261108.
+E   Absolute difference: 0.12449538707733154
+E   Relative difference: 0.14641462274586423
+_____ test_none_cfg_shared_inputs_match_omitted_defaults[cond_keep_mask-6] _____
+tests/test_xm_none_shared_random.py:116: in test_none_cfg_shared_inputs_match_omitted_defaults
+    compare_loss_and_gradients(diffusion, reference, images, kwargs, reference_kwargs, chunk)
+tests/test_xm_none_shared_random.py:42: in compare_loss_and_gradients
+    torch.testing.assert_close(result, reference, rtol=0, atol=0)
+E   AssertionError: Scalars are not equal!
+E   
+E   Expected 0.8502934575080872 but got 0.8479933738708496.
+E   Absolute difference: 0.002300083637237549
+E   Relative difference: 0.0027050468481532126
+__________ test_none_cfg_shared_inputs_match_omitted_defaults[both-2] __________
+tests/test_xm_none_shared_random.py:116: in test_none_cfg_shared_inputs_match_omitted_defaults
+    compare_loss_and_gradients(diffusion, reference, images, kwargs, reference_kwargs, chunk)
+tests/test_xm_none_shared_random.py:42: in compare_loss_and_gradients
+    torch.testing.assert_close(result, reference, rtol=0, atol=0)
+E   AssertionError: Scalars are not equal!
+E   
+E   Expected 0.8502933979034424 but got 0.7910975217819214.
+E   Absolute difference: 0.059195876121520996
+E   Relative difference: 0.06961817681694285
+__________ test_none_cfg_shared_inputs_match_omitted_defaults[both-6] __________
+tests/test_xm_none_shared_random.py:116: in test_none_cfg_shared_inputs_match_omitted_defaults
+    compare_loss_and_gradients(diffusion, reference, images, kwargs, reference_kwargs, chunk)
+tests/test_xm_none_shared_random.py:42: in compare_loss_and_gradients
+    torch.testing.assert_close(result, reference, rtol=0, atol=0)
+E   AssertionError: Scalars are not equal!
+E   
+E   Expected 0.8502934575080872 but got 0.7197443246841431.
+E   Absolute difference: 0.1305491328239441
+E   Relative difference: 0.15353420830325798
+=========================== short test summary info ============================
+FAILED tests/test_xm_none_shared_random.py::test_none_times_matches_omitted_shared_times[False-2-denoising_diffusion_pytorch]
+FAILED tests/test_xm_none_shared_random.py::test_none_times_matches_omitted_shared_times[False-2-denoising_diffusion_pytorch_1d]
+FAILED tests/test_xm_none_shared_random.py::test_none_times_matches_omitted_shared_times[False-2-continuous_time_gaussian_diffusion]
+FAILED tests/test_xm_none_shared_random.py::test_none_times_matches_omitted_shared_times[False-2-v_param_continuous_time_gaussian_diffusion]
+FAILED tests/test_xm_none_shared_random.py::test_none_times_matches_omitted_shared_times[False-6-denoising_diffusion_pytorch]
+FAILED tests/test_xm_none_shared_random.py::test_none_times_matches_omitted_shared_times[False-6-denoising_diffusion_pytorch_1d]
+FAILED tests/test_xm_none_shared_random.py::test_none_times_matches_omitted_shared_times[False-6-continuous_time_gaussian_diffusion]
+FAILED tests/test_xm_none_shared_random.py::test_none_times_matches_omitted_shared_times[False-6-v_param_continuous_time_gaussian_diffusion]
+FAILED tests/test_xm_none_shared_random.py::test_none_cfg_shared_inputs_match_omitted_defaults[times-2]
+FAILED tests/test_xm_none_shared_random.py::test_none_cfg_shared_inputs_match_omitted_defaults[times-6]
+FAILED tests/test_xm_none_shared_random.py::test_none_cfg_shared_inputs_match_omitted_defaults[cond_keep_mask-2]
+FAILED tests/test_xm_none_shared_random.py::test_none_cfg_shared_inputs_match_omitted_defaults[cond_keep_mask-6]
+FAILED tests/test_xm_none_shared_random.py::test_none_cfg_shared_inputs_match_omitted_defaults[both-2]
+FAILED tests/test_xm_none_shared_random.py::test_none_cfg_shared_inputs_match_omitted_defaults[both-6]
+14 failed, 10 passed in 8.14s

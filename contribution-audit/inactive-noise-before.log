@@ -1,0 +1,85 @@
+FFFFF.......FF.F                                                         [100%]
+=================================== FAILURES ===================================
+_______ test_ddim_only_draws_used_noise[0.0-denoising_diffusion_pytorch] _______
+tests/test_inactive_sampling_noise.py:98: in test_ddim_only_draws_used_noise
+    assert calls == ([initial.numel()] * 3 if eta else [])
+E   assert [32, 32, 32] == []
+E     
+E     Left contains 3 more items, first extra item: 32
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling loop time step: 100%|██████████| 4/4 [00:00<00:00, 1650.98it/s]
+_____ test_ddim_only_draws_used_noise[0.0-denoising_diffusion_pytorch_1d] ______
+tests/test_inactive_sampling_noise.py:98: in test_ddim_only_draws_used_noise
+    assert calls == ([initial.numel()] * 3 if eta else [])
+E   assert [8, 8, 8] == []
+E     
+E     Left contains 3 more items, first extra item: 8
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling loop time step: 100%|██████████| 4/4 [00:00<00:00, 2457.12it/s]
+____________ test_ddim_only_draws_used_noise[0.0-guided_diffusion] _____________
+tests/test_inactive_sampling_noise.py:98: in test_ddim_only_draws_used_noise
+    assert calls == ([initial.numel()] * 3 if eta else [])
+E   assert [32, 32, 32] == []
+E     
+E     Left contains 3 more items, first extra item: 32
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling loop time step: 100%|██████████| 4/4 [00:00<00:00, 2484.04it/s]
+_________________ test_ddim_only_draws_used_noise[0.0-repaint] _________________
+tests/test_inactive_sampling_noise.py:98: in test_ddim_only_draws_used_noise
+    assert calls == ([initial.numel()] * 3 if eta else [])
+E   assert [32, 32, 32] == []
+E     
+E     Left contains 3 more items, first extra item: 32
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling loop time step: 100%|██████████| 4/4 [00:00<00:00, 4438.42it/s]
+________ test_ddim_only_draws_used_noise[0.0-classifier_free_guidance] _________
+tests/test_inactive_sampling_noise.py:98: in test_ddim_only_draws_used_noise
+    assert calls == ([initial.numel()] * 3 if eta else [])
+E   assert [32, 32, 32] == []
+E     
+E     Left contains 3 more items, first extra item: 32
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling loop time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling loop time step: 100%|██████████| 4/4 [00:00<00:00, 3280.00it/s]
+_________ test_edm_only_draws_noise_during_active_churn[0.0-0.0-10.0] __________
+tests/test_inactive_sampling_noise.py:184: in test_edm_only_draws_noise_during_active_churn
+    assert calls == [expected.numel()] * expected_draws
+E   assert [32, 32, 32, 32, 32] == [32]
+E     
+E     Left contains 4 more items, first extra item: 32
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling time step: 100%|██████████| 4/4 [00:00<00:00, 1955.39it/s]
+_________ test_edm_only_draws_noise_during_active_churn[0.5-10.0-20.0] _________
+tests/test_inactive_sampling_noise.py:184: in test_edm_only_draws_noise_during_active_churn
+    assert calls == [expected.numel()] * expected_draws
+E   assert [32, 32, 32, 32, 32] == [32]
+E     
+E     Left contains 4 more items, first extra item: 32
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+sampling time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling time step: 100%|██████████| 4/4 [00:00<00:00, 2193.96it/s]
+__________ test_edm_only_draws_noise_during_active_churn[0.5-0.1-0.8] __________
+tests/test_inactive_sampling_noise.py:182: in test_edm_only_draws_noise_during_active_churn
+    torch.testing.assert_close(output, expected, rtol=2e-5, atol=2e-5)
+E   AssertionError: Tensor-likes are not close!
+E   
+E   Mismatched elements: 32 / 32 (100.0%)
+E   Greatest absolute difference: 0.22217091917991638 at index (0, 0, 2, 2) (up to 2e-05 allowed)
+E   Greatest relative difference: 1.9175666570663452 at index (0, 0, 1, 2) (up to 2e-05 allowed)
+----------------------------- Captured stderr call -----------------------------
+sampling time step:   0%|          | 0/4 [00:00<?, ?it/s]sampling time step: 100%|██████████| 4/4 [00:00<00:00, 1956.30it/s]
+=========================== short test summary info ============================
+FAILED tests/test_inactive_sampling_noise.py::test_ddim_only_draws_used_noise[0.0-denoising_diffusion_pytorch]
+FAILED tests/test_inactive_sampling_noise.py::test_ddim_only_draws_used_noise[0.0-denoising_diffusion_pytorch_1d]
+FAILED tests/test_inactive_sampling_noise.py::test_ddim_only_draws_used_noise[0.0-guided_diffusion]
+FAILED tests/test_inactive_sampling_noise.py::test_ddim_only_draws_used_noise[0.0-repaint]
+FAILED tests/test_inactive_sampling_noise.py::test_ddim_only_draws_used_noise[0.0-classifier_free_guidance]
+FAILED tests/test_inactive_sampling_noise.py::test_edm_only_draws_noise_during_active_churn[0.0-0.0-10.0]
+FAILED tests/test_inactive_sampling_noise.py::test_edm_only_draws_noise_during_active_churn[0.5-10.0-20.0]
+FAILED tests/test_inactive_sampling_noise.py::test_edm_only_draws_noise_during_active_churn[0.5-0.1-0.8]
+8 failed, 8 passed in 5.21s
