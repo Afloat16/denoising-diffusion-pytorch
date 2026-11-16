@@ -1,0 +1,124 @@
+F.FF.FF.FF.F                                                             [100%]
+=================================== FAILURES ===================================
+_ test_trainer_configuration_controls_actual_batch_shards[denoising_diffusion_pytorch-None] _
+tests/test_trainer_batch_shards.py:74: in test_trainer_configuration_controls_actual_batch_shards
+    assert [len(batch) for batch in batches] == [expected_local, expected_local]
+E   assert [16, 16] == [8, 8]
+E     
+E     At index 0 diff: 16 != 8
+E     Use -v to get more diff
+----------------------------- Captured stdout call -----------------------------
+training complete
+----------------------------- Captured stderr call -----------------------------
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+loss: 0.3644:   0%|          | 0/1 [00:00<?, ?it/s]
+loss: 0.3644: 100%|██████████| 1/1 [00:00<00:00, 16.84it/s]
+_ test_trainer_configuration_controls_actual_batch_shards[denoising_diffusion_pytorch-True] _
+tests/test_trainer_batch_shards.py:74: in test_trainer_configuration_controls_actual_batch_shards
+    assert [len(batch) for batch in batches] == [expected_local, expected_local]
+E   assert [16, 16] == [8, 8]
+E     
+E     At index 0 diff: 16 != 8
+E     Use -v to get more diff
+----------------------------- Captured stdout call -----------------------------
+training complete
+----------------------------- Captured stderr call -----------------------------
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+loss: 0.3879:   0%|          | 0/1 [00:00<?, ?it/s]
+loss: 0.3879: 100%|██████████| 1/1 [00:00<00:00, 296.63it/s]
+_ test_trainer_configuration_controls_actual_batch_shards[denoising_diffusion_pytorch_1d-None] _
+tests/test_trainer_batch_shards.py:74: in test_trainer_configuration_controls_actual_batch_shards
+    assert [len(batch) for batch in batches] == [expected_local, expected_local]
+E   assert [16, 16] == [8, 8]
+E     
+E     At index 0 diff: 16 != 8
+E     Use -v to get more diff
+----------------------------- Captured stdout call -----------------------------
+training complete
+----------------------------- Captured stderr call -----------------------------
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+loss: 1.0882:   0%|          | 0/1 [00:00<?, ?it/s]
+loss: 1.0882: 100%|██████████| 1/1 [00:00<00:00, 182.20it/s]
+_ test_trainer_configuration_controls_actual_batch_shards[denoising_diffusion_pytorch_1d-True] _
+tests/test_trainer_batch_shards.py:74: in test_trainer_configuration_controls_actual_batch_shards
+    assert [len(batch) for batch in batches] == [expected_local, expected_local]
+E   assert [16, 16] == [8, 8]
+E     
+E     At index 0 diff: 16 != 8
+E     Use -v to get more diff
+----------------------------- Captured stdout call -----------------------------
+training complete
+----------------------------- Captured stderr call -----------------------------
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+loss: 3.2460:   0%|          | 0/1 [00:00<?, ?it/s]
+loss: 3.2460: 100%|██████████| 1/1 [00:00<00:00, 489.99it/s]
+_ test_trainer_configuration_controls_actual_batch_shards[guided_diffusion-None] _
+tests/test_trainer_batch_shards.py:74: in test_trainer_configuration_controls_actual_batch_shards
+    assert [len(batch) for batch in batches] == [expected_local, expected_local]
+E   assert [16, 16] == [8, 8]
+E     
+E     At index 0 diff: 16 != 8
+E     Use -v to get more diff
+----------------------------- Captured stdout call -----------------------------
+training complete
+----------------------------- Captured stderr call -----------------------------
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+loss: 2.6720:   0%|          | 0/1 [00:00<?, ?it/s]
+loss: 2.6720: 100%|██████████| 1/1 [00:00<00:00, 383.78it/s]
+_ test_trainer_configuration_controls_actual_batch_shards[guided_diffusion-True] _
+tests/test_trainer_batch_shards.py:74: in test_trainer_configuration_controls_actual_batch_shards
+    assert [len(batch) for batch in batches] == [expected_local, expected_local]
+E   assert [16, 16] == [8, 8]
+E     
+E     At index 0 diff: 16 != 8
+E     Use -v to get more diff
+----------------------------- Captured stdout call -----------------------------
+training complete
+----------------------------- Captured stderr call -----------------------------
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+loss: 1.8405:   0%|          | 0/1 [00:00<?, ?it/s]
+loss: 1.8405: 100%|██████████| 1/1 [00:00<00:00, 488.56it/s]
+____ test_trainer_configuration_controls_actual_batch_shards[repaint-None] _____
+tests/test_trainer_batch_shards.py:74: in test_trainer_configuration_controls_actual_batch_shards
+    assert [len(batch) for batch in batches] == [expected_local, expected_local]
+E   assert [16, 16] == [8, 8]
+E     
+E     At index 0 diff: 16 != 8
+E     Use -v to get more diff
+----------------------------- Captured stdout call -----------------------------
+training complete
+----------------------------- Captured stderr call -----------------------------
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+loss: 1.1642:   0%|          | 0/1 [00:00<?, ?it/s]
+loss: 1.1642: 100%|██████████| 1/1 [00:00<00:00, 318.47it/s]
+____ test_trainer_configuration_controls_actual_batch_shards[repaint-True] _____
+tests/test_trainer_batch_shards.py:74: in test_trainer_configuration_controls_actual_batch_shards
+    assert [len(batch) for batch in batches] == [expected_local, expected_local]
+E   assert [16, 16] == [8, 8]
+E     
+E     At index 0 diff: 16 != 8
+E     Use -v to get more diff
+----------------------------- Captured stdout call -----------------------------
+training complete
+----------------------------- Captured stderr call -----------------------------
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+loss: 0.7686:   0%|          | 0/1 [00:00<?, ?it/s]
+loss: 0.7686: 100%|██████████| 1/1 [00:00<00:00, 383.22it/s]
+=========================== short test summary info ============================
+FAILED tests/test_trainer_batch_shards.py::test_trainer_configuration_controls_actual_batch_shards[denoising_diffusion_pytorch-None]
+FAILED tests/test_trainer_batch_shards.py::test_trainer_configuration_controls_actual_batch_shards[denoising_diffusion_pytorch-True]
+FAILED tests/test_trainer_batch_shards.py::test_trainer_configuration_controls_actual_batch_shards[denoising_diffusion_pytorch_1d-None]
+FAILED tests/test_trainer_batch_shards.py::test_trainer_configuration_controls_actual_batch_shards[denoising_diffusion_pytorch_1d-True]
+FAILED tests/test_trainer_batch_shards.py::test_trainer_configuration_controls_actual_batch_shards[guided_diffusion-None]
+FAILED tests/test_trainer_batch_shards.py::test_trainer_configuration_controls_actual_batch_shards[guided_diffusion-True]
+FAILED tests/test_trainer_batch_shards.py::test_trainer_configuration_controls_actual_batch_shards[repaint-None]
+FAILED tests/test_trainer_batch_shards.py::test_trainer_configuration_controls_actual_batch_shards[repaint-True]
+8 failed, 4 passed in 4.79s

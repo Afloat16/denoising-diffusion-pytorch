@@ -1,0 +1,112 @@
+......FFFF                                                               [100%]
+=================================== FAILURES ===================================
+___________ test_training_restores_model_mode[True-guided_diffusion] ___________
+tests/test_trainer_training_mode.py:85: in test_training_restores_model_mode
+    compare_training(trainers, models)
+tests/test_trainer_training_mode.py:69: in compare_training
+    assert actual.modes == reference.modes
+E   assert [(False, False)] == [(True, True)]
+E     
+E     At index 0 diff: (False, False) != (True, True)
+E     Use -v to get more diff
+----------------------------- Captured stdout call -----------------------------
+training complete
+training complete
+----------------------------- Captured stderr call -----------------------------
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+loss: 2.0983:   0%|          | 0/1 [00:00<?, ?it/s]
+loss: 2.0983: 100%|██████████| 1/1 [00:00<00:00, 355.24it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+loss: 4.5998:   0%|          | 0/1 [00:00<?, ?it/s]
+loss: 4.5998: 100%|██████████| 1/1 [00:00<00:00, 395.09it/s]
+_______________ test_training_restores_model_mode[True-repaint] ________________
+tests/test_trainer_training_mode.py:85: in test_training_restores_model_mode
+    compare_training(trainers, models)
+tests/test_trainer_training_mode.py:69: in compare_training
+    assert actual.modes == reference.modes
+E   assert [(False, False)] == [(True, True)]
+E     
+E     At index 0 diff: (False, False) != (True, True)
+E     Use -v to get more diff
+----------------------------- Captured stdout call -----------------------------
+training complete
+training complete
+----------------------------- Captured stderr call -----------------------------
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+loss: 0.7518:   0%|          | 0/1 [00:00<?, ?it/s]
+loss: 0.7518: 100%|██████████| 1/1 [00:00<00:00, 208.58it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+loss: 1.3543:   0%|          | 0/1 [00:00<?, ?it/s]
+loss: 1.3543: 100%|██████████| 1/1 [00:00<00:00, 276.58it/s]
+______ test_resuming_training_after_external_evaluation[guided_diffusion] ______
+tests/test_trainer_training_mode.py:95: in test_resuming_training_after_external_evaluation
+    compare_training(trainers, models)
+tests/test_trainer_training_mode.py:69: in compare_training
+    assert actual.modes == reference.modes
+E   assert [(True, True), (False, False)] == [(True, True), (True, True)]
+E     
+E     At index 1 diff: (False, False) != (True, True)
+E     Use -v to get more diff
+----------------------------- Captured stdout call -----------------------------
+training complete
+training complete
+training complete
+training complete
+----------------------------- Captured stderr call -----------------------------
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+loss: 4.5998:   0%|          | 0/1 [00:00<?, ?it/s]
+loss: 4.5998: 100%|██████████| 1/1 [00:00<00:00, 162.15it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+loss: 4.5998:   0%|          | 0/1 [00:00<?, ?it/s]
+loss: 4.5998: 100%|██████████| 1/1 [00:00<00:00, 234.10it/s]
+
+ 50%|█████     | 1/2 [00:00<?, ?it/s]
+loss: 2.2294:  50%|█████     | 1/2 [00:00<?, ?it/s]
+loss: 2.2294: 100%|██████████| 2/2 [00:00<00:00, 264.34it/s]
+
+ 50%|█████     | 1/2 [00:00<?, ?it/s]
+loss: 5.1349:  50%|█████     | 1/2 [00:00<?, ?it/s]
+loss: 5.1349: 100%|██████████| 2/2 [00:00<00:00, 416.39it/s]
+__________ test_resuming_training_after_external_evaluation[repaint] ___________
+tests/test_trainer_training_mode.py:95: in test_resuming_training_after_external_evaluation
+    compare_training(trainers, models)
+tests/test_trainer_training_mode.py:69: in compare_training
+    assert actual.modes == reference.modes
+E   assert [(True, True), (False, False)] == [(True, True), (True, True)]
+E     
+E     At index 1 diff: (False, False) != (True, True)
+E     Use -v to get more diff
+----------------------------- Captured stdout call -----------------------------
+training complete
+training complete
+training complete
+training complete
+----------------------------- Captured stderr call -----------------------------
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+loss: 1.3543:   0%|          | 0/1 [00:00<?, ?it/s]
+loss: 1.3543: 100%|██████████| 1/1 [00:00<00:00, 206.64it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s]
+loss: 1.3543:   0%|          | 0/1 [00:00<?, ?it/s]
+loss: 1.3543: 100%|██████████| 1/1 [00:00<00:00, 321.67it/s]
+
+ 50%|█████     | 1/2 [00:00<?, ?it/s]
+loss: 0.4968:  50%|█████     | 1/2 [00:00<?, ?it/s]
+loss: 0.4968: 100%|██████████| 2/2 [00:00<00:00, 279.84it/s]
+
+ 50%|█████     | 1/2 [00:00<?, ?it/s]
+loss: 0.9748:  50%|█████     | 1/2 [00:00<?, ?it/s]
+loss: 0.9748: 100%|██████████| 2/2 [00:00<00:00, 397.87it/s]
+=========================== short test summary info ============================
+FAILED tests/test_trainer_training_mode.py::test_training_restores_model_mode[True-guided_diffusion]
+FAILED tests/test_trainer_training_mode.py::test_training_restores_model_mode[True-repaint]
+FAILED tests/test_trainer_training_mode.py::test_resuming_training_after_external_evaluation[guided_diffusion]
+FAILED tests/test_trainer_training_mode.py::test_resuming_training_after_external_evaluation[repaint]
+4 failed, 6 passed in 4.50s

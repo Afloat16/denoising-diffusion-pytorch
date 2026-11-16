@@ -1,0 +1,560 @@
+﻿2026-11-16T13:50:15.2511145Z Current runner version: '2.338.2'
+2026-11-16T13:50:15.2536121Z ##[group]Runner Image Provisioner
+2026-11-16T13:50:15.2537029Z Hosted Compute Agent
+2026-11-16T13:50:15.2537631Z Version: 20261103.629
+2026-11-16T13:50:15.2538344Z Commit: 15dbd9ccb5dbf34fae002b6ed1a2670f52df37bc
+2026-11-16T13:50:15.2539108Z Build Date: 2026-11-03T17:26:59Z
+2026-11-16T13:50:15.2539788Z Worker ID: {986f1e6f-7e00-4c1d-ae4a-7f16d724457f}
+2026-11-16T13:50:15.2540639Z Region: northcentralus
+2026-11-16T13:50:15.2541234Z Cloud: Azure
+2026-11-16T13:50:15.2541849Z ##[endgroup]
+2026-11-16T13:50:15.2543350Z ##[group]Operating System
+2026-11-16T13:50:15.2543975Z Ubuntu
+2026-11-16T13:50:15.2545042Z 26.04.1
+2026-11-16T13:50:15.2545591Z LTS
+2026-11-16T13:50:15.2546175Z ##[endgroup]
+2026-11-16T13:50:15.2547029Z ##[group]Runner Image
+2026-11-16T13:50:15.2547637Z Image: ubuntu-26.04
+2026-11-16T13:50:15.2548674Z Version: 20261111.196.1
+2026-11-16T13:50:15.2549959Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261111.196/images/ubuntu/Ubuntu2604-Readme.md
+2026-11-16T13:50:15.2551594Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261111.196
+2026-11-16T13:50:15.2552613Z ##[endgroup]
+2026-11-16T13:50:15.2553877Z ##[group]GITHUB_TOKEN Permissions
+2026-11-16T13:50:15.2556272Z Contents: read
+2026-11-16T13:50:15.2556999Z Metadata: read
+2026-11-16T13:50:15.2557614Z ##[endgroup]
+2026-11-16T13:50:15.2560162Z Secret source: Actions
+2026-11-16T13:50:15.2561181Z Cache mode: write
+2026-11-16T13:50:15.2562102Z Prepare workflow directory
+2026-11-16T13:50:15.2965699Z Prepare all required actions
+2026-11-16T13:50:15.3014521Z Getting action download info
+2026-11-16T13:50:15.5578679Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-16T13:50:15.7179671Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-11-16T13:50:15.8278987Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-16T13:50:16.2966614Z Complete job name: cpu-gloo
+2026-11-16T13:50:16.4023623Z ##[group]Run actions/checkout@v4
+2026-11-16T13:50:16.4025167Z with:
+2026-11-16T13:50:16.4025980Z   persist-credentials: false
+2026-11-16T13:50:16.4027101Z   repository: Afloat16/denoising-diffusion-pytorch
+2026-11-16T13:50:16.4036398Z   token: ***
+2026-11-16T13:50:16.4037201Z   ssh-strict: true
+2026-11-16T13:50:16.4038016Z   ssh-user: git
+2026-11-16T13:50:16.4038810Z   clean: true
+2026-11-16T13:50:16.4039656Z   sparse-checkout-cone-mode: true
+2026-11-16T13:50:16.4040650Z   fetch-depth: 1
+2026-11-16T13:50:16.4041463Z   fetch-tags: false
+2026-11-16T13:50:16.4042305Z   show-progress: true
+2026-11-16T13:50:16.4043157Z   lfs: false
+2026-11-16T13:50:16.4043955Z   submodules: false
+2026-11-16T13:50:16.4044928Z   set-safe-directory: true
+2026-11-16T13:50:16.4045893Z   allow-unsafe-pr-checkout: false
+2026-11-16T13:50:16.4047136Z env:
+2026-11-16T13:50:16.4047899Z   OMP_NUM_THREADS: 1
+2026-11-16T13:50:16.4049235Z   MKL_NUM_THREADS: 1
+2026-11-16T13:50:16.4050251Z   OPENBLAS_NUM_THREADS: 1
+2026-11-16T13:50:16.4051248Z   PYTEST_DISABLE_PLUGIN_AUTOLOAD: 1
+2026-11-16T13:50:16.4052284Z   ACCELERATE_USE_CPU: true
+2026-11-16T13:50:16.4053175Z ##[endgroup]
+2026-11-16T13:50:17.0783211Z Syncing repository: Afloat16/denoising-diffusion-pytorch
+2026-11-16T13:50:17.0785586Z ##[group]Getting Git version info
+2026-11-16T13:50:17.0786807Z Working directory is '/home/runner/work/denoising-diffusion-pytorch/denoising-diffusion-pytorch'
+2026-11-16T13:50:17.0788392Z [command]/usr/bin/git version
+2026-11-16T13:50:17.1143611Z git version 2.56.1
+2026-11-16T13:50:17.1176379Z ##[endgroup]
+2026-11-16T13:50:17.1185524Z Temporarily overriding HOME='/home/runner/work/_temp/19cceec8-b949-477a-837e-4e3ca0bd5469' before making global git config changes
+2026-11-16T13:50:17.1189245Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-16T13:50:17.1193183Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/denoising-diffusion-pytorch/denoising-diffusion-pytorch
+2026-11-16T13:50:17.1266913Z Deleting the contents of '/home/runner/work/denoising-diffusion-pytorch/denoising-diffusion-pytorch'
+2026-11-16T13:50:17.1270210Z ##[group]Initializing the repository
+2026-11-16T13:50:17.1275221Z [command]/usr/bin/git init /home/runner/work/denoising-diffusion-pytorch/denoising-diffusion-pytorch
+2026-11-16T13:50:17.1640826Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-16T13:50:17.1643415Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-16T13:50:17.1646004Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-16T13:50:17.1647791Z hint: call:
+2026-11-16T13:50:17.1648544Z hint:
+2026-11-16T13:50:17.1649544Z hint: 	git config --global init.defaultBranch <name>
+2026-11-16T13:50:17.1650901Z hint:
+2026-11-16T13:50:17.1652192Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-16T13:50:17.1654791Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-16T13:50:17.1656611Z hint:
+2026-11-16T13:50:17.1657384Z hint: 	git branch -m <name>
+2026-11-16T13:50:17.1658350Z hint:
+2026-11-16T13:50:17.1659779Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-16T13:50:17.1663227Z Initialized empty Git repository in /home/runner/work/denoising-diffusion-pytorch/denoising-diffusion-pytorch/.git/
+2026-11-16T13:50:17.1673328Z [command]/usr/bin/git remote add origin https://github.com/Afloat16/denoising-diffusion-pytorch
+2026-11-16T13:50:17.1751731Z ##[endgroup]
+2026-11-16T13:50:17.1753246Z ##[group]Disabling automatic garbage collection
+2026-11-16T13:50:17.1756723Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-16T13:50:17.1797219Z ##[endgroup]
+2026-11-16T13:50:17.1798568Z ##[group]Setting up auth
+2026-11-16T13:50:17.1803261Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-16T13:50:17.1843423Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-16T13:50:17.2693804Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-16T13:50:17.2734823Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-16T13:50:17.3032558Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-16T13:50:17.3073963Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-16T13:50:17.3365689Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-16T13:50:17.3625955Z ##[endgroup]
+2026-11-16T13:50:17.3627578Z ##[group]Fetching the repository
+2026-11-16T13:50:17.3637800Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +05a861a5e63b9f19b7b3da285ef72f619f8241d2:refs/remotes/origin/validation/ddp-split-batches-20261116
+2026-11-16T13:50:17.8631734Z From https://github.com/Afloat16/denoising-diffusion-pytorch
+2026-11-16T13:50:17.8633807Z  * [new ref]         05a861a5e63b9f19b7b3da285ef72f619f8241d2 -> origin/validation/ddp-split-batches-20261116
+2026-11-16T13:50:17.8637999Z ##[endgroup]
+2026-11-16T13:50:17.8639039Z ##[group]Determining the checkout info
+2026-11-16T13:50:17.8640437Z ##[endgroup]
+2026-11-16T13:50:17.8645744Z [command]/usr/bin/git sparse-checkout disable
+2026-11-16T13:50:17.8702956Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-16T13:50:17.8737248Z ##[group]Checking out the ref
+2026-11-16T13:50:17.8741571Z [command]/usr/bin/git checkout --progress --force -B validation/ddp-split-batches-20261116 refs/remotes/origin/validation/ddp-split-batches-20261116
+2026-11-16T13:50:17.8847259Z Switched to a new branch 'validation/ddp-split-batches-20261116'
+2026-11-16T13:50:17.8854537Z branch 'validation/ddp-split-batches-20261116' set up to track 'origin/validation/ddp-split-batches-20261116'.
+2026-11-16T13:50:17.8860006Z ##[endgroup]
+2026-11-16T13:50:17.8907824Z [command]/usr/bin/git log -1 --format=%H
+2026-11-16T13:50:17.8934976Z 05a861a5e63b9f19b7b3da285ef72f619f8241d2
+2026-11-16T13:50:17.8947593Z ##[group]Removing auth
+2026-11-16T13:50:17.8949305Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-16T13:50:17.8984024Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-16T13:50:17.9274993Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-16T13:50:17.9303086Z http.https://github.com/.extraheader
+2026-11-16T13:50:17.9313728Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-16T13:50:17.9351475Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-16T13:50:17.9628341Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-16T13:50:17.9661518Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-16T13:50:17.9938228Z ##[endgroup]
+2026-11-16T13:50:18.0283750Z ##[group]Run actions/checkout@v4
+2026-11-16T13:50:18.0284535Z with:
+2026-11-16T13:50:18.0285019Z   ref: c8155b1dc622e3f1ef0d53dc6e5a570ca105bcec
+2026-11-16T13:50:18.0285718Z   path: baseline
+2026-11-16T13:50:18.0286180Z   persist-credentials: false
+2026-11-16T13:50:18.0286873Z   repository: Afloat16/denoising-diffusion-pytorch
+2026-11-16T13:50:18.0294949Z   token: ***
+2026-11-16T13:50:18.0295359Z   ssh-strict: true
+2026-11-16T13:50:18.0295782Z   ssh-user: git
+2026-11-16T13:50:18.0296192Z   clean: true
+2026-11-16T13:50:18.0296639Z   sparse-checkout-cone-mode: true
+2026-11-16T13:50:18.0297222Z   fetch-depth: 1
+2026-11-16T13:50:18.0297658Z   fetch-tags: false
+2026-11-16T13:50:18.0298110Z   show-progress: true
+2026-11-16T13:50:18.0298560Z   lfs: false
+2026-11-16T13:50:18.0298954Z   submodules: false
+2026-11-16T13:50:18.0299412Z   set-safe-directory: true
+2026-11-16T13:50:18.0299965Z   allow-unsafe-pr-checkout: false
+2026-11-16T13:50:18.0300529Z env:
+2026-11-16T13:50:18.0300920Z   OMP_NUM_THREADS: 1
+2026-11-16T13:50:18.0301365Z   MKL_NUM_THREADS: 1
+2026-11-16T13:50:18.0301822Z   OPENBLAS_NUM_THREADS: 1
+2026-11-16T13:50:18.0302350Z   PYTEST_DISABLE_PLUGIN_AUTOLOAD: 1
+2026-11-16T13:50:18.0302948Z   ACCELERATE_USE_CPU: true
+2026-11-16T13:50:18.0303444Z ##[endgroup]
+2026-11-16T13:50:18.1249872Z Syncing repository: Afloat16/denoising-diffusion-pytorch
+2026-11-16T13:50:18.1261793Z ##[group]Getting Git version info
+2026-11-16T13:50:18.1264583Z Working directory is '/home/runner/work/denoising-diffusion-pytorch/denoising-diffusion-pytorch/baseline'
+2026-11-16T13:50:18.1268371Z [command]/usr/bin/git version
+2026-11-16T13:50:18.1293169Z git version 2.56.1
+2026-11-16T13:50:18.1326328Z ##[endgroup]
+2026-11-16T13:50:18.1333986Z Temporarily overriding HOME='/home/runner/work/_temp/f07feb77-2ab7-4a1d-a8aa-3ef41515c877' before making global git config changes
+2026-11-16T13:50:18.1337710Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-16T13:50:18.1341583Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/denoising-diffusion-pytorch/denoising-diffusion-pytorch/baseline
+2026-11-16T13:50:18.1378893Z ##[group]Initializing the repository
+2026-11-16T13:50:18.1383863Z [command]/usr/bin/git init /home/runner/work/denoising-diffusion-pytorch/denoising-diffusion-pytorch/baseline
+2026-11-16T13:50:18.1429053Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-16T13:50:18.1431612Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-16T13:50:18.1435700Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-16T13:50:18.1439035Z hint: call:
+2026-11-16T13:50:18.1440117Z hint:
+2026-11-16T13:50:18.1441138Z hint: 	git config --global init.defaultBranch <name>
+2026-11-16T13:50:18.1441906Z hint:
+2026-11-16T13:50:18.1442614Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-16T13:50:18.1443911Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-16T13:50:18.1445793Z hint:
+2026-11-16T13:50:18.1446576Z hint: 	git branch -m <name>
+2026-11-16T13:50:18.1447503Z hint:
+2026-11-16T13:50:18.1448896Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-16T13:50:18.1452266Z Initialized empty Git repository in /home/runner/work/denoising-diffusion-pytorch/denoising-diffusion-pytorch/baseline/.git/
+2026-11-16T13:50:18.1456842Z [command]/usr/bin/git remote add origin https://github.com/Afloat16/denoising-diffusion-pytorch
+2026-11-16T13:50:18.1492778Z ##[endgroup]
+2026-11-16T13:50:18.1494511Z ##[group]Disabling automatic garbage collection
+2026-11-16T13:50:18.1497433Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-16T13:50:18.1531963Z ##[endgroup]
+2026-11-16T13:50:18.1533602Z ##[group]Setting up auth
+2026-11-16T13:50:18.1537567Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-16T13:50:18.1573675Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-16T13:50:18.1883335Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-16T13:50:18.1923185Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-16T13:50:18.2262360Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-16T13:50:18.2298473Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-16T13:50:18.2568740Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-16T13:50:18.2607447Z ##[endgroup]
+2026-11-16T13:50:18.2608476Z ##[group]Fetching the repository
+2026-11-16T13:50:18.2617295Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin c8155b1dc622e3f1ef0d53dc6e5a570ca105bcec
+2026-11-16T13:50:18.6927764Z From https://github.com/Afloat16/denoising-diffusion-pytorch
+2026-11-16T13:50:18.6928616Z  * branch            c8155b1dc622e3f1ef0d53dc6e5a570ca105bcec -> FETCH_HEAD
+2026-11-16T13:50:18.6933762Z ##[endgroup]
+2026-11-16T13:50:18.6935002Z ##[group]Determining the checkout info
+2026-11-16T13:50:18.6937951Z ##[endgroup]
+2026-11-16T13:50:18.6943985Z [command]/usr/bin/git sparse-checkout disable
+2026-11-16T13:50:18.6987718Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-16T13:50:18.7020830Z ##[group]Checking out the ref
+2026-11-16T13:50:18.7025357Z [command]/usr/bin/git checkout --progress --force c8155b1dc622e3f1ef0d53dc6e5a570ca105bcec
+2026-11-16T13:50:18.7096017Z Note: switching to 'c8155b1dc622e3f1ef0d53dc6e5a570ca105bcec'.
+2026-11-16T13:50:18.7096939Z 
+2026-11-16T13:50:18.7097628Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-11-16T13:50:18.7098588Z changes and commit them, and you can discard any commits you make in this
+2026-11-16T13:50:18.7099684Z state without impacting any branches by switching back to a branch.
+2026-11-16T13:50:18.7100563Z 
+2026-11-16T13:50:18.7100949Z If you want to create a new branch to retain commits you create, you may
+2026-11-16T13:50:18.7101741Z do so (now or later) by using -c with the switch command. Example:
+2026-11-16T13:50:18.7102047Z 
+2026-11-16T13:50:18.7102189Z   git switch -c <new-branch-name>
+2026-11-16T13:50:18.7102409Z 
+2026-11-16T13:50:18.7102536Z Or undo this operation with:
+2026-11-16T13:50:18.7102728Z 
+2026-11-16T13:50:18.7102837Z   git switch -
+2026-11-16T13:50:18.7103011Z 
+2026-11-16T13:50:18.7103250Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-11-16T13:50:18.7103590Z 
+2026-11-16T13:50:18.7103765Z HEAD is now at c8155b1 fix self cond in 1d diffusion
+2026-11-16T13:50:18.7112009Z ##[endgroup]
+2026-11-16T13:50:18.7143605Z [command]/usr/bin/git log -1 --format=%H
+2026-11-16T13:50:18.7167715Z c8155b1dc622e3f1ef0d53dc6e5a570ca105bcec
+2026-11-16T13:50:18.7177154Z ##[group]Removing auth
+2026-11-16T13:50:18.7180460Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-16T13:50:18.7209984Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-16T13:50:18.7478395Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-16T13:50:18.7501400Z http.https://github.com/.extraheader
+2026-11-16T13:50:18.7509809Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-16T13:50:18.7541642Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-16T13:50:18.7814745Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-16T13:50:18.7847391Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-16T13:50:18.8133060Z ##[endgroup]
+2026-11-16T13:50:18.8326965Z ##[group]Run actions/setup-python@v5
+2026-11-16T13:50:18.8327287Z with:
+2026-11-16T13:50:18.8327496Z   python-version: 3.12
+2026-11-16T13:50:18.8327740Z   check-latest: false
+2026-11-16T13:50:18.8330169Z   token: ***
+2026-11-16T13:50:18.8330393Z   update-environment: true
+2026-11-16T13:50:18.8330664Z   allow-prereleases: false
+2026-11-16T13:50:18.8330910Z   freethreaded: false
+2026-11-16T13:50:18.8331127Z env:
+2026-11-16T13:50:18.8331313Z   OMP_NUM_THREADS: 1
+2026-11-16T13:50:18.8331538Z   MKL_NUM_THREADS: 1
+2026-11-16T13:50:18.8331757Z   OPENBLAS_NUM_THREADS: 1
+2026-11-16T13:50:18.8332005Z   PYTEST_DISABLE_PLUGIN_AUTOLOAD: 1
+2026-11-16T13:50:18.8332280Z   ACCELERATE_USE_CPU: true
+2026-11-16T13:50:18.8332507Z ##[endgroup]
+2026-11-16T13:50:18.9730740Z ##[group]Installed versions
+2026-11-16T13:50:18.9853460Z (node:2672) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-16T13:50:18.9855072Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-16T13:50:18.9855959Z Successfully set up CPython (3.12.16)
+2026-11-16T13:50:18.9856727Z ##[endgroup]
+2026-11-16T13:50:19.0045180Z ##[group]Run python -m pip install torch==2.5.1+cpu torchvision==0.20.1+cpu --index-url https://download.pytorch.org/whl/cpu
+2026-11-16T13:50:19.0046757Z [36;1mpython -m pip install torch==2.5.1+cpu torchvision==0.20.1+cpu --index-url https://download.pytorch.org/whl/cpu[0m
+2026-11-16T13:50:19.0048491Z [36;1mpython -m pip install accelerate==1.15.0 einops==0.8.2 ema-pytorch==0.8.3 numpy==1.26.4 pillow==11.3.0 pytorch-fid==0.3.0 scipy==1.13.1 pytest==8.3.5 huggingface-hub==0.25.2 safetensors==0.5.3[0m
+2026-11-16T13:50:19.0132056Z shell: /usr/bin/bash -e {0}
+2026-11-16T13:50:19.0132430Z env:
+2026-11-16T13:50:19.0132735Z   OMP_NUM_THREADS: 1
+2026-11-16T13:50:19.0133057Z   MKL_NUM_THREADS: 1
+2026-11-16T13:50:19.0133387Z   OPENBLAS_NUM_THREADS: 1
+2026-11-16T13:50:19.0134383Z   PYTEST_DISABLE_PLUGIN_AUTOLOAD: 1
+2026-11-16T13:50:19.0134922Z   ACCELERATE_USE_CPU: true
+2026-11-16T13:50:19.0135433Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-16T13:50:19.0136182Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-16T13:50:19.0136868Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-16T13:50:19.0137542Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-16T13:50:19.0138206Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-16T13:50:19.0138886Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-16T13:50:19.0139368Z ##[endgroup]
+2026-11-16T13:50:22.4062298Z Looking in indexes: https://download.pytorch.org/whl/cpu
+2026-11-16T13:50:22.5229587Z Collecting torch==2.5.1+cpu
+2026-11-16T13:50:22.5933225Z   Downloading torch-2.5.1%2Bcpu-cp312-cp312-linux_x86_64.whl (174.6 MB)
+2026-11-16T13:50:24.0201046Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 174.6/174.6 MB 124.2 MB/s  0:00:01
+2026-11-16T13:50:24.2939565Z Collecting torchvision==0.20.1+cpu
+2026-11-16T13:50:24.3094632Z   Downloading torchvision-0.20.1%2Bcpu-cp312-cp312-linux_x86_64.whl (1.8 MB)
+2026-11-16T13:50:24.3398377Z      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 74.5 MB/s  0:00:00
+2026-11-16T13:50:24.3712655Z Collecting filelock (from torch==2.5.1+cpu)
+2026-11-16T13:50:24.3980240Z   Downloading filelock-4.2.4-py3-none-any.whl.metadata (2.0 kB)
+2026-11-16T13:50:24.4161642Z Collecting typing-extensions>=4.8.0 (from torch==2.5.1+cpu)
+2026-11-16T13:50:24.4198503Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-11-16T13:50:24.4449676Z Collecting networkx (from torch==2.5.1+cpu)
+2026-11-16T13:50:24.4482890Z   Downloading networkx-3.7-py3-none-any.whl.metadata (6.7 kB)
+2026-11-16T13:50:24.4618099Z Collecting jinja2 (from torch==2.5.1+cpu)
+2026-11-16T13:50:24.4661844Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+2026-11-16T13:50:24.4901458Z Collecting fsspec (from torch==2.5.1+cpu)
+2026-11-16T13:50:24.4934733Z   Downloading fsspec-2026.9.0-py3-none-any.whl.metadata (10 kB)
+2026-11-16T13:50:24.5159367Z Collecting setuptools (from torch==2.5.1+cpu)
+2026-11-16T13:50:24.5200629Z   Downloading setuptools-78.1.0-py3-none-any.whl.metadata (6.6 kB)
+2026-11-16T13:50:24.5443179Z Collecting sympy==1.13.1 (from torch==2.5.1+cpu)
+2026-11-16T13:50:24.5474755Z   Downloading sympy-1.13.1-py3-none-any.whl.metadata (12 kB)
+2026-11-16T13:50:24.8296786Z Collecting numpy (from torchvision==0.20.1+cpu)
+2026-11-16T13:50:24.8336184Z   Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+2026-11-16T13:50:25.0847043Z Collecting pillow!=8.3.*,>=5.3.0 (from torchvision==0.20.1+cpu)
+2026-11-16T13:50:25.0883259Z   Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+2026-11-16T13:50:25.1068077Z Collecting mpmath<1.4,>=1.1.0 (from sympy==1.13.1->torch==2.5.1+cpu)
+2026-11-16T13:50:25.1102343Z   Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+2026-11-16T13:50:25.1329030Z Collecting MarkupSafe>=2.0 (from jinja2->torch==2.5.1+cpu)
+2026-11-16T13:50:25.1388524Z   Downloading markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+2026-11-16T13:50:25.1467222Z Downloading sympy-1.13.1-py3-none-any.whl (6.2 MB)
+2026-11-16T13:50:25.1864821Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 178.7 MB/s  0:00:00
+2026-11-16T13:50:25.1900151Z Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+2026-11-16T13:50:25.1952735Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 87.2 MB/s  0:00:00
+2026-11-16T13:50:25.1987256Z Downloading pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+2026-11-16T13:50:25.2267306Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 271.5 MB/s  0:00:00
+2026-11-16T13:50:25.2303423Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-11-16T13:50:25.2363224Z Downloading filelock-4.2.4-py3-none-any.whl (162 kB)
+2026-11-16T13:50:25.2419182Z Downloading fsspec-2026.9.0-py3-none-any.whl (221 kB)
+2026-11-16T13:50:25.2489218Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+2026-11-16T13:50:25.2562297Z Downloading markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+2026-11-16T13:50:25.2613606Z Downloading networkx-3.7-py3-none-any.whl (2.1 MB)
+2026-11-16T13:50:25.2703113Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 282.0 MB/s  0:00:00
+2026-11-16T13:50:25.2737094Z Downloading numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+2026-11-16T13:50:25.3212554Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 364.0 MB/s  0:00:00
+2026-11-16T13:50:25.3259276Z Downloading setuptools-78.1.0-py3-none-any.whl (1.3 MB)
+2026-11-16T13:50:25.3323875Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 227.3 MB/s  0:00:00
+2026-11-16T13:50:25.7746929Z Installing collected packages: mpmath, typing-extensions, sympy, setuptools, pillow, numpy, networkx, MarkupSafe, fsspec, filelock, jinja2, torch, torchvision
+2026-11-16T13:50:45.8939602Z 
+2026-11-16T13:50:45.8962494Z Successfully installed MarkupSafe-3.0.3 filelock-4.2.4 fsspec-2026.9.0 jinja2-3.1.6 mpmath-1.3.0 networkx-3.7 numpy-2.5.4 pillow-13.0.0 setuptools-78.1.0 sympy-1.13.1 torch-2.5.1+cpu torchvision-0.20.1+cpu typing-extensions-4.16.0
+2026-11-16T13:50:46.4079122Z Collecting accelerate==1.15.0
+2026-11-16T13:50:46.4347830Z   Downloading accelerate-1.15.0-py3-none-any.whl.metadata (19 kB)
+2026-11-16T13:50:46.4584970Z Collecting einops==0.8.2
+2026-11-16T13:50:46.4623738Z   Downloading einops-0.8.2-py3-none-any.whl.metadata (13 kB)
+2026-11-16T13:50:46.4814752Z Collecting ema-pytorch==0.8.3
+2026-11-16T13:50:46.4933269Z   Downloading ema_pytorch-0.8.3-py3-none-any.whl.metadata (8.0 kB)
+2026-11-16T13:50:46.7073742Z Collecting numpy==1.26.4
+2026-11-16T13:50:46.7112021Z   Downloading numpy-1.26.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (61 kB)
+2026-11-16T13:50:46.8793611Z Collecting pillow==11.3.0
+2026-11-16T13:50:46.8831634Z   Downloading pillow-11.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.0 kB)
+2026-11-16T13:50:46.8949057Z Collecting pytorch-fid==0.3.0
+2026-11-16T13:50:46.9001497Z   Downloading pytorch_fid-0.3.0-py3-none-any.whl.metadata (5.3 kB)
+2026-11-16T13:50:47.0160701Z Collecting scipy==1.13.1
+2026-11-16T13:50:47.0199659Z   Downloading scipy-1.13.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (60 kB)
+2026-11-16T13:50:47.0547530Z Collecting pytest==8.3.5
+2026-11-16T13:50:47.0583683Z   Downloading pytest-8.3.5-py3-none-any.whl.metadata (7.6 kB)
+2026-11-16T13:50:47.0968552Z Collecting huggingface-hub==0.25.2
+2026-11-16T13:50:47.1019281Z   Downloading huggingface_hub-0.25.2-py3-none-any.whl.metadata (13 kB)
+2026-11-16T13:50:47.2177343Z Collecting safetensors==0.5.3
+2026-11-16T13:50:47.2229833Z   Downloading safetensors-0.5.3-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.8 kB)
+2026-11-16T13:50:47.2409255Z Collecting packaging>=20.0 (from accelerate==1.15.0)
+2026-11-16T13:50:47.2445213Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+2026-11-16T13:50:47.3193383Z Collecting psutil (from accelerate==1.15.0)
+2026-11-16T13:50:47.3231990Z   Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+2026-11-16T13:50:47.3597668Z Collecting pyyaml (from accelerate==1.15.0)
+2026-11-16T13:50:47.3632817Z   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2026-11-16T13:50:47.3670915Z Requirement already satisfied: torch>=2.0.0 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from accelerate==1.15.0) (2.5.1+cpu)
+2026-11-16T13:50:47.3714014Z Requirement already satisfied: torchvision>=0.2.2 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from pytorch-fid==0.3.0) (0.20.1+cpu)
+2026-11-16T13:50:47.3797269Z Collecting iniconfig (from pytest==8.3.5)
+2026-11-16T13:50:47.3831540Z   Downloading iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+2026-11-16T13:50:47.3945581Z Collecting pluggy<2,>=1.5 (from pytest==8.3.5)
+2026-11-16T13:50:47.3981048Z   Downloading pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+2026-11-16T13:50:47.4028202Z Requirement already satisfied: filelock in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from huggingface-hub==0.25.2) (4.2.4)
+2026-11-16T13:50:47.4032592Z Requirement already satisfied: fsspec>=2023.5.0 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from huggingface-hub==0.25.2) (2026.9.0)
+2026-11-16T13:50:47.4237979Z Collecting requests (from huggingface-hub==0.25.2)
+2026-11-16T13:50:47.4271230Z   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+2026-11-16T13:50:47.4520521Z Collecting tqdm>=4.42.1 (from huggingface-hub==0.25.2)
+2026-11-16T13:50:47.4555977Z   Downloading tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
+2026-11-16T13:50:47.4632662Z Requirement already satisfied: typing-extensions>=3.7.4.3 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from huggingface-hub==0.25.2) (4.16.0)
+2026-11-16T13:50:47.4717629Z Requirement already satisfied: networkx in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from torch>=2.0.0->accelerate==1.15.0) (3.7)
+2026-11-16T13:50:47.4721808Z Requirement already satisfied: jinja2 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from torch>=2.0.0->accelerate==1.15.0) (3.1.6)
+2026-11-16T13:50:47.4729378Z Requirement already satisfied: setuptools in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from torch>=2.0.0->accelerate==1.15.0) (78.1.0)
+2026-11-16T13:50:47.4735950Z Requirement already satisfied: sympy==1.13.1 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from torch>=2.0.0->accelerate==1.15.0) (1.13.1)
+2026-11-16T13:50:47.4755214Z Requirement already satisfied: mpmath<1.4,>=1.1.0 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from sympy==1.13.1->torch>=2.0.0->accelerate==1.15.0) (1.3.0)
+2026-11-16T13:50:47.4812187Z Requirement already satisfied: MarkupSafe>=2.0 in /opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages (from jinja2->torch>=2.0.0->accelerate==1.15.0) (3.0.3)
+2026-11-16T13:50:47.6006895Z Collecting charset_normalizer<4,>=2 (from requests->huggingface-hub==0.25.2)
+2026-11-16T13:50:47.6044645Z   Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+2026-11-16T13:50:47.6210996Z Collecting idna<4,>=2.5 (from requests->huggingface-hub==0.25.2)
+2026-11-16T13:50:47.6246859Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+2026-11-16T13:50:47.6441536Z Collecting urllib3<3,>=1.26 (from requests->huggingface-hub==0.25.2)
+2026-11-16T13:50:47.6475550Z   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+2026-11-16T13:50:47.6637286Z Collecting certifi>=2023.5.7 (from requests->huggingface-hub==0.25.2)
+2026-11-16T13:50:47.6672840Z   Downloading certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+2026-11-16T13:50:47.6797246Z Downloading accelerate-1.15.0-py3-none-any.whl (394 kB)
+2026-11-16T13:50:47.6880018Z Downloading einops-0.8.2-py3-none-any.whl (65 kB)
+2026-11-16T13:50:47.6937548Z Downloading ema_pytorch-0.8.3-py3-none-any.whl (16 kB)
+2026-11-16T13:50:47.6989321Z Downloading numpy-1.26.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.0 MB)
+2026-11-16T13:50:47.7517074Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 18.0/18.0 MB 369.2 MB/s  0:00:00
+2026-11-16T13:50:47.7554974Z Downloading pillow-11.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.6 MB)
+2026-11-16T13:50:47.7756890Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.6/6.6 MB 357.8 MB/s  0:00:00
+2026-11-16T13:50:47.7795783Z Downloading pytorch_fid-0.3.0-py3-none-any.whl (15 kB)
+2026-11-16T13:50:47.7892575Z Downloading scipy-1.13.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (38.2 MB)
+2026-11-16T13:50:47.9412653Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 38.2/38.2 MB 253.7 MB/s  0:00:00
+2026-11-16T13:50:47.9452181Z Downloading pytest-8.3.5-py3-none-any.whl (343 kB)
+2026-11-16T13:50:47.9529855Z Downloading huggingface_hub-0.25.2-py3-none-any.whl (436 kB)
+2026-11-16T13:50:47.9595948Z Downloading safetensors-0.5.3-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (471 kB)
+2026-11-16T13:50:47.9663345Z Downloading pluggy-1.7.0-py3-none-any.whl (27 kB)
+2026-11-16T13:50:47.9716398Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+2026-11-16T13:50:47.9775307Z Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+2026-11-16T13:50:47.9827521Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 175.2 MB/s  0:00:00
+2026-11-16T13:50:47.9861276Z Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+2026-11-16T13:50:47.9915311Z Downloading iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+2026-11-16T13:50:47.9967757Z Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+2026-11-16T13:50:48.0022766Z Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+2026-11-16T13:50:48.0078516Z Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+2026-11-16T13:50:48.0137294Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+2026-11-16T13:50:48.0192603Z Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+2026-11-16T13:50:48.0249267Z Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+2026-11-16T13:50:48.2479503Z Installing collected packages: urllib3, tqdm, safetensors, pyyaml, psutil, pluggy, pillow, packaging, numpy, iniconfig, idna, einops, charset_normalizer, certifi, scipy, requests, pytest, huggingface-hub, ema-pytorch, pytorch-fid, accelerate
+2026-11-16T13:50:48.5214431Z   Attempting uninstall: pillow
+2026-11-16T13:50:48.5237884Z     Found existing installation: pillow 13.0.0
+2026-11-16T13:50:48.5326417Z     Uninstalling pillow-13.0.0:
+2026-11-16T13:50:48.5342962Z       Successfully uninstalled pillow-13.0.0
+2026-11-16T13:50:48.9311671Z   Attempting uninstall: numpy
+2026-11-16T13:50:48.9335524Z     Found existing installation: numpy 2.5.4
+2026-11-16T13:50:48.9763616Z     Uninstalling numpy-2.5.4:
+2026-11-16T13:50:48.9845310Z       Successfully uninstalled numpy-2.5.4
+2026-11-16T13:50:55.1386991Z 
+2026-11-16T13:50:55.1417855Z Successfully installed accelerate-1.15.0 certifi-2026.10.23 charset_normalizer-3.5.2 einops-0.8.2 ema-pytorch-0.8.3 huggingface-hub-0.25.2 idna-3.20 iniconfig-2.3.1 numpy-1.26.4 packaging-26.3 pillow-11.3.0 pluggy-1.7.0 psutil-7.2.2 pytest-8.3.5 pytorch-fid-0.3.0 pyyaml-6.0.3 requests-2.34.2 safetensors-0.5.3 scipy-1.13.1 tqdm-4.70.1 urllib3-2.8.0
+2026-11-16T13:50:55.2322227Z ##[group]Run mkdir -p baseline/tests
+2026-11-16T13:50:55.2322595Z [36;1mmkdir -p baseline/tests[0m
+2026-11-16T13:50:55.2322944Z [36;1mcp tests/test_trainer_split_batches.py baseline/tests/[0m
+2026-11-16T13:50:55.2323279Z [36;1mcd baseline[0m
+2026-11-16T13:50:55.2323479Z [36;1mset +e[0m
+2026-11-16T13:50:55.2324025Z [36;1mpython -m pytest tests/test_trainer_split_batches.py -q --tb=short --basetemp=../before-data --junitxml=../before.xml > ../before.log 2>&1[0m
+2026-11-16T13:50:55.2324951Z [36;1mresult=$?[0m
+2026-11-16T13:50:55.2325158Z [36;1mset -e[0m
+2026-11-16T13:50:55.2325357Z [36;1mcat ../before.log[0m
+2026-11-16T13:50:55.2325586Z [36;1mtest "$result" -eq 1[0m
+2026-11-16T13:50:55.2325823Z [36;1mpython - <<'PY'[0m
+2026-11-16T13:50:55.2326084Z [36;1mimport xml.etree.ElementTree as ET[0m
+2026-11-16T13:50:55.2326450Z [36;1msuite = ET.parse('../before.xml').getroot().find('testsuite')[0m
+2026-11-16T13:50:55.2326892Z [36;1massert int(suite.attrib['tests']) == 8, suite.attrib[0m
+2026-11-16T13:50:55.2327294Z [36;1massert int(suite.attrib['errors']) == 0, suite.attrib[0m
+2026-11-16T13:50:55.2327912Z [36;1massert int(suite.attrib['failures']) == 4, suite.attrib[0m
+2026-11-16T13:50:55.2328227Z [36;1mPY[0m
+2026-11-16T13:50:55.2378147Z shell: /usr/bin/bash -e {0}
+2026-11-16T13:50:55.2378396Z env:
+2026-11-16T13:50:55.2378585Z   OMP_NUM_THREADS: 1
+2026-11-16T13:50:55.2378798Z   MKL_NUM_THREADS: 1
+2026-11-16T13:50:55.2379009Z   OPENBLAS_NUM_THREADS: 1
+2026-11-16T13:50:55.2379249Z   PYTEST_DISABLE_PLUGIN_AUTOLOAD: 1
+2026-11-16T13:50:55.2379529Z   ACCELERATE_USE_CPU: true
+2026-11-16T13:50:55.2379822Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-16T13:50:55.2380255Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-16T13:50:55.2380677Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-16T13:50:55.2381050Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-16T13:50:55.2381429Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-16T13:50:55.2381812Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-16T13:50:55.2382131Z ##[endgroup]
+2026-11-16T13:51:02.7901145Z ....FFFF                                                                 [100%]
+2026-11-16T13:51:02.7904543Z =================================== FAILURES ===================================
+2026-11-16T13:51:02.7905416Z _ test_native_distributed_training_respects_split_batches[True-denoising_diffusion_pytorch] _
+2026-11-16T13:51:02.7906557Z tests/test_trainer_split_batches.py:151: in test_native_distributed_training_respects_split_batches
+2026-11-16T13:51:02.7907191Z     assert len(row["local_ids"]) == expected_local
+2026-11-16T13:51:02.7907509Z E   assert 16 == 8
+2026-11-16T13:51:02.7907752Z E    +  where 16 = len([75, 120, 42, 84, 127, 93, ...])
+2026-11-16T13:51:02.7908273Z _ test_native_distributed_training_respects_split_batches[True-denoising_diffusion_pytorch_1d] _
+2026-11-16T13:51:02.7908991Z tests/test_trainer_split_batches.py:151: in test_native_distributed_training_respects_split_batches
+2026-11-16T13:51:02.7909513Z     assert len(row["local_ids"]) == expected_local
+2026-11-16T13:51:02.7909811Z E   assert 16 == 8
+2026-11-16T13:51:02.7910047Z E    +  where 16 = len([75, 120, 42, 84, 127, 93, ...])
+2026-11-16T13:51:02.7910505Z _ test_native_distributed_training_respects_split_batches[True-guided_diffusion] _
+2026-11-16T13:51:02.7911124Z tests/test_trainer_split_batches.py:151: in test_native_distributed_training_respects_split_batches
+2026-11-16T13:51:02.7911623Z     assert len(row["local_ids"]) == expected_local
+2026-11-16T13:51:02.7911924Z E   assert 16 == 8
+2026-11-16T13:51:02.7912151Z E    +  where 16 = len([75, 120, 42, 84, 127, 93, ...])
+2026-11-16T13:51:02.7912585Z ____ test_native_distributed_training_respects_split_batches[True-repaint] _____
+2026-11-16T13:51:02.7913193Z tests/test_trainer_split_batches.py:151: in test_native_distributed_training_respects_split_batches
+2026-11-16T13:51:02.7914049Z     assert len(row["local_ids"]) == expected_local
+2026-11-16T13:51:02.7914618Z E   assert 16 == 8
+2026-11-16T13:51:02.7914874Z E    +  where 16 = len([75, 120, 42, 84, 127, 93, ...])
+2026-11-16T13:51:02.7915456Z - generated xml file: /home/runner/work/denoising-diffusion-pytorch/denoising-diffusion-pytorch/before.xml -
+2026-11-16T13:51:02.7916094Z =========================== short test summary info ============================
+2026-11-16T13:51:02.7916973Z FAILED tests/test_trainer_split_batches.py::test_native_distributed_training_respects_split_batches[True-denoising_diffusion_pytorch] - assert 16 == 8
+2026-11-16T13:51:02.7917680Z  +  where 16 = len([75, 120, 42, 84, 127, 93, ...])
+2026-11-16T13:51:02.7918392Z FAILED tests/test_trainer_split_batches.py::test_native_distributed_training_respects_split_batches[True-denoising_diffusion_pytorch_1d] - assert 16 == 8
+2026-11-16T13:51:02.7919117Z  +  where 16 = len([75, 120, 42, 84, 127, 93, ...])
+2026-11-16T13:51:02.7919739Z FAILED tests/test_trainer_split_batches.py::test_native_distributed_training_respects_split_batches[True-guided_diffusion] - assert 16 == 8
+2026-11-16T13:51:02.7920532Z  +  where 16 = len([75, 120, 42, 84, 127, 93, ...])
+2026-11-16T13:51:02.7921105Z FAILED tests/test_trainer_split_batches.py::test_native_distributed_training_respects_split_batches[True-repaint] - assert 16 == 8
+2026-11-16T13:51:02.7921675Z  +  where 16 = len([75, 120, 42, 84, 127, 93, ...])
+2026-11-16T13:51:02.7921959Z 4 failed, 4 passed in 6.90s
+2026-11-16T13:51:02.8179890Z ##[group]Run set -o pipefail
+2026-11-16T13:51:02.8180207Z [36;1mset -o pipefail[0m
+2026-11-16T13:51:02.8180877Z [36;1mpython -m pytest tests/test_trainer_batch_shards.py tests/test_trainer_split_batches.py -q --tb=short --basetemp=after-data --junitxml=after.xml | tee after.log[0m
+2026-11-16T13:51:02.8230866Z shell: /usr/bin/bash -e {0}
+2026-11-16T13:51:02.8231112Z env:
+2026-11-16T13:51:02.8231296Z   OMP_NUM_THREADS: 1
+2026-11-16T13:51:02.8231509Z   MKL_NUM_THREADS: 1
+2026-11-16T13:51:02.8231719Z   OPENBLAS_NUM_THREADS: 1
+2026-11-16T13:51:02.8231957Z   PYTEST_DISABLE_PLUGIN_AUTOLOAD: 1
+2026-11-16T13:51:02.8232235Z   ACCELERATE_USE_CPU: true
+2026-11-16T13:51:02.8232527Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-16T13:51:02.8232956Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-16T13:51:02.8233370Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-16T13:51:02.8233779Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-16T13:51:02.8234426Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-16T13:51:02.8234823Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-16T13:51:02.8235138Z ##[endgroup]
+2026-11-16T13:51:10.0440853Z ....................                                                     [100%]
+2026-11-16T13:51:10.0442022Z - generated xml file: /home/runner/work/denoising-diffusion-pytorch/denoising-diffusion-pytorch/after.xml -
+2026-11-16T13:51:10.0442817Z 20 passed in 7.06s
+2026-11-16T13:51:10.4445072Z ##[group]Run actions/upload-artifact@v4
+2026-11-16T13:51:10.4445404Z with:
+2026-11-16T13:51:10.4445620Z   name: split-batch-regression-evidence
+2026-11-16T13:51:10.4446063Z   path: before.log
+before.xml
+after.log
+after.xml
+before-data/**/*.json
+after-data/**/*.json
+
+2026-11-16T13:51:10.4446509Z   if-no-files-found: warn
+2026-11-16T13:51:10.4446745Z   compression-level: 6
+2026-11-16T13:51:10.4446960Z   overwrite: false
+2026-11-16T13:51:10.4447175Z   include-hidden-files: false
+2026-11-16T13:51:10.4447405Z env:
+2026-11-16T13:51:10.4447588Z   OMP_NUM_THREADS: 1
+2026-11-16T13:51:10.4447799Z   MKL_NUM_THREADS: 1
+2026-11-16T13:51:10.4448009Z   OPENBLAS_NUM_THREADS: 1
+2026-11-16T13:51:10.4448246Z   PYTEST_DISABLE_PLUGIN_AUTOLOAD: 1
+2026-11-16T13:51:10.4448505Z   ACCELERATE_USE_CPU: true
+2026-11-16T13:51:10.4448794Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-16T13:51:10.4449219Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+2026-11-16T13:51:10.4449666Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-16T13:51:10.4450042Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-16T13:51:10.4450414Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+2026-11-16T13:51:10.4450790Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+2026-11-16T13:51:10.4451105Z ##[endgroup]
+2026-11-16T13:51:10.6107231Z (node:2805) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-16T13:51:10.6108097Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-16T13:51:10.6351887Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-11-16T13:51:10.6358932Z The least common ancestor is /home/runner/work/denoising-diffusion-pytorch/denoising-diffusion-pytorch. This will be the root directory of the artifact
+2026-11-16T13:51:10.6360182Z With the provided path, there will be 12 files uploaded
+2026-11-16T13:51:10.6363334Z Artifact name is valid!
+2026-11-16T13:51:10.6364014Z Root directory input is valid!
+2026-11-16T13:51:10.9430100Z Beginning upload of artifact content to blob storage
+2026-11-16T13:51:10.9843240Z (node:2805) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-16T13:51:11.1007089Z Uploaded bytes 5833
+2026-11-16T13:51:11.1366645Z Finished uploading artifact content to blob storage!
+2026-11-16T13:51:11.1367957Z SHA256 digest of uploaded artifact zip is 8a737ee22408a04116274c76a16edc81ecf3c9c913ee3c34fd3c843c378da5ff
+2026-11-16T13:51:11.1370146Z Finalizing artifact upload
+2026-11-16T13:51:11.5085117Z Artifact split-batch-regression-evidence.zip successfully finalized. Artifact ID 14231493302
+2026-11-16T13:51:11.5086173Z Artifact split-batch-regression-evidence has been successfully uploaded! Final size is 5833 bytes. Artifact ID is 14231493302
+2026-11-16T13:51:11.5088758Z Artifact download URL: https://github.com/Afloat16/denoising-diffusion-pytorch/actions/runs/43879622524/artifacts/14231493302
+2026-11-16T13:51:11.5278275Z Post job cleanup.
+2026-11-16T13:51:11.6467408Z (node:2818) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-16T13:51:11.6468387Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-16T13:51:11.6680800Z Post job cleanup.
+2026-11-16T13:51:11.7598366Z [command]/usr/bin/git version
+2026-11-16T13:51:11.7643264Z git version 2.56.1
+2026-11-16T13:51:11.7682230Z Temporarily overriding HOME='/home/runner/work/_temp/37b7229a-876d-417c-9436-a9798ff28ee6' before making global git config changes
+2026-11-16T13:51:11.7683563Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-16T13:51:11.7688920Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/denoising-diffusion-pytorch/denoising-diffusion-pytorch/baseline
+2026-11-16T13:51:11.7732773Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-16T13:51:11.7772548Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-16T13:51:11.8109271Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-16T13:51:11.8147586Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-16T13:51:11.8476181Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-16T13:51:11.8509007Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-16T13:51:11.8941653Z Post job cleanup.
+2026-11-16T13:51:11.9935848Z [command]/usr/bin/git version
+2026-11-16T13:51:11.9984858Z git version 2.56.1
+2026-11-16T13:51:12.0033172Z Temporarily overriding HOME='/home/runner/work/_temp/301e4146-fedc-43b6-8b26-5a6a3c64e243' before making global git config changes
+2026-11-16T13:51:12.0035833Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-16T13:51:12.0045339Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/denoising-diffusion-pytorch/denoising-diffusion-pytorch
+2026-11-16T13:51:12.0102723Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-16T13:51:12.0156656Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-16T13:51:12.0535288Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-16T13:51:12.0569357Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-16T13:51:12.1008650Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-16T13:51:12.1045291Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-16T13:51:12.1465411Z Cleaning up orphan processes
+2026-11-16T13:51:12.1859849Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
