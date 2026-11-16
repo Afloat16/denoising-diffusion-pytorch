@@ -985,6 +985,10 @@ class Trainer:
         if self.calculate_fid:
             from denoising_diffusion_pytorch.fid_evaluation import FIDEvaluation
 
+            # FID runs only on the main process and must not advance or
+            # synchronize the distributed training iterator.
+            fid_dl = DataLoader(self.ds, batch_size = self.batch_size, shuffle = True, pin_memory = True)
+
             if not is_ddim_sampling:
                 self.accelerator.print(
                     "WARNING: Robust FID computation requires a lot of generated samples and can therefore be very time consuming."\
@@ -993,7 +997,7 @@ class Trainer:
 
             self.fid_scorer = FIDEvaluation(
                 batch_size=self.batch_size,
-                dl=self.dl,
+                dl=cycle(fid_dl),
                 sampler=self.ema.ema_model,
                 channels=self.channels,
                 accelerator=self.accelerator,
